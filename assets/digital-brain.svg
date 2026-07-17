@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="300" viewBox="0 0 900 300" role="img" aria-labelledby="title desc">
+  <title id="title">Digital Brain — persistent knowledge system</title>
+  <desc id="desc">A cinematic project card showing an animated data flow through Raw, Wiki, and Schema layers.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#050711" />
+      <stop offset="0.52" stop-color="#0a0d1c" />
+      <stop offset="1" stop-color="#07131d" />
+    </linearGradient>
+    <linearGradient id="border" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.92" />
+      <stop offset="0.58" stop-color="#c084fc" stop-opacity="0.42" />
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0.62" />
+    </linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#a78bfa" />
+      <stop offset="0.52" stop-color="#d8b4fe" />
+      <stop offset="1" stop-color="#22d3ee" />
+    </linearGradient>
+    <linearGradient id="flow-gradient" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#22d3ee" />
+      <stop offset="0.5" stop-color="#c084fc" />
+      <stop offset="1" stop-color="#8b5cf6" />
+    </linearGradient>
+    <radialGradient id="purple-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.28" />
+      <stop offset="0.55" stop-color="#7c3aed" stop-opacity="0.08" />
+      <stop offset="1" stop-color="#7c3aed" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="cyan-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.22" />
+      <stop offset="1" stop-color="#0891b2" stop-opacity="0" />
+    </radialGradient>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M30 0H0V30" fill="none" stroke="#a78bfa" stroke-opacity="0.045" />
+      <circle cx="0" cy="0" r="1" fill="#22d3ee" fill-opacity="0.1" />
+    </pattern>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="#c084fc" />
+    </marker>
+    <filter id="soft-glow" x="-120%" y="-120%" width="340%" height="340%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <clipPath id="frame">
+      <rect x="1" y="1" width="898" height="298" rx="22" />
+    </clipPath>
+  </defs>
+
+  <style>
+    .data-flow { animation: data-flow 4.8s linear infinite; }
+    .data-flow-slow { animation: data-flow-slow 7.2s linear infinite; }
+    .signal-pulse { animation: signal-pulse 3.6s ease-in-out infinite; }
+    @keyframes data-flow { to { stroke-dashoffset: -64; } }
+    @keyframes data-flow-slow { to { stroke-dashoffset: -48; } }
+    @keyframes signal-pulse { 0%, 100% { opacity: .38; } 50% { opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) {
+      .data-flow, .data-flow-slow, .signal-pulse { animation: none; }
+    }
+  </style>
+
+  <rect x="1" y="1" width="898" height="298" rx="22" fill="url(#bg)" stroke="url(#border)" stroke-width="2" />
+  <g clip-path="url(#frame)">
+    <rect x="1" y="1" width="898" height="298" fill="url(#grid)" />
+    <ellipse cx="300" cy="110" rx="330" ry="260" fill="url(#purple-glow)" />
+    <ellipse cx="800" cy="175" rx="250" ry="245" fill="url(#cyan-glow)" />
+    <path d="M-20 270C188 215 306 302 492 250S744 208 920 248" fill="none" stroke="#8b5cf6" stroke-opacity="0.11" stroke-width="2" />
+  </g>
+
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace">
+    <circle cx="38" cy="36" r="5" fill="#a3e635" filter="url(#soft-glow)" />
+    <text x="54" y="43" fill="#b8a7e8" font-size="18" letter-spacing="2">01 / KNOWLEDGE SYSTEM</text>
+  </g>
+
+  <g font-family="ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif">
+    <text x="38" y="91" fill="#f8faff" font-size="36" font-weight="800">Digital Brain</text>
+    <text x="40" y="127" fill="#d9e0ee" font-size="20" font-weight="600">An LLM-maintained personal wiki.</text>
+    <text x="40" y="154" fill="#98a4ba" font-size="20">Knowledge that compounds over time.</text>
+  </g>
+
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="18">
+    <rect x="38" y="180" width="124" height="40" rx="10" fill="#8b5cf6" fill-opacity="0.1" stroke="#a78bfa" stroke-opacity="0.55" />
+    <text x="54" y="206" fill="#c4b5fd">MARKDOWN</text>
+    <rect x="174" y="180" width="190" height="40" rx="10" fill="#c084fc" fill-opacity="0.08" stroke="#c084fc" stroke-opacity="0.5" />
+    <text x="189" y="206" fill="#e9d5ff">AGENT-AGNOSTIC</text>
+    <rect x="376" y="180" width="136" height="40" rx="10" fill="#22d3ee" fill-opacity="0.07" stroke="#22d3ee" stroke-opacity="0.45" />
+    <text x="388" y="206" fill="#67e8f9">PLAIN FILES</text>
+
+    <circle class="signal-pulse" cx="44" cy="256" r="5" fill="#a3e635" filter="url(#soft-glow)" />
+    <text x="58" y="263" fill="#a7b2c8">ACTIVE BUILD · OPEN SYSTEM</text>
+  </g>
+
+  <line x1="536" y1="28" x2="536" y2="272" stroke="url(#border)" stroke-opacity="0.46" />
+
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace">
+    <text x="560" y="36" fill="#a7b2c8" font-size="18" letter-spacing="1.7">LIVE KNOWLEDGE PIPELINE</text>
+
+    <rect x="558" y="52" width="304" height="52" rx="12" fill="#111226" fill-opacity="0.96" stroke="#8b5cf6" stroke-opacity="0.56" />
+    <rect x="558" y="52" width="5" height="52" rx="2.5" fill="#8b5cf6" />
+    <text x="580" y="85" fill="#e9d5ff" font-size="20" font-weight="700" letter-spacing="1.5">SCHEMA</text>
+    <text x="758" y="85" fill="#a99cc8" font-size="18">POLICY</text>
+
+    <rect x="558" y="124" width="304" height="52" rx="12" fill="#17122b" fill-opacity="0.98" stroke="#c084fc" stroke-opacity="0.76" />
+    <rect x="558" y="124" width="5" height="52" rx="2.5" fill="#c084fc" />
+    <text x="580" y="157" fill="#f3e8ff" font-size="20" font-weight="700" letter-spacing="1.5">WIKI</text>
+    <text x="735" y="157" fill="#d8b4fe" font-size="18">KNOWLEDGE</text>
+
+    <rect x="558" y="196" width="304" height="52" rx="12" fill="#0d1823" fill-opacity="0.98" stroke="#22d3ee" stroke-opacity="0.58" />
+    <rect x="558" y="196" width="5" height="52" rx="2.5" fill="#22d3ee" />
+    <text x="580" y="229" fill="#cffafe" font-size="20" font-weight="700" letter-spacing="1.5">RAW</text>
+    <text x="766" y="229" fill="#86dce8" font-size="18">SOURCES</text>
+  </g>
+
+  <g aria-hidden="true">
+    <path d="M836 194V179M836 122V107" fill="none" stroke="#37435f" stroke-width="3" />
+    <path class="data-flow" d="M836 194V179M836 122V107" fill="none" stroke="url(#flow-gradient)" stroke-width="3" stroke-linecap="round" stroke-dasharray="7 9" marker-end="url(#arrow)" />
+
+    <path d="M700 222C726 222 730 150 700 150S674 78 700 78" fill="none" stroke="#8b5cf6" stroke-opacity="0.18" stroke-width="2" />
+    <path class="data-flow-slow" d="M700 222C726 222 730 150 700 150S674 78 700 78" fill="none" stroke="url(#flow-gradient)" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 10" />
+
+    <g class="signal-pulse" fill="#c084fc" filter="url(#soft-glow)">
+      <circle cx="700" cy="78" r="4" />
+      <circle cx="700" cy="150" r="5" />
+      <circle cx="700" cy="222" r="4" fill="#22d3ee" />
+    </g>
+  </g>
+
+  <g fill="none" stroke="#8691a8" stroke-opacity="0.34">
+    <path d="M20 45V20H45" />
+    <path d="M855 20H880V45" />
+    <path d="M20 255V280H45" />
+    <path d="M855 280H880V255" />
+  </g>
+</svg>
