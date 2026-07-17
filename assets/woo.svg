@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="300" viewBox="0 0 900 300" role="img" aria-labelledby="title desc">
+  <title id="title">Woo — calm, offline-first notes</title>
+  <desc id="desc">A cinematic cyan project card with Woo project details, a quiet note editor, a blinking cursor, and a flowing sync signal.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#050711" />
+      <stop offset="0.52" stop-color="#080d19" />
+      <stop offset="1" stop-color="#061721" />
+    </linearGradient>
+    <linearGradient id="frame-border" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.72" />
+      <stop offset="0.48" stop-color="#22d3ee" stop-opacity="0.62" />
+      <stop offset="1" stop-color="#67e8f9" stop-opacity="0.2" />
+    </linearGradient>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22d3ee" />
+      <stop offset="0.56" stop-color="#67e8f9" />
+      <stop offset="1" stop-color="#a78bfa" />
+    </linearGradient>
+    <linearGradient id="flow-gradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0" />
+      <stop offset="0.35" stop-color="#22d3ee" />
+      <stop offset="0.72" stop-color="#a78bfa" />
+      <stop offset="1" stop-color="#a78bfa" stop-opacity="0" />
+    </linearGradient>
+    <radialGradient id="cyan-aurora" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.23" />
+      <stop offset="0.56" stop-color="#0891b2" stop-opacity="0.07" />
+      <stop offset="1" stop-color="#0891b2" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="purple-aurora" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#8b5cf6" stop-opacity="0.18" />
+      <stop offset="1" stop-color="#7c3aed" stop-opacity="0" />
+    </radialGradient>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M36 0H0V36" fill="none" stroke="#67e8f9" stroke-opacity="0.035" />
+      <circle cx="0" cy="0" r="1" fill="#a78bfa" fill-opacity="0.11" />
+    </pattern>
+    <filter id="soft-glow" x="-120%" y="-120%" width="340%" height="340%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <clipPath id="frame">
+      <rect x="1" y="1" width="898" height="298" rx="24" />
+    </clipPath>
+    <clipPath id="editor-clip">
+      <rect x="510" y="37" width="348" height="226" rx="18" />
+    </clipPath>
+  </defs>
+
+  <style>
+    .sync-flow { stroke-dashoffset: 0; }
+    .sync-ring { stroke-dashoffset: 0; }
+    .cursor { opacity: .92; }
+    .status-pulse { opacity: .88; }
+    .aurora-breathe { opacity: .86; }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .sync-flow { animation: sync-flow 5.4s linear infinite; }
+      .sync-ring { animation: sync-ring 7.5s linear infinite; }
+      .cursor { animation: cursor 1.2s steps(1, end) infinite; }
+      .status-pulse { animation: status-pulse 3.8s ease-in-out infinite; }
+      .aurora-breathe { animation: aurora-breathe 9s ease-in-out infinite; }
+    }
+
+    @keyframes sync-flow { to { stroke-dashoffset: -80; } }
+    @keyframes sync-ring { to { stroke-dashoffset: -42; } }
+    @keyframes cursor { 0%, 52% { opacity: 1; } 53%, 100% { opacity: .2; } }
+    @keyframes status-pulse { 0%, 100% { opacity: .45; } 50% { opacity: 1; } }
+    @keyframes aurora-breathe { 0%, 100% { opacity: .7; } 50% { opacity: 1; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .sync-flow, .sync-ring, .cursor, .status-pulse, .aurora-breathe { animation: none; }
+    }
+  </style>
+
+  <rect x="1" y="1" width="898" height="298" rx="24" fill="url(#bg)" stroke="url(#frame-border)" stroke-width="2" />
+
+  <g clip-path="url(#frame)">
+    <rect x="1" y="1" width="898" height="298" fill="url(#grid)" />
+    <ellipse class="aurora-breathe" cx="710" cy="146" rx="300" ry="220" fill="url(#cyan-aurora)" />
+    <ellipse cx="410" cy="40" rx="230" ry="170" fill="url(#purple-aurora)" />
+    <path d="M-30 275 C168 224 287 306 470 260 S729 207 930 244" fill="none" stroke="#22d3ee" stroke-opacity="0.09" stroke-width="2" />
+    <path d="M-20 288 C174 242 300 315 478 278 S735 226 925 260" fill="none" stroke="#8b5cf6" stroke-opacity="0.08" />
+  </g>
+
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace">
+    <circle class="status-pulse" cx="42" cy="38" r="5" fill="#22d3ee" filter="url(#soft-glow)" />
+    <text x="58" y="45" fill="#8fa0b8" font-size="18" letter-spacing="2.5">02 / CAPTURE SYSTEM</text>
+    <path d="M42 65H290" stroke="url(#flow-gradient)" stroke-width="2" />
+  </g>
+
+  <g font-family="Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif">
+    <text x="40" y="119" fill="#f7fbff" font-size="40" font-weight="800">Woo</text>
+    <text x="40" y="153" fill="#d9e5ef" font-size="21" font-weight="600">Capture thoughts without friction.</text>
+    <text x="40" y="182" fill="#9badbf" font-size="21">Keep them local, calm, and in sync.</text>
+  </g>
+
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="18">
+    <rect x="40" y="215" width="84" height="38" rx="10" fill="#22d3ee" fill-opacity="0.08" stroke="#22d3ee" stroke-opacity="0.42" />
+    <text x="57" y="240" fill="#67e8f9">RUST</text>
+    <rect x="136" y="215" width="94" height="38" rx="10" fill="#22d3ee" fill-opacity="0.08" stroke="#22d3ee" stroke-opacity="0.42" />
+    <text x="152" y="240" fill="#67e8f9">TAURI</text>
+    <rect x="242" y="215" width="104" height="38" rx="10" fill="#8b5cf6" fill-opacity="0.08" stroke="#a78bfa" stroke-opacity="0.42" />
+    <text x="258" y="240" fill="#c4b5fd">VUE 3</text>
+  </g>
+
+  <g aria-hidden="true">
+    <path class="sync-flow" d="M374 150 C424 116 460 117 510 146" fill="none" stroke="url(#flow-gradient)" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="10 14" />
+    <circle cx="382" cy="145" r="4" fill="#a78bfa" />
+    <circle cx="499" cy="142" r="4" fill="#22d3ee" filter="url(#soft-glow)" />
+  </g>
+
+  <g>
+    <rect x="506" y="33" width="356" height="234" rx="22" fill="#22d3ee" fill-opacity="0.035" stroke="#22d3ee" stroke-opacity="0.12" stroke-width="4" />
+    <rect x="510" y="37" width="348" height="226" rx="18" fill="#08131d" fill-opacity="0.96" stroke="#22d3ee" stroke-opacity="0.5" />
+
+    <g clip-path="url(#editor-clip)">
+      <rect x="510" y="37" width="348" height="47" fill="#0c1b26" />
+      <path d="M510 84H858" stroke="#24404d" />
+      <rect x="510" y="84" width="76" height="179" fill="#0a1720" />
+      <path d="M586 84V263" stroke="#203946" />
+      <rect x="586" y="84" width="272" height="179" fill="#08141d" />
+      <rect x="586" y="84" width="4" height="179" fill="url(#brand)" fill-opacity="0.7" />
+    </g>
+
+    <circle cx="532" cy="60" r="5" fill="#fb7185" />
+    <circle cx="549" cy="60" r="5" fill="#fbbf24" />
+    <circle cx="566" cy="60" r="5" fill="#a3e635" />
+    <text x="608" y="67" fill="#a9bac9" font-size="18" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace">woo.md</text>
+
+    <g fill="#466674">
+      <rect x="530" y="109" width="36" height="6" rx="3" />
+      <rect x="530" y="132" width="27" height="6" rx="3" />
+      <rect x="530" y="155" width="39" height="6" rx="3" />
+      <rect x="530" y="178" width="31" height="6" rx="3" />
+    </g>
+    <circle cx="540" cy="221" r="7" fill="#22d3ee" fill-opacity="0.12" stroke="#22d3ee" stroke-opacity="0.7" />
+    <circle class="sync-ring" cx="540" cy="221" r="12" fill="none" stroke="#67e8f9" stroke-opacity="0.75" stroke-width="2" stroke-dasharray="17 9" />
+
+    <g font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace">
+      <text x="612" y="125" fill="#67e8f9" font-size="19" font-weight="700">Capture first.</text>
+      <text x="612" y="156" fill="#d4e4ed" font-size="19">Shape later.</text>
+    </g>
+    <rect x="612" y="177" width="194" height="6" rx="3" fill="#5c7783" />
+    <rect x="612" y="197" width="164" height="6" rx="3" fill="#425d68" />
+    <rect x="612" y="217" width="181" height="6" rx="3" fill="#425d68" />
+
+    <g class="cursor">
+      <rect x="610" y="233" width="10" height="25" rx="5" fill="#22d3ee" fill-opacity="0.08" />
+      <rect x="614" y="234" width="3" height="23" rx="1.5" fill="#67e8f9" />
+    </g>
+    <path class="sync-flow" d="M643 247 C697 231 744 260 804 239" fill="none" stroke="url(#flow-gradient)" stroke-width="2" stroke-linecap="round" stroke-dasharray="8 12" />
+    <circle class="status-pulse" cx="820" cy="238" r="5" fill="#a3e635" filter="url(#soft-glow)" />
+  </g>
+
+  <g fill="none" stroke="#8193a8" stroke-opacity="0.38">
+    <path d="M20 44V20H44" />
+    <path d="M856 20H880V44" />
+    <path d="M20 256V280H44" />
+    <path d="M856 280H880V256" />
+  </g>
+</svg>
