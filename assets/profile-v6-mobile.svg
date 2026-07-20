@@ -1,16 +1,190 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg"
      width="720"
-     height="300"
-     viewBox="0 0 720 300"
+     height="1024"
+     viewBox="0 0 720 1024"
      role="img"
-     aria-labelledby="trace-title trace-desc"
+     aria-labelledby="profile-title profile-desc"
      focusable="false">
-  <title id="trace-title">stophemo 的 GitHub 贡献轨迹</title>
-  <desc id="trace-desc">stophemo 过去 365 天共有 96 次贡献，分布在 28 个活跃日。</desc>
+  <title id="profile-title">stophemo 的个人主页</title>
+  <desc id="profile-desc">自动运行的三轨躲避游戏，文字“好好吃饭，好好睡觉，好好生活”，以及过去 365 天的真实 GitHub 贡献轨迹。</desc>
 
   <style>
+.sans {
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      letter-spacing: 0;
+    }
+
     .mono {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      letter-spacing: 0;
+    }
+
+    .grid-flow { animation: grid-flow .72s linear infinite; }
+    .lane-flow { animation: lane-flow .54s linear infinite; }
+    .runner { animation: runner-shift 7.2s cubic-bezier(.65, 0, .35, 1) infinite; }
+    .trail { animation: trail-pulse .42s ease-in-out infinite alternate; }
+    .fall-one { animation: fall-one 7.2s linear infinite; }
+    .fall-two { animation: fall-two 7.2s linear infinite; }
+    .fall-three { animation: fall-three 7.2s linear infinite; }
+    .pickup-one { animation: pickup-one 7.2s linear infinite; }
+    .pickup-two { animation: pickup-two 7.2s linear infinite; }
+    .pickup-three { animation: pickup-three 7.2s linear infinite; }
+    .burst-one,
+    .burst-two,
+    .burst-three {
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+    .burst-one { animation: burst-one 7.2s ease-out infinite; }
+    .burst-two { animation: burst-two 7.2s ease-out infinite; }
+    .burst-three { animation: burst-three 7.2s ease-out infinite; }
+    .score-zero { animation: score-zero 7.2s steps(1, end) infinite; }
+    .score-one { animation: score-one 7.2s steps(1, end) infinite; }
+    .score-two { animation: score-two 7.2s steps(1, end) infinite; }
+    .score-three { animation: score-three 7.2s steps(1, end) infinite; }
+    .status-flash { animation: status-flash 2.4s steps(1, end) infinite; }
+    .scan { animation: scan 3.6s linear infinite; }
+
+    @keyframes grid-flow {
+      to { transform: translateY(36px); }
+    }
+
+    @keyframes lane-flow {
+      to { stroke-dashoffset: -42; }
+    }
+
+    @keyframes runner-shift {
+      0%, 14% { transform: translateX(0); }
+      20%, 38% { transform: translateX(-225px); }
+      44%, 68% { transform: translateX(225px); }
+      74%, 100% { transform: translateX(0); }
+    }
+
+    @keyframes trail-pulse {
+      from { opacity: .35; transform: scaleY(.72); }
+      to { opacity: .95; transform: scaleY(1); }
+    }
+
+    @keyframes fall-one {
+      0% { transform: translateY(-200px); opacity: 0; }
+      3% { opacity: 1; }
+      37% { transform: translateY(500px); opacity: 1; }
+      39%, 100% { transform: translateY(500px); opacity: 0; }
+    }
+
+    @keyframes fall-two {
+      0%, 31% { transform: translateY(-200px); opacity: 0; }
+      34% { opacity: 1; }
+      69% { transform: translateY(500px); opacity: 1; }
+      71%, 100% { transform: translateY(500px); opacity: 0; }
+    }
+
+    @keyframes fall-three {
+      0%, 62% { transform: translateY(-200px); opacity: 0; }
+      65% { opacity: 1; }
+      98% { transform: translateY(500px); opacity: 1; }
+      100% { transform: translateY(500px); opacity: 0; }
+    }
+
+    @keyframes pickup-one {
+      0% { transform: translateY(-200px); opacity: 0; }
+      3% { opacity: 1; }
+      30% { transform: translateY(297px); opacity: 1; }
+      31%, 100% { transform: translateY(297px); opacity: 0; }
+    }
+
+    @keyframes pickup-two {
+      0%, 31% { transform: translateY(-200px); opacity: 0; }
+      34% { opacity: 1; }
+      61% { transform: translateY(297px); opacity: 1; }
+      62%, 100% { transform: translateY(297px); opacity: 0; }
+    }
+
+    @keyframes pickup-three {
+      0%, 62% { transform: translateY(-200px); opacity: 0; }
+      65% { opacity: 1; }
+      92% { transform: translateY(297px); opacity: 1; }
+      93%, 100% { transform: translateY(297px); opacity: 0; }
+    }
+
+    @keyframes burst-one {
+      0%, 27% { transform: scale(.4); opacity: 0; }
+      30% { opacity: 1; }
+      35%, 100% { transform: scale(1.7); opacity: 0; }
+    }
+
+    @keyframes burst-two {
+      0%, 58% { transform: scale(.4); opacity: 0; }
+      61% { opacity: 1; }
+      66%, 100% { transform: scale(1.7); opacity: 0; }
+    }
+
+    @keyframes burst-three {
+      0%, 89% { transform: scale(.4); opacity: 0; }
+      92% { opacity: 1; }
+      97%, 100% { transform: scale(1.7); opacity: 0; }
+    }
+
+    @keyframes score-zero { 0%, 30% { opacity: 1; } 31%, 100% { opacity: 0; } }
+    @keyframes score-one { 0%, 30% { opacity: 0; } 31%, 61% { opacity: 1; } 62%, 100% { opacity: 0; } }
+    @keyframes score-two { 0%, 61% { opacity: 0; } 62%, 92% { opacity: 1; } 93%, 100% { opacity: 0; } }
+    @keyframes score-three { 0%, 92% { opacity: 0; } 93%, 100% { opacity: 1; } }
+
+    @keyframes status-flash {
+      0%, 76% { opacity: 1; }
+      77%, 82% { opacity: .2; }
+      83%, 100% { opacity: 1; }
+    }
+
+    @keyframes scan {
+      from { transform: translateY(-72px); opacity: 0; }
+      10%, 90% { opacity: .22; }
+      to { transform: translateY(570px); opacity: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .grid-flow,
+      .lane-flow,
+      .runner,
+      .trail,
+      .fall-one,
+      .fall-two,
+      .fall-three,
+      .pickup-one,
+      .pickup-two,
+      .pickup-three,
+      .burst-one,
+      .burst-two,
+      .burst-three,
+      .score-zero,
+      .score-one,
+      .score-two,
+      .score-three,
+      .status-flash,
+      .scan {
+        animation: none !important;
+      }
+
+      .burst-one,
+      .burst-two,
+      .burst-three,
+      .score-one,
+      .score-two,
+      .score-three,
+      .scan { opacity: 0; }
+
+      .fall-one { transform: translateY(80px); opacity: 1; }
+      .pickup-one { transform: translateY(180px); opacity: 1; }
+      .fall-two,
+      .fall-three,
+      .pickup-two,
+      .pickup-three { opacity: 0; }
+
+      .score-zero { opacity: 1; }
+    }
+
+.mono {
       font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
       letter-spacing: 0;
     }
@@ -56,9 +230,178 @@
       .current,
       .live { opacity: 1; }
     }
+
+    .bridge-sans {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      letter-spacing: 0;
+    }
   </style>
 
-  <defs>
+  <g>
+<defs>
+    <clipPath id="playfield-clip">
+      <rect y="118" width="720" height="522"/>
+    </clipPath>
+    <pattern id="hazard-stripe" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="7" height="14" fill="#FF4F5E"/>
+      <rect x="7" width="7" height="14" fill="#151618"/>
+    </pattern>
+  </defs>
+
+  <rect width="720" height="640" fill="#090A0B"/>
+  <rect width="720" height="8" fill="#D7FF3F"/>
+  <rect y="8" width="720" height="110" fill="#121315"/>
+  <path d="M0 118H720" stroke="#34373B"/>
+
+  <g class="mono">
+    <text x="32" y="42" fill="#F4F2EA" font-size="20" font-weight="800">STOPHEMO</text>
+    <text x="32" y="84" fill="#F4F2EA" font-size="34" font-weight="800">SIDE QUEST</text>
+    <text x="249" y="84" fill="#27D7F2" font-size="12" font-weight="800">/ 07</text>
+
+    <text x="516" y="36" fill="#747A81" font-size="10" font-weight="700">SCORE</text>
+    <g fill="#F4F2EA" font-size="27" font-weight="800">
+      <text class="score-zero" x="516" y="67">00420</text>
+      <text class="score-one" x="516" y="67" opacity="0">00520</text>
+      <text class="score-two" x="516" y="67" opacity="0">00620</text>
+      <text class="score-three" x="516" y="67" opacity="0">00720</text>
+    </g>
+    <text x="516" y="95" fill="#27D7F2" font-size="12" font-weight="800">CHAIN x03</text>
+
+    <g class="status-flash">
+      <rect x="414" y="31" width="7" height="7" fill="#D7FF3F"/>
+      <text x="430" y="38" fill="#D7FF3F" font-size="10" font-weight="700">RUNNING</text>
+    </g>
+  </g>
+
+  <g clip-path="url(#playfield-clip)">
+    <rect y="118" width="720" height="522" fill="#0D0E10"/>
+    <rect y="118" width="720" height="48" fill="#151618"/>
+    <path d="M0 166H720" stroke="#34373B"/>
+
+    <g class="grid-flow" fill="none" stroke="#25282C" stroke-width="1" aria-hidden="true">
+      <path d="M0 130H720 M0 166H720 M0 202H720 M0 238H720 M0 274H720 M0 310H720 M0 346H720 M0 382H720 M0 418H720 M0 454H720 M0 490H720 M0 526H720 M0 562H720 M0 598H720 M0 634H720"/>
+    </g>
+
+    <rect x="15" y="182" width="210" height="458" fill="#101113"/>
+    <rect x="240" y="182" width="240" height="458" fill="#0B0C0E"/>
+    <rect x="495" y="182" width="210" height="458" fill="#101113"/>
+
+    <g fill="none" stroke="#4A4E54" stroke-width="2" aria-hidden="true">
+      <path class="lane-flow" d="M240 166V650" stroke-dasharray="12 30"/>
+      <path class="lane-flow" d="M480 166V650" stroke-dasharray="12 30"/>
+    </g>
+
+    <g class="grid-flow" fill="#34373B" opacity=".75" aria-hidden="true">
+      <path d="M24 146h24l-15 7H9z M24 290h24l-15 7H9z M24 434h24l-15 7H9z M24 578h24l-15 7H9z"/>
+      <path d="M687 218h24l-15 7h-24z M687 362h24l-15 7h-24z M687 506h24l-15 7h-24z"/>
+    </g>
+
+    <g class="mono" font-size="10" font-weight="700">
+      <text x="24" y="148" fill="#8D9299">DIST / 01.84 KM</text>
+      <text x="319" y="148" fill="#8D9299">LANE 02</text>
+      <text x="625" y="148" fill="#D7FF3F">03 / 03</text>
+    </g>
+
+    <g class="fall-one">
+      <g transform="translate(360 205)">
+        <rect x="-70" y="-14" width="140" height="28" fill="url(#hazard-stripe)"/>
+        <rect x="-79" y="-19" width="11" height="38" fill="#FF4F5E"/>
+        <rect x="68" y="-19" width="11" height="38" fill="#FF4F5E"/>
+      </g>
+    </g>
+    <g class="fall-two">
+      <g transform="translate(135 205)">
+        <rect x="-70" y="-14" width="140" height="28" fill="url(#hazard-stripe)"/>
+        <rect x="-79" y="-19" width="11" height="38" fill="#FF4F5E"/>
+        <rect x="68" y="-19" width="11" height="38" fill="#FF4F5E"/>
+      </g>
+    </g>
+    <g class="fall-three">
+      <g transform="translate(585 205)">
+        <rect x="-70" y="-14" width="140" height="28" fill="url(#hazard-stripe)"/>
+        <rect x="-79" y="-19" width="11" height="38" fill="#FF4F5E"/>
+        <rect x="68" y="-19" width="11" height="38" fill="#FF4F5E"/>
+      </g>
+    </g>
+
+    <g class="pickup-one">
+      <g transform="translate(135 245)">
+        <path d="M0-13L13 0 0 13-13 0Z" fill="#D7FF3F"/>
+        <path d="M0-22L22 0 0 22-22 0Z" fill="none" stroke="#D7FF3F" opacity=".45"/>
+      </g>
+    </g>
+    <g class="pickup-two">
+      <g transform="translate(585 245)">
+        <path d="M0-13L13 0 0 13-13 0Z" fill="#D7FF3F"/>
+        <path d="M0-22L22 0 0 22-22 0Z" fill="none" stroke="#D7FF3F" opacity=".45"/>
+      </g>
+    </g>
+    <g class="pickup-three">
+      <g transform="translate(360 245)">
+        <path d="M0-13L13 0 0 13-13 0Z" fill="#D7FF3F"/>
+        <path d="M0-22L22 0 0 22-22 0Z" fill="none" stroke="#D7FF3F" opacity=".45"/>
+      </g>
+    </g>
+
+    <g class="burst-one" opacity="0" aria-hidden="true">
+      <g transform="translate(135 542)">
+        <path d="M-30 0H30M0-30V30" stroke="#D7FF3F" stroke-width="2"/>
+        <rect x="-21" y="-21" width="42" height="42" fill="none" stroke="#27D7F2"/>
+      </g>
+    </g>
+    <g class="burst-two" opacity="0" aria-hidden="true">
+      <g transform="translate(585 542)">
+        <path d="M-30 0H30M0-30V30" stroke="#D7FF3F" stroke-width="2"/>
+        <rect x="-21" y="-21" width="42" height="42" fill="none" stroke="#27D7F2"/>
+      </g>
+    </g>
+    <g class="burst-three" opacity="0" aria-hidden="true">
+      <g transform="translate(360 542)">
+        <path d="M-30 0H30M0-30V30" stroke="#D7FF3F" stroke-width="2"/>
+        <rect x="-21" y="-21" width="42" height="42" fill="none" stroke="#27D7F2"/>
+      </g>
+    </g>
+
+    <g class="runner">
+      <g transform="translate(360 542)">
+        <g class="trail" transform-origin="0 26">
+          <path d="M-12 21L0 66 12 21Z" fill="#27D7F2" opacity=".28"/>
+          <path d="M-6 20L0 53 6 20Z" fill="#D7FF3F" opacity=".75"/>
+        </g>
+        <path d="M0-33L28 26 0 16-28 26Z" fill="#F4F2EA"/>
+        <path d="M0-19L11 13 0 9-11 13Z" fill="#090A0B"/>
+        <path d="M0-33V-45" stroke="#D7FF3F" stroke-width="3"/>
+        <path d="M-28 26L0 16 28 26" fill="none" stroke="#27D7F2" stroke-width="2"/>
+      </g>
+    </g>
+
+    <g class="mono" fill="#D7FF3F" font-size="11" font-weight="800" aria-hidden="true">
+      <text class="burst-one" x="167" y="530" opacity="0">+100</text>
+      <text class="burst-two" x="617" y="530" opacity="0">+100</text>
+      <text class="burst-three" x="392" y="530" opacity="0">+100</text>
+    </g>
+
+    <rect class="scan" y="118" width="720" height="2" fill="#27D7F2" opacity="0" aria-hidden="true"/>
+  </g>
+  </g>
+
+  <g transform="translate(0 640)">
+    <rect width="720" height="84" fill="#121315"/>
+    <path d="M0 0H720" stroke="#34373B"/>
+    <text x="32" y="44" class="bridge-sans" fill="#F4F2EA" font-size="21" font-weight="600">好好吃饭，好好睡觉，好好生活</text>
+    <g aria-hidden="true">
+      <rect x="32" y="61" width="72" height="3" fill="#D7FF3F"/>
+      <rect x="112" y="61" width="72" height="3" fill="#27D7F2"/>
+      <rect x="192" y="61" width="72" height="3" fill="#FF4F5E"/>
+      <path d="M304 62.5H688" stroke="#34373B"/>
+      <rect x="430" y="59" width="7" height="7" fill="#D7FF3F"/>
+      <rect x="558" y="59" width="7" height="7" fill="#27D7F2"/>
+      <rect x="681" y="59" width="7" height="7" fill="#FF4F5E"/>
+    </g>
+  </g>
+
+  <g transform="translate(0 724)">
+<defs>
     <clipPath id="grid-clip">
       <rect x="24" y="126" width="672" height="120"/>
     </clipPath>
@@ -478,5 +821,6 @@
       <path d="M13 126V246" stroke="#27D7F2" opacity=".35"/>
       <path d="M23 126V246" stroke="#27D7F2" stroke-width="2"/>
     </g>
+  </g>
   </g>
 </svg>

@@ -1,4 +1,4 @@
-import { mkdirSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 
 const userName = process.env.GITHUB_USER || process.env.GITHUB_REPOSITORY_OWNER;
@@ -180,7 +180,7 @@ function renderSvg(layout) {
 
     .cell { shape-rendering: crispEdges; }
     .month { fill: #747A81; font-size: 10px; font-weight: 700; }
-    .scan { animation: scan 8s cubic-bezier(.45, 0, .55, 1) infinite; }
+    .trace-scan { animation: trace-scan 8s cubic-bezier(.45, 0, .55, 1) infinite; }
     .peak { animation: peak 3.2s ease-in-out infinite; }
     .phase-1 { animation-delay: -.8s; }
     .phase-2 { animation-delay: -1.6s; }
@@ -188,7 +188,7 @@ function renderSvg(layout) {
     .current { animation: current 1.8s steps(2, end) infinite; }
     .live { animation: live 2.4s steps(2, end) infinite; }
 
-    @keyframes scan {
+    @keyframes trace-scan {
       from { transform: translateX(0); }
       to { transform: translateX(${number(scanDistance)}px); }
     }
@@ -209,12 +209,12 @@ function renderSvg(layout) {
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .scan,
+      .trace-scan,
       .peak,
       .current,
       .live { animation: none !important; }
 
-      .scan { display: none; }
+      .trace-scan { display: none; }
       .peak,
       .current,
       .live { opacity: 1; }
@@ -241,7 +241,7 @@ ${cells}
   </g>
 
   <g clip-path="url(#grid-clip)" aria-hidden="true">
-    <g class="scan">
+    <g class="trace-scan">
       <rect x="${scanStart}" y="${layout.gridY}" width="44" height="${number(graphBottom - layout.gridY)}" fill="#27D7F2" opacity=".14"/>
       <path d="M${number(scanStart + 33)} ${layout.gridY}V${graphBottom}" stroke="#27D7F2" opacity=".35"/>
       <path d="M${number(scanStart + 43)} ${layout.gridY}V${graphBottom}" stroke="#27D7F2" stroke-width="2"/>
@@ -261,7 +261,8 @@ const desktop = {
   cellWidth: 9,
   cellHeight: 14,
   monthY: 38,
-  frame: `<rect x="8" y="6" width="184" height="214" fill="#121315"/>
+  frame: `<rect x="0" y="6" width="8" height="214" fill="#D7FF3F"/>
+  <rect x="8" y="6" width="184" height="214" fill="#121315"/>
   <path d="M192 6V220" stroke="#34373B"/>
   <path d="M216 192H936" stroke="#25282C"/>`,
   header: (total, active) => `<text x="28" y="40" fill="#F4F2EA" font-size="13" font-weight="800">COMMIT</text>
@@ -319,9 +320,123 @@ const mobile = {
     </g>`,
 };
 
+function extractSvgParts(source, fileName) {
+  const styleStart = source.indexOf("<style>");
+  const styleEnd = source.indexOf("</style>");
+  const svgEnd = source.lastIndexOf("</svg>");
+
+  if (styleStart < 0 || styleEnd < 0 || svgEnd < 0) {
+    throw new Error(`${fileName} 缺少完整的 SVG 样式或根元素。`);
+  }
+
+  return {
+    style: source.slice(styleStart + "<style>".length, styleEnd).trim(),
+    body: source.slice(styleEnd + "</style>".length, svgEnd).trim(),
+  };
+}
+
+function renderBridge({ width, height, y, mobile: isMobile }) {
+  if (isMobile) {
+    return `<g transform="translate(0 ${y})">
+    <rect width="720" height="${height}" fill="#121315"/>
+    <path d="M0 0H720" stroke="#34373B"/>
+    <text x="32" y="44" class="bridge-sans" fill="#F4F2EA" font-size="21" font-weight="600">好好吃饭，好好睡觉，好好生活</text>
+    <g aria-hidden="true">
+      <rect x="32" y="61" width="72" height="3" fill="#D7FF3F"/>
+      <rect x="112" y="61" width="72" height="3" fill="#27D7F2"/>
+      <rect x="192" y="61" width="72" height="3" fill="#FF4F5E"/>
+      <path d="M304 62.5H688" stroke="#34373B"/>
+      <rect x="430" y="59" width="7" height="7" fill="#D7FF3F"/>
+      <rect x="558" y="59" width="7" height="7" fill="#27D7F2"/>
+      <rect x="681" y="59" width="7" height="7" fill="#FF4F5E"/>
+    </g>
+  </g>`;
+  }
+
+  return `<g transform="translate(0 ${y})">
+    <rect width="${width}" height="${height}" fill="#0D0E10"/>
+    <rect width="8" height="${height}" fill="#D7FF3F"/>
+    <rect x="8" width="184" height="${height}" fill="#121315"/>
+    <path d="M192 0V${height}M192 0H${width}" stroke="#34373B"/>
+    <g aria-hidden="true">
+      <rect x="28" y="17" width="72" height="3" fill="#D7FF3F"/>
+      <rect x="28" y="28" width="104" height="3" fill="#27D7F2"/>
+      <rect x="28" y="39" width="44" height="3" fill="#FF4F5E"/>
+    </g>
+    <text x="218" y="39" class="bridge-sans" fill="#F4F2EA" font-size="20" font-weight="550">好好吃饭，好好睡觉，好好生活</text>
+    <g aria-hidden="true">
+      <path d="M560 32H932" stroke="#34373B"/>
+      <rect x="650" y="28" width="8" height="8" fill="#D7FF3F"/>
+      <rect x="784" y="28" width="8" height="8" fill="#27D7F2"/>
+      <rect x="924" y="28" width="8" height="8" fill="#FF4F5E"/>
+    </g>
+  </g>`;
+}
+
+function renderProfile({ width, heroHeight, bridgeHeight, traceHeight, heroFile, traceSvg, mobile: isMobile }) {
+  const hero = extractSvgParts(readFileSync(resolve(heroFile), "utf8"), heroFile);
+  const trace = extractSvgParts(traceSvg, isMobile ? "contributions-mobile.svg" : "contributions.svg");
+  const height = heroHeight + bridgeHeight + traceHeight;
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="${width}"
+     height="${height}"
+     viewBox="0 0 ${width} ${height}"
+     role="img"
+     aria-labelledby="profile-title profile-desc"
+     focusable="false">
+  <title id="profile-title">${escapeXml(userName)} 的个人主页</title>
+  <desc id="profile-desc">自动运行的三轨躲避游戏，文字“好好吃饭，好好睡觉，好好生活”，以及过去 365 天的真实 GitHub 贡献轨迹。</desc>
+
+  <style>
+${hero.style}
+
+${trace.style}
+
+    .bridge-sans {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      letter-spacing: 0;
+    }
+  </style>
+
+  <g>
+${hero.body}
+  </g>
+
+  ${renderBridge({ width, height: bridgeHeight, y: heroHeight, mobile: isMobile })}
+
+  <g transform="translate(0 ${heroHeight + bridgeHeight})">
+${trace.body}
+  </g>
+</svg>
+`;
+}
+
+const desktopTrace = renderSvg(desktop);
+const mobileTrace = renderSvg(mobile);
+
 const outputs = [
-  ["assets/contributions.svg", renderSvg(desktop)],
-  ["assets/contributions-mobile.svg", renderSvg(mobile)],
+  ["assets/contributions.svg", desktopTrace],
+  ["assets/contributions-mobile.svg", mobileTrace],
+  ["assets/profile-v6.svg", renderProfile({
+    width: 960,
+    heroHeight: 420,
+    bridgeHeight: 64,
+    traceHeight: 220,
+    heroFile: "assets/hero-v5.svg",
+    traceSvg: desktopTrace,
+    mobile: false,
+  })],
+  ["assets/profile-v6-mobile.svg", renderProfile({
+    width: 720,
+    heroHeight: 640,
+    bridgeHeight: 84,
+    traceHeight: 300,
+    heroFile: "assets/hero-v5-mobile.svg",
+    traceSvg: mobileTrace,
+    mobile: true,
+  })],
 ];
 
 for (const [fileName, contents] of outputs) {
@@ -330,4 +445,4 @@ for (const [fileName, contents] of outputs) {
   writeFileSync(outputPath, contents, "utf8");
 }
 
-console.log(`已生成 ${userName} 的贡献轨迹：${calendar.totalContributions} 次贡献，${activeDays} 个活跃日。`);
+console.log(`已生成 ${userName} 的整体主页：${calendar.totalContributions} 次贡献，${activeDays} 个活跃日。`);

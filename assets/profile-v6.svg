@@ -1,16 +1,190 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg"
      width="960"
-     height="220"
-     viewBox="0 0 960 220"
+     height="704"
+     viewBox="0 0 960 704"
      role="img"
-     aria-labelledby="trace-title trace-desc"
+     aria-labelledby="profile-title profile-desc"
      focusable="false">
-  <title id="trace-title">stophemo 的 GitHub 贡献轨迹</title>
-  <desc id="trace-desc">stophemo 过去 365 天共有 96 次贡献，分布在 28 个活跃日。</desc>
+  <title id="profile-title">stophemo 的个人主页</title>
+  <desc id="profile-desc">自动运行的三轨躲避游戏，文字“好好吃饭，好好睡觉，好好生活”，以及过去 365 天的真实 GitHub 贡献轨迹。</desc>
 
   <style>
+.sans {
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      letter-spacing: 0;
+    }
+
     .mono {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      letter-spacing: 0;
+    }
+
+    .grid-flow { animation: grid-flow .72s linear infinite; }
+    .lane-flow { animation: lane-flow .54s linear infinite; }
+    .runner { animation: runner-shift 7.2s cubic-bezier(.65, 0, .35, 1) infinite; }
+    .trail { animation: trail-pulse .42s ease-in-out infinite alternate; }
+    .fall-one { animation: fall-one 7.2s linear infinite; }
+    .fall-two { animation: fall-two 7.2s linear infinite; }
+    .fall-three { animation: fall-three 7.2s linear infinite; }
+    .pickup-one { animation: pickup-one 7.2s linear infinite; }
+    .pickup-two { animation: pickup-two 7.2s linear infinite; }
+    .pickup-three { animation: pickup-three 7.2s linear infinite; }
+    .burst-one,
+    .burst-two,
+    .burst-three {
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+    .burst-one { animation: burst-one 7.2s ease-out infinite; }
+    .burst-two { animation: burst-two 7.2s ease-out infinite; }
+    .burst-three { animation: burst-three 7.2s ease-out infinite; }
+    .score-zero { animation: score-zero 7.2s steps(1, end) infinite; }
+    .score-one { animation: score-one 7.2s steps(1, end) infinite; }
+    .score-two { animation: score-two 7.2s steps(1, end) infinite; }
+    .score-three { animation: score-three 7.2s steps(1, end) infinite; }
+    .status-flash { animation: status-flash 2.4s steps(1, end) infinite; }
+    .scan { animation: scan 3.6s linear infinite; }
+
+    @keyframes grid-flow {
+      to { transform: translateY(32px); }
+    }
+
+    @keyframes lane-flow {
+      to { stroke-dashoffset: -38; }
+    }
+
+    @keyframes runner-shift {
+      0%, 14% { transform: translateX(0); }
+      20%, 38% { transform: translateX(-245px); }
+      44%, 68% { transform: translateX(245px); }
+      74%, 100% { transform: translateX(0); }
+    }
+
+    @keyframes trail-pulse {
+      from { opacity: .35; transform: scaleY(.72); }
+      to { opacity: .95; transform: scaleY(1); }
+    }
+
+    @keyframes fall-one {
+      0% { transform: translateY(-170px); opacity: 0; }
+      3% { opacity: 1; }
+      37% { transform: translateY(365px); opacity: 1; }
+      39%, 100% { transform: translateY(365px); opacity: 0; }
+    }
+
+    @keyframes fall-two {
+      0%, 31% { transform: translateY(-170px); opacity: 0; }
+      34% { opacity: 1; }
+      69% { transform: translateY(365px); opacity: 1; }
+      71%, 100% { transform: translateY(365px); opacity: 0; }
+    }
+
+    @keyframes fall-three {
+      0%, 62% { transform: translateY(-170px); opacity: 0; }
+      65% { opacity: 1; }
+      98% { transform: translateY(365px); opacity: 1; }
+      100% { transform: translateY(365px); opacity: 0; }
+    }
+
+    @keyframes pickup-one {
+      0% { transform: translateY(-170px); opacity: 0; }
+      3% { opacity: 1; }
+      30% { transform: translateY(228px); opacity: 1; }
+      31%, 100% { transform: translateY(228px); opacity: 0; }
+    }
+
+    @keyframes pickup-two {
+      0%, 31% { transform: translateY(-170px); opacity: 0; }
+      34% { opacity: 1; }
+      61% { transform: translateY(228px); opacity: 1; }
+      62%, 100% { transform: translateY(228px); opacity: 0; }
+    }
+
+    @keyframes pickup-three {
+      0%, 62% { transform: translateY(-170px); opacity: 0; }
+      65% { opacity: 1; }
+      92% { transform: translateY(228px); opacity: 1; }
+      93%, 100% { transform: translateY(228px); opacity: 0; }
+    }
+
+    @keyframes burst-one {
+      0%, 27% { transform: scale(.4); opacity: 0; }
+      30% { opacity: 1; }
+      35%, 100% { transform: scale(1.7); opacity: 0; }
+    }
+
+    @keyframes burst-two {
+      0%, 58% { transform: scale(.4); opacity: 0; }
+      61% { opacity: 1; }
+      66%, 100% { transform: scale(1.7); opacity: 0; }
+    }
+
+    @keyframes burst-three {
+      0%, 89% { transform: scale(.4); opacity: 0; }
+      92% { opacity: 1; }
+      97%, 100% { transform: scale(1.7); opacity: 0; }
+    }
+
+    @keyframes score-zero { 0%, 30% { opacity: 1; } 31%, 100% { opacity: 0; } }
+    @keyframes score-one { 0%, 30% { opacity: 0; } 31%, 61% { opacity: 1; } 62%, 100% { opacity: 0; } }
+    @keyframes score-two { 0%, 61% { opacity: 0; } 62%, 92% { opacity: 1; } 93%, 100% { opacity: 0; } }
+    @keyframes score-three { 0%, 92% { opacity: 0; } 93%, 100% { opacity: 1; } }
+
+    @keyframes status-flash {
+      0%, 76% { opacity: 1; }
+      77%, 82% { opacity: .2; }
+      83%, 100% { opacity: 1; }
+    }
+
+    @keyframes scan {
+      from { transform: translateY(-52px); opacity: 0; }
+      10%, 90% { opacity: .22; }
+      to { transform: translateY(450px); opacity: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .grid-flow,
+      .lane-flow,
+      .runner,
+      .trail,
+      .fall-one,
+      .fall-two,
+      .fall-three,
+      .pickup-one,
+      .pickup-two,
+      .pickup-three,
+      .burst-one,
+      .burst-two,
+      .burst-three,
+      .score-zero,
+      .score-one,
+      .score-two,
+      .score-three,
+      .status-flash,
+      .scan {
+        animation: none !important;
+      }
+
+      .burst-one,
+      .burst-two,
+      .burst-three,
+      .score-one,
+      .score-two,
+      .score-three,
+      .scan { opacity: 0; }
+
+      .fall-one { transform: translateY(95px); opacity: 1; }
+      .pickup-one { transform: translateY(130px); opacity: 1; }
+      .fall-two,
+      .fall-three,
+      .pickup-two,
+      .pickup-three { opacity: 0; }
+
+      .score-zero { opacity: 1; }
+    }
+
+.mono {
       font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
       letter-spacing: 0;
     }
@@ -56,9 +230,198 @@
       .current,
       .live { opacity: 1; }
     }
+
+    .bridge-sans {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      letter-spacing: 0;
+    }
   </style>
 
-  <defs>
+  <g>
+<defs>
+    <clipPath id="playfield-clip">
+      <rect x="192" width="768" height="420"/>
+    </clipPath>
+    <pattern id="hazard-stripe" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="7" height="14" fill="#FF4F5E"/>
+      <rect x="7" width="7" height="14" fill="#151618"/>
+    </pattern>
+  </defs>
+
+  <rect width="960" height="420" fill="#090A0B"/>
+  <rect width="8" height="420" fill="#D7FF3F"/>
+  <rect x="8" width="184" height="420" fill="#121315"/>
+  <path d="M192 0V420" stroke="#34373B"/>
+
+  <g class="mono">
+    <text x="28" y="38" fill="#F4F2EA" font-size="18" font-weight="800">STOPHEMO</text>
+    <text x="28" y="61" fill="#8D9299" font-size="10" font-weight="700">PLAYER / 01</text>
+
+    <text x="28" y="120" fill="#F4F2EA" font-size="43" font-weight="800">SIDE</text>
+    <text x="28" y="160" fill="#F4F2EA" font-size="43" font-weight="800">QUEST</text>
+    <rect x="28" y="174" width="104" height="5" fill="#D7FF3F"/>
+    <rect x="138" y="174" width="24" height="5" fill="#27D7F2"/>
+
+    <text x="28" y="218" fill="#747A81" font-size="10" font-weight="700">SCORE</text>
+    <g fill="#F4F2EA" font-size="30" font-weight="800">
+      <text class="score-zero" x="28" y="251">00420</text>
+      <text class="score-one" x="28" y="251" opacity="0">00520</text>
+      <text class="score-two" x="28" y="251" opacity="0">00620</text>
+      <text class="score-three" x="28" y="251" opacity="0">00720</text>
+    </g>
+
+    <text x="28" y="291" fill="#747A81" font-size="10" font-weight="700">CHAIN</text>
+    <text x="28" y="318" fill="#27D7F2" font-size="22" font-weight="800">x03</text>
+
+    <g class="status-flash">
+      <rect x="28" y="350" width="7" height="7" fill="#D7FF3F"/>
+      <text x="44" y="357" fill="#D7FF3F" font-size="10" font-weight="700">RUNNING</text>
+    </g>
+
+    <path d="M28 382H162" stroke="#34373B"/>
+    <text x="28" y="404" fill="#747A81" font-size="9" font-weight="700">RUN / 07</text>
+    <g fill="#FF4F5E">
+      <rect x="118" y="397" width="12" height="4"/>
+      <rect x="134" y="397" width="12" height="4"/>
+      <rect x="150" y="397" width="12" height="4"/>
+    </g>
+  </g>
+
+  <g clip-path="url(#playfield-clip)">
+    <rect x="192" width="768" height="420" fill="#0D0E10"/>
+    <rect x="192" width="768" height="54" fill="#151618"/>
+    <path d="M192 54H960" stroke="#34373B"/>
+
+    <g class="grid-flow" fill="none" stroke="#25282C" stroke-width="1" aria-hidden="true">
+      <path d="M192 -32H960 M192 0H960 M192 32H960 M192 64H960 M192 96H960 M192 128H960 M192 160H960 M192 192H960 M192 224H960 M192 256H960 M192 288H960 M192 320H960 M192 352H960 M192 384H960 M192 416H960"/>
+    </g>
+
+    <rect x="207" y="70" width="230" height="350" fill="#101113"/>
+    <rect x="452" y="70" width="230" height="350" fill="#0B0C0E"/>
+    <rect x="697" y="70" width="248" height="350" fill="#101113"/>
+
+    <g fill="none" stroke="#4A4E54" stroke-width="2" aria-hidden="true">
+      <path class="lane-flow" d="M452 62V430" stroke-dasharray="11 27"/>
+      <path class="lane-flow" d="M697 62V430" stroke-dasharray="11 27"/>
+    </g>
+
+    <g class="grid-flow" fill="#34373B" opacity=".75" aria-hidden="true">
+      <path d="M220 -20h22l-14 6h-22z M220 108h22l-14 6h-22z M220 236h22l-14 6h-22z M220 364h22l-14 6h-22z"/>
+      <path d="M922 44h22l-14 6h-22z M922 172h22l-14 6h-22z M922 300h22l-14 6h-22z"/>
+    </g>
+
+    <g class="mono" font-size="10" font-weight="700">
+      <text x="218" y="34" fill="#8D9299">DIST / 01.84 KM</text>
+      <text x="527" y="34" fill="#8D9299">LANE 02</text>
+      <text x="849" y="34" fill="#D7FF3F">03 / 03</text>
+    </g>
+    <rect x="218" y="47" width="700" height="2" fill="#2A2D31"/>
+    <rect x="218" y="47" width="462" height="2" fill="#27D7F2"/>
+
+    <g class="fall-one">
+      <g transform="translate(575 80)">
+        <rect x="-72" y="-13" width="144" height="26" fill="url(#hazard-stripe)"/>
+        <rect x="-80" y="-18" width="10" height="36" fill="#FF4F5E"/>
+        <rect x="70" y="-18" width="10" height="36" fill="#FF4F5E"/>
+      </g>
+    </g>
+    <g class="fall-two">
+      <g transform="translate(330 80)">
+        <rect x="-72" y="-13" width="144" height="26" fill="url(#hazard-stripe)"/>
+        <rect x="-80" y="-18" width="10" height="36" fill="#FF4F5E"/>
+        <rect x="70" y="-18" width="10" height="36" fill="#FF4F5E"/>
+      </g>
+    </g>
+    <g class="fall-three">
+      <g transform="translate(820 80)">
+        <rect x="-72" y="-13" width="144" height="26" fill="url(#hazard-stripe)"/>
+        <rect x="-80" y="-18" width="10" height="36" fill="#FF4F5E"/>
+        <rect x="70" y="-18" width="10" height="36" fill="#FF4F5E"/>
+      </g>
+    </g>
+
+    <g class="pickup-one">
+      <g transform="translate(330 108)">
+        <path d="M0-12L12 0 0 12-12 0Z" fill="#D7FF3F"/>
+        <path d="M0-20L20 0 0 20-20 0Z" fill="none" stroke="#D7FF3F" opacity=".45"/>
+      </g>
+    </g>
+    <g class="pickup-two">
+      <g transform="translate(820 108)">
+        <path d="M0-12L12 0 0 12-12 0Z" fill="#D7FF3F"/>
+        <path d="M0-20L20 0 0 20-20 0Z" fill="none" stroke="#D7FF3F" opacity=".45"/>
+      </g>
+    </g>
+    <g class="pickup-three">
+      <g transform="translate(575 108)">
+        <path d="M0-12L12 0 0 12-12 0Z" fill="#D7FF3F"/>
+        <path d="M0-20L20 0 0 20-20 0Z" fill="none" stroke="#D7FF3F" opacity=".45"/>
+      </g>
+    </g>
+
+    <g class="burst-one" opacity="0" aria-hidden="true">
+      <g transform="translate(330 336)">
+        <path d="M-28 0H28M0-28V28" stroke="#D7FF3F" stroke-width="2"/>
+        <rect x="-19" y="-19" width="38" height="38" fill="none" stroke="#27D7F2"/>
+      </g>
+    </g>
+    <g class="burst-two" opacity="0" aria-hidden="true">
+      <g transform="translate(820 336)">
+        <path d="M-28 0H28M0-28V28" stroke="#D7FF3F" stroke-width="2"/>
+        <rect x="-19" y="-19" width="38" height="38" fill="none" stroke="#27D7F2"/>
+      </g>
+    </g>
+    <g class="burst-three" opacity="0" aria-hidden="true">
+      <g transform="translate(575 336)">
+        <path d="M-28 0H28M0-28V28" stroke="#D7FF3F" stroke-width="2"/>
+        <rect x="-19" y="-19" width="38" height="38" fill="none" stroke="#27D7F2"/>
+      </g>
+    </g>
+
+    <g class="runner">
+      <g transform="translate(575 336)">
+        <g class="trail" transform-origin="0 24">
+          <path d="M-11 19L0 58 11 19Z" fill="#27D7F2" opacity=".28"/>
+          <path d="M-5 18L0 46 5 18Z" fill="#D7FF3F" opacity=".75"/>
+        </g>
+        <path d="M0-29L25 23 0 14-25 23Z" fill="#F4F2EA"/>
+        <path d="M0-17L10 12 0 8-10 12Z" fill="#090A0B"/>
+        <path d="M0-29V-40" stroke="#D7FF3F" stroke-width="3"/>
+        <path d="M-25 23L0 14 25 23" fill="none" stroke="#27D7F2" stroke-width="2"/>
+      </g>
+    </g>
+
+    <g class="mono" fill="#D7FF3F" font-size="10" font-weight="800" aria-hidden="true">
+      <text class="burst-one" x="358" y="327" opacity="0">+100</text>
+      <text class="burst-two" x="848" y="327" opacity="0">+100</text>
+      <text class="burst-three" x="603" y="327" opacity="0">+100</text>
+    </g>
+
+    <rect class="scan" x="192" y="0" width="768" height="2" fill="#27D7F2" opacity="0" aria-hidden="true"/>
+  </g>
+  </g>
+
+  <g transform="translate(0 420)">
+    <rect width="960" height="64" fill="#0D0E10"/>
+    <rect width="8" height="64" fill="#D7FF3F"/>
+    <rect x="8" width="184" height="64" fill="#121315"/>
+    <path d="M192 0V64M192 0H960" stroke="#34373B"/>
+    <g aria-hidden="true">
+      <rect x="28" y="17" width="72" height="3" fill="#D7FF3F"/>
+      <rect x="28" y="28" width="104" height="3" fill="#27D7F2"/>
+      <rect x="28" y="39" width="44" height="3" fill="#FF4F5E"/>
+    </g>
+    <text x="218" y="39" class="bridge-sans" fill="#F4F2EA" font-size="20" font-weight="550">好好吃饭，好好睡觉，好好生活</text>
+    <g aria-hidden="true">
+      <path d="M560 32H932" stroke="#34373B"/>
+      <rect x="650" y="28" width="8" height="8" fill="#D7FF3F"/>
+      <rect x="784" y="28" width="8" height="8" fill="#27D7F2"/>
+      <rect x="924" y="28" width="8" height="8" fill="#FF4F5E"/>
+    </g>
+  </g>
+
+  <g transform="translate(0 484)">
+<defs>
     <clipPath id="grid-clip">
       <rect x="232" y="52" width="700" height="134"/>
     </clipPath>
@@ -479,5 +842,6 @@
       <path d="M221 52V186" stroke="#27D7F2" opacity=".35"/>
       <path d="M231 52V186" stroke="#27D7F2" stroke-width="2"/>
     </g>
+  </g>
   </g>
 </svg>
