@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="960"
+     height="480"
+     viewBox="0 0 960 480"
+     role="img"
+     aria-labelledby="hero-title hero-desc"
+     focusable="false">
+  <title id="hero-title">Stophemo 的周末乱造研究所</title>
+  <desc id="hero-desc">暖色复古扁平插画。左侧是 Stophemo 的自我介绍和三枚幽默贴纸；右侧工作台放着显示终端命令的 CRT、橡皮鸭、咖啡、慢转风扇和一个写着不要部署的红色按钮。动画包括风扇旋转、咖啡蒸汽和终端光标闪烁，并会在减少动态效果模式下停止。</desc>
+
+  <style>
+    .sans {
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .mono {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    }
+
+    .ink-stroke {
+      stroke: #2B2B2B;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .fan-blades {
+      animation: fan-spin 9s linear infinite;
+      transform-origin: 514px 286px;
+    }
+
+    .steam {
+      animation: steam-rise 3.6s ease-in-out infinite;
+      transform-box: fill-box;
+      transform-origin: center bottom;
+    }
+
+    .steam-late {
+      animation-delay: -1.8s;
+    }
+
+    .cursor {
+      animation: cursor-blink 1.05s steps(1, end) infinite;
+    }
+
+    @keyframes fan-spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes steam-rise {
+      0%   { opacity: 0; transform: translateY(7px); }
+      28%  { opacity: .78; }
+      100% { opacity: 0; transform: translateY(-13px); }
+    }
+
+    @keyframes cursor-blink {
+      0%, 48% { opacity: 1; }
+      49%, 100% { opacity: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .fan-blades,
+      .steam,
+      .cursor {
+        animation: none !important;
+      }
+
+      .steam { opacity: .65; transform: none; }
+      .cursor { opacity: 1; }
+    }
+  </style>
+
+  <!-- 纸张画框 -->
+  <rect width="960" height="480" fill="#F7F1E3"/>
+  <rect x="16" y="16" width="928" height="448" rx="28"
+        fill="none" stroke="#2B2B2B" stroke-width="4"/>
+  <circle cx="34" cy="34" r="5" fill="#F25F5C" stroke="#2B2B2B" stroke-width="3"/>
+  <circle cx="926" cy="34" r="5" fill="#F2C14E" stroke="#2B2B2B" stroke-width="3"/>
+  <circle cx="34" cy="446" r="5" fill="#2A9D8F" stroke="#2B2B2B" stroke-width="3"/>
+  <circle cx="926" cy="446" r="5" fill="#7CC6FE" stroke="#2B2B2B" stroke-width="3"/>
+
+  <!-- 两侧内容的松散分隔线 -->
+  <path d="M444 48 V432" fill="none" stroke="#2B2B2B" stroke-width="3"
+        stroke-linecap="round" stroke-dasharray="4 11" opacity=".42"/>
+
+  <!-- 左侧：自我介绍 -->
+  <g class="sans">
+    <path d="M48 54 h34 M65 37 v34" fill="none" stroke="#F25F5C"
+          stroke-width="8" stroke-linecap="round"/>
+    <circle cx="405" cy="62" r="9" fill="#2A9D8F" stroke="#2B2B2B" stroke-width="3"/>
+    <circle cx="386" cy="82" r="5" fill="#F2C14E"/>
+
+    <text x="48" y="105" fill="#2B2B2B" font-size="40" font-weight="850"
+          letter-spacing="1">HI, I'M</text>
+
+    <path d="M43 125 L397 117 L389 181 L51 187 Z"
+          fill="#F2C14E" stroke="#2B2B2B" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M389 181 L399 190 L58 196 L51 187 Z" fill="#2B2B2B"/>
+    <text x="58" y="171" fill="#2B2B2B" font-size="52" font-weight="900"
+          letter-spacing="-.8">STOPHEMO.</text>
+
+    <text x="50" y="235" fill="#2B2B2B" font-size="26" font-weight="700">
+      Mostly code.
+    </text>
+    <text x="50" y="270" fill="#2B2B2B" font-size="26" font-weight="700">
+      Sometimes useful.
+    </text>
+    <text x="50" y="305" fill="#F25F5C" font-size="26" font-weight="850">
+      Always for fun.
+    </text>
+  </g>
+
+  <!-- 左侧：三枚纸质贴纸 -->
+  <g class="mono" font-size="18" font-weight="800" letter-spacing="-.65">
+    <g transform="rotate(-2.8 156 342)">
+      <rect x="51" y="325" width="220" height="42" rx="7" fill="#2B2B2B"/>
+      <rect x="46" y="320" width="220" height="42" rx="7"
+            fill="#F2C14E" stroke="#2B2B2B" stroke-width="3"/>
+      <text x="61" y="347" fill="#2B2B2B">SIDE QUEST ENJOYER</text>
+    </g>
+
+    <g transform="rotate(2.5 283 387)">
+      <rect x="175" y="370" width="232" height="42" rx="7" fill="#2B2B2B"/>
+      <rect x="170" y="365" width="232" height="42" rx="7"
+            fill="#2A9D8F" stroke="#2B2B2B" stroke-width="3"/>
+      <text x="184" y="392" fill="#F7F1E3">WORKS ON MY MACHINE</text>
+    </g>
+
+    <g transform="rotate(-1.6 176 431)">
+      <rect x="51" y="414" width="250" height="42" rx="7" fill="#2B2B2B"/>
+      <rect x="46" y="409" width="250" height="42" rx="7"
+            fill="#7CC6FE" stroke="#2B2B2B" stroke-width="3"/>
+      <text x="59" y="436" fill="#2B2B2B">ONE MORE LITTLE TWEAK</text>
+    </g>
+  </g>
+
+  <!-- 右侧：研究所门牌 -->
+  <g class="mono">
+    <path d="M488 49 h232 l-8 38 H480 Z" fill="#7CC6FE"
+          stroke="#2B2B2B" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="499" cy="67" r="4" fill="#2B2B2B"/>
+    <text x="516" y="74" fill="#2B2B2B" font-size="18" font-weight="800"
+          letter-spacing=".4">WEEKEND BUILD LAB</text>
+  </g>
+
+  <!-- 工作台主体 -->
+  <g class="ink-stroke">
+    <rect x="466" y="351" width="468" height="28" rx="6"
+          fill="#F2C14E" stroke-width="4"/>
+    <path d="M479 379 H921" fill="none" stroke-width="5"/>
+    <path d="M491 379 V442 H516 V379" fill="#F25F5C" stroke-width="4"/>
+    <path d="M888 379 V442 H913 V379" fill="#F25F5C" stroke-width="4"/>
+    <path d="M516 421 H888" fill="none" stroke-width="6"/>
+  </g>
+
+  <!-- 物件一：复古 CRT 与终端 -->
+  <g class="ink-stroke">
+    <rect x="542" y="108" width="282" height="204" rx="24" fill="#2B2B2B" stroke="none"/>
+    <rect x="534" y="100" width="282" height="204" rx="24"
+          fill="#7CC6FE" stroke-width="4"/>
+    <rect x="552" y="119" width="247" height="142" rx="17"
+          fill="#F7F1E3" stroke-width="4"/>
+    <rect x="562" y="129" width="227" height="122" rx="11"
+          fill="#2B2B2B" stroke-width="3"/>
+
+    <text x="574" y="174" class="mono" fill="#F7F1E3" stroke="none"
+          font-size="18" font-weight="700" textLength="200" lengthAdjust="spacingAndGlyphs">$ make something-fun</text>
+    <text x="574" y="210" class="mono" fill="#2A9D8F" stroke="none"
+          font-size="18" font-weight="700">done! (probably)</text>
+    <rect class="cursor" x="747" y="193" width="11" height="20" rx="1"
+          fill="#F2C14E" stroke="none"/>
+
+    <circle cx="778" cy="281" r="7" fill="#F25F5C" stroke-width="3"/>
+    <path d="M650 305 V323 H704 V305" fill="#7CC6FE" stroke-width="4"/>
+    <path d="M629 327 H725 L738 351 H616 Z" fill="#F25F5C" stroke-width="4"/>
+    <path d="M638 335 H716 M631 343 H723" fill="none" stroke-width="2.5" opacity=".72"/>
+  </g>
+
+  <!-- 物件二：负责代码审查的橡皮鸭 -->
+  <g class="ink-stroke">
+    <path d="M807 80 l-10 13 h22 Z" fill="#F7F1E3" stroke-width="3"/>
+    <rect x="783" y="42" width="116" height="43" rx="14"
+          fill="#F7F1E3" stroke-width="3"/>
+    <text x="815" y="70" class="mono" fill="#2B2B2B" stroke="none"
+          font-size="20" font-weight="850">LGTM</text>
+
+    <ellipse cx="816" cy="137" rx="36" ry="26" fill="#F2C14E" stroke-width="4"/>
+    <circle cx="825" cy="105" r="24" fill="#F2C14E" stroke-width="4"/>
+    <path d="M845 108 q22 6 0 17 h-13 Z" fill="#F25F5C" stroke-width="3"/>
+    <circle cx="832" cy="99" r="4.5" fill="#2B2B2B" stroke="none"/>
+    <path d="M794 134 q18 -12 28 5 q-14 13 -28 4 Z" fill="#F7F1E3" stroke-width="3"/>
+  </g>
+
+  <!-- 物件三：慢转的小风扇 -->
+  <g class="ink-stroke">
+    <circle cx="514" cy="286" r="43" fill="#F7F1E3" stroke-width="4"/>
+    <g class="fan-blades" fill="#2A9D8F" stroke="#2B2B2B" stroke-width="3">
+      <ellipse cx="514" cy="264" rx="10" ry="21"/>
+      <ellipse cx="536" cy="286" rx="21" ry="10"/>
+      <ellipse cx="514" cy="308" rx="10" ry="21"/>
+      <ellipse cx="492" cy="286" rx="21" ry="10"/>
+    </g>
+    <circle cx="514" cy="286" r="10" fill="#F25F5C" stroke-width="3"/>
+    <path d="M514 329 V348" fill="none" stroke-width="5"/>
+    <path d="M489 351 H539" fill="none" stroke-width="8"/>
+  </g>
+
+  <!-- 物件四：带蒸汽的咖啡 -->
+  <g class="ink-stroke">
+    <path class="steam" d="M845 280 C831 267 855 256 840 242"
+          fill="none" stroke="#F25F5C" stroke-width="4"/>
+    <path class="steam steam-late" d="M867 281 C881 267 856 255 872 239"
+          fill="none" stroke="#2A9D8F" stroke-width="4"/>
+    <path d="M820 295 H878 V337 Q878 351 864 351 H834 Q820 351 820 337 Z"
+          fill="#F7F1E3" stroke-width="4"/>
+    <path d="M878 305 h8 q17 0 17 15 q0 15 -17 15 h-8"
+          fill="none" stroke-width="4"/>
+    <ellipse cx="849" cy="296" rx="29" ry="8" fill="#2B2B2B" stroke-width="3"/>
+    <path d="M836 323 h26" fill="none" stroke="#F25F5C" stroke-width="5"/>
+  </g>
+
+  <!-- 物件五：绝对不要按的部署按钮 -->
+  <g class="ink-stroke">
+    <rect x="889" y="360" width="38" height="25" rx="6" fill="#2B2B2B" stroke-width="3"/>
+    <ellipse cx="908" cy="360" rx="18" ry="10" fill="#F25F5C" stroke-width="4"/>
+
+    <rect x="746" y="386" width="180" height="34" rx="7"
+          fill="#F7F1E3" stroke-width="3"/>
+    <text x="760" y="409" class="mono" fill="#2B2B2B" stroke="none"
+          font-size="18" font-weight="900" letter-spacing="-.6">DO NOT DEPLOY</text>
+  </g>
+
+  <!-- 少量静态纸屑，让画面保持手作感 -->
+  <g fill="none" stroke="#2B2B2B" stroke-width="3" stroke-linecap="round">
+    <path d="M459 111 l10 -8 l8 10"/>
+    <path d="M915 104 l10 7 l-8 10"/>
+    <path d="M459 228 h14"/>
+  </g>
+  <circle cx="928" cy="235" r="6" fill="#F25F5C"/>
+  <circle cx="472" cy="198" r="5" fill="#2A9D8F"/>
+</svg>

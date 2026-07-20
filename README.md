@@ -1,60 +1,37 @@
+<picture>
+  <source media="(max-width: 767px)" srcset="./assets/hero-v3-mobile.svg" />
+  <img src="./assets/hero-v3.svg" width="100%" alt="Stophemo — making playful things with code." />
+</picture>
+
 <p align="center">
-  <img src="./assets/hero.svg" width="100%" alt="Stephem Haul — I build systems that remember" />
+  <strong>Mostly code. Sometimes useful. Always for fun.</strong><br />
+  多数是代码，偶尔有用，好玩最重要。
 </p>
 
-<p align="center">
-  <a href="https://github.com/stophemo/digital-brain"><strong>KNOWLEDGE</strong></a>
-  &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="https://github.com/stophemo/Woo"><strong>CAPTURE</strong></a>
-  &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="https://github.com/stophemo/woo-todo"><strong>ACTION</strong></a>
-  &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="https://github.com/stophemo?tab=repositories">ALL BUILDS ↗</a>
-</p>
+## me.js
 
-> **I build with AI to turn scattered information into durable knowledge — and intent into action.**<br />
-> 我用 AI 构建会持续生长的系统：让信息沉淀为知识，让想法自然抵达行动。
+```js
+const me = {
+  likes: ["写代码", "小工具", "奇怪点子"],
+  now: "想到什么好玩就做什么",
+  rule: "有用很好，好玩更重要",
+};
+```
 
-## `// SELECTED SYSTEMS`
+## Some things that escaped localhost
 
-<p align="center">
-  <a href="https://github.com/stophemo/digital-brain">
-    <img src="./assets/digital-brain.svg" width="100%" alt="Digital Brain — an agent-agnostic, LLM-maintained personal knowledge system" />
-  </a>
-</p>
+- [Digital Brain](https://github.com/stophemo/digital-brain) — 整理个人知识时，顺手搭起来的一套方法。
+- [Woo](https://github.com/stophemo/Woo) — 一个离线也能用的 Markdown 笔记小工具。
+- [Woo Todo](https://github.com/stophemo/woo-todo) — 给 macOS 和 Android 写的简单待办。
 
-<p align="center">
-  <a href="https://github.com/stophemo/Woo">
-    <img src="./assets/woo.svg" width="100%" alt="Woo — offline-first Markdown notes, synced quietly across devices" />
-  </a>
-</p>
+## Toolbox
+
+TypeScript · Vue · Rust · Swift · Kotlin · Java · Python
+
+## Say hi
+
+[GitHub](https://github.com/stophemo) · [Repositories](https://github.com/stophemo?tab=repositories)
 
 <p align="center">
-  <a href="https://github.com/stophemo/woo-todo">
-    <img src="./assets/woo-todo.svg" width="100%" alt="Woo Todo — local-first tasks for macOS and Android home screens" />
-  </a>
-</p>
-
-## `// OPERATING MODE`
-
-`SYSTEMS > ONE-OFFS` &nbsp;·&nbsp; `CLARITY > CLEVERNESS` &nbsp;·&nbsp; `CALM IS A FEATURE`
-
-我喜欢把零散功能组织成可持续演化的系统，也相信真正好的工具，应该降低注意力成本，而不是制造更多噪音。
-
-## `// TOOLCHAIN`
-
-**Systems** — AI Agents · LLM Workflows · Knowledge Architecture<br />
-**Building** — TypeScript · Vue · Rust · Swift · Kotlin · Java · Python<br />
-**Medium** — Markdown · Git / GitHub · Obsidian · Plain Files
-
-## `// CONNECT`
-
-<p align="center">
-  <a href="https://github.com/stophemo">GitHub</a>
-  &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="https://github.com/stophemo?tab=repositories">Repositories</a>
-</p>
-
-<p align="center">
-  <sub>Building quiet software with a visible pulse.</sub>
+  <sub>Thanks for stopping by. Go make something fun.</sub>
 </p>
