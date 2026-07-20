@@ -4,3 +4,8 @@
 </picture>
 
 好好吃饭，好好睡觉，好好生活
+
+<picture>
+  <source media="(max-width: 767px)" srcset="./assets/contributions-mobile.svg" />
+  <img src="./assets/contributions.svg" width="100%" alt="Stophemo 过去 365 天的 GitHub 贡献轨迹。" />
+</picture>
