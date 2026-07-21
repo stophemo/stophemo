@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="420"
+     height="310"
+     viewBox="0 0 420 310"
+     role="img"
+     aria-labelledby="trace-title trace-desc"
+     focusable="false">
+  <title id="trace-title">stophemo 的 GitHub 贡献信号轨迹</title>
+  <desc id="trace-desc">stophemo 过去 365 天共有 96 次贡献，分布在 28 个活跃日。折线按周聚合，每个点代表一周，颜色与高度从低到高表示活跃程度。</desc>
+
+  <style>
+    .sans {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      letter-spacing: 0;
+    }
+
+    .mono {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      letter-spacing: 0;
+    }
+
+    .month { fill: #697174; font-size: 8px; font-weight: 700; }
+    .signal-point { stroke: #F5F5F0; stroke-width: 1.5; }
+    .level-none { fill: #BFC3BF; }
+    .level-one { fill: #1D9CB0; }
+    .level-two { fill: #7568C8; }
+    .level-three { fill: #F25F4B; }
+    .level-four { fill: #D4DE3F; stroke: #15191D; }
+    .signal-line { animation: draw-signal 12s ease-in-out infinite alternate; }
+    .signal-cursor { animation: scan 11s linear infinite; }
+    .level-four { animation: peak 4s ease-in-out infinite; }
+    .phase-1 { animation-delay: -1s; }
+    .phase-2 { animation-delay: -2s; }
+    .phase-3 { animation-delay: -3s; }
+    .current-ring { animation: current 2.4s ease-out infinite; transform-box: fill-box; transform-origin: center; }
+
+    @keyframes draw-signal {
+      0%, 8% { stroke-dasharray: 1800; stroke-dashoffset: 1800; }
+      72%, 100% { stroke-dasharray: 1800; stroke-dashoffset: 0; }
+    }
+
+    @keyframes scan {
+      from { transform: translateX(0); }
+      to { transform: translateX(372px); }
+    }
+
+    @keyframes peak {
+      0%, 100% { opacity: 1; }
+      50% { opacity: .55; }
+    }
+
+    @keyframes current {
+      0% { opacity: .75; transform: scale(.75); }
+      80%, 100% { opacity: 0; transform: scale(1.7); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .signal-line,
+      .signal-cursor,
+      .level-four,
+      .current-ring { animation: none !important; }
+
+      .signal-line { stroke-dasharray: none; stroke-dashoffset: 0; }
+      .signal-cursor { display: none; }
+      .level-four,
+      .current-ring { opacity: 1; }
+    }
+  </style>
+
+  <defs>
+    <clipPath id="signal-clip">
+      <rect x="24" y="111" width="372" height="116"/>
+    </clipPath>
+  </defs>
+
+  <rect width="420" height="310" fill="#F5F5F0"/>
+  <rect width="155.4" height="7" fill="#F25F4B"/>
+  <rect x="155.4" width="130.2" height="7" fill="#1D9CB0"/>
+  <rect x="285.6" width="134.4" height="7" fill="#7568C8"/>
+
+  <path d="M24 91H396" stroke="#15191D" opacity=".18"/>
+  <path d="M24 260H396" stroke="#15191D" opacity=".18"/>
+
+  <g class="sans">
+    <text x="24" y="45" fill="#15191D" font-size="27" font-weight="850">TRACES</text>
+    <text x="24" y="68" fill="#697174" font-size="9" font-weight="700">365 DAYS / WEEKLY SIGNAL</text>
+    <text x="250" y="46" fill="#15191D" font-size="25" font-weight="850">96</text>
+    <text x="250" y="67" fill="#697174" font-size="9" font-weight="700">CONTRIBUTIONS</text>
+    <circle cx="350" cy="42" r="4" fill="#D4DE3F" stroke="#15191D"/>
+    <text x="363" y="46" fill="#15191D" font-size="9" font-weight="700">28</text>
+    <text x="396" y="68" fill="#697174" font-size="8" font-weight="700" text-anchor="end">ACTIVE DAYS</text>
+    <text x="24" y="106" fill="#15191D" font-size="9" font-weight="750">WEEKLY SIGNAL / 53 / LOW &gt; HIGH</text>
+    <text x="396" y="106" fill="#697174" font-size="8" font-weight="700" text-anchor="end">2026-07-21</text>
+  </g>
+
+  <g aria-hidden="true">
+    <path d="M24 119H396" stroke="#15191D" opacity=".1"/>
+    <path d="M24 152H396" stroke="#15191D" opacity=".1"/>
+    <path d="M24 185H396" stroke="#15191D" opacity=".1"/>
+    <path d="M24 219H396" stroke="#15191D" opacity=".1"/>
+  </g>
+
+  <g clip-path="url(#signal-clip)" aria-hidden="true">
+    <path d="M24 219 L31.15 219 L38.31 219 L45.46 219 L52.62 219 L59.77 219 L66.92 219 L74.08 219 L81.23 219 L88.38 219 L95.54 219 L102.69 219 L109.85 219 L117 219 L124.15 219 L131.31 219 L138.46 219 L145.62 219 L152.77 219 L159.92 219 L167.08 219 L174.23 219 L181.38 219 L188.54 219 L195.69 219 L202.85 219 L210 219 L217.15 219 L224.31 219 L231.46 219 L238.62 184.43 L245.77 219 L252.92 219 L260.08 219 L267.23 197.19 L274.38 219 L281.54 184.43 L288.69 219 L295.85 219 L303 168.36 L310.15 119 L317.31 124.74 L324.46 162.62 L331.62 175.38 L338.77 119 L345.92 197.19 L353.08 219 L360.23 219 L367.38 219 L374.54 219 L381.69 197.19 L388.85 140.81 L396 197.19 L396 219 L24 219Z" fill="#15191D" opacity=".05"/>
+    <path class="signal-line" d="M24 219 L31.15 219 L38.31 219 L45.46 219 L52.62 219 L59.77 219 L66.92 219 L74.08 219 L81.23 219 L88.38 219 L95.54 219 L102.69 219 L109.85 219 L117 219 L124.15 219 L131.31 219 L138.46 219 L145.62 219 L152.77 219 L159.92 219 L167.08 219 L174.23 219 L181.38 219 L188.54 219 L195.69 219 L202.85 219 L210 219 L217.15 219 L224.31 219 L231.46 219 L238.62 184.43 L245.77 219 L252.92 219 L260.08 219 L267.23 197.19 L274.38 219 L281.54 184.43 L288.69 219 L295.85 219 L303 168.36 L310.15 119 L317.31 124.74 L324.46 162.62 L331.62 175.38 L338.77 119 L345.92 197.19 L353.08 219 L360.23 219 L367.38 219 L374.54 219 L381.69 197.19 L388.85 140.81 L396 197.19" fill="none" stroke="#15191D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle class="signal-point level-none" cx="24" cy="219" r="1.7"/>
+    <circle class="signal-point level-none" cx="31.15" cy="219" r="1.7"/>
+    <circle class="signal-point level-none" cx="38.31" cy="219" r="1.7"/>
+    <circle class="signal-point level-none" cx="45.46" cy="219" r="1.7"/>
+    <circle class="signal-point level-none" cx="52.62" cy="219" r="1.7"/>
+    <circle class="signal-point level-none" cx="59.77" cy="219" r="1.7"/>
+    <circle class="signal-point level-none" cx="66.92" cy="219" r="1.7"/>
+    <circle class="signal-point level-none" cx="74.08" cy="219" r="1.7"/>
+    <circle class="signal-point level-none" cx="81.23" cy="219" r="1.7"/>
+    <circle class="signal-point level-none" cx="88.38" cy="219" r="1.7"/>
+    <circle class="signal-point level-none" cx="95.54" cy="219" r="1.7"/>
+    <circle class="signal-point level-none" cx="102.69" cy="219" r="1.7"/>
+    <circle class="signal-point level-none" cx="109.85" cy="219" r="1.7"/>
+    <circle class="signal-point level-none" cx="117" cy="219" r="1.7"/>
+    <circle class="signal-point level-none" cx="124.15" cy="219" r="1.7"/>
+    <circle class="signal-point level-none" cx="131.31" cy="219" r="1.7"/>
+    <circle class="signal-point level-none" cx="138.46" cy="219" r="1.7"/>
+    <circle class="signal-point level-none" cx="145.62" cy="219" r="1.7"/>
+    <circle class="signal-point level-none" cx="152.77" cy="219" r="1.7"/>
+    <circle class="signal-point level-none" cx="159.92" cy="219" r="1.7"/>
+    <circle class="signal-point level-none" cx="167.08" cy="219" r="1.7"/>
+    <circle class="signal-point level-none" cx="174.23" cy="219" r="1.7"/>
+    <circle class="signal-point level-none" cx="181.38" cy="219" r="1.7"/>
+    <circle class="signal-point level-none" cx="188.54" cy="219" r="1.7"/>
+    <circle class="signal-point level-none" cx="195.69" cy="219" r="1.7"/>
+    <circle class="signal-point level-none" cx="202.85" cy="219" r="1.7"/>
+    <circle class="signal-point level-none" cx="210" cy="219" r="1.7"/>
+    <circle class="signal-point level-none" cx="217.15" cy="219" r="1.7"/>
+    <circle class="signal-point level-none" cx="224.31" cy="219" r="1.7"/>
+    <circle class="signal-point level-none" cx="231.46" cy="219" r="1.7"/>
+    <circle class="signal-point level-one" cx="238.62" cy="184.43" r="3.3"/>
+    <circle class="signal-point level-none" cx="245.77" cy="219" r="1.7"/>
+    <circle class="signal-point level-none" cx="252.92" cy="219" r="1.7"/>
+    <circle class="signal-point level-none" cx="260.08" cy="219" r="1.7"/>
+    <circle class="signal-point level-one" cx="267.23" cy="197.19" r="3.3"/>
+    <circle class="signal-point level-none" cx="274.38" cy="219" r="1.7"/>
+    <circle class="signal-point level-one" cx="281.54" cy="184.43" r="3.3"/>
+    <circle class="signal-point level-none" cx="288.69" cy="219" r="1.7"/>
+    <circle class="signal-point level-none" cx="295.85" cy="219" r="1.7"/>
+    <circle class="signal-point level-one" cx="303" cy="168.36" r="3.3"/>
+    <circle class="signal-point level-four phase-0" cx="310.15" cy="119" r="3.3"/>
+    <circle class="signal-point level-four phase-1" cx="317.31" cy="124.74" r="3.3"/>
+    <circle class="signal-point level-one" cx="324.46" cy="162.62" r="3.3"/>
+    <circle class="signal-point level-one" cx="331.62" cy="175.38" r="3.3"/>
+    <circle class="signal-point level-four phase-0" cx="338.77" cy="119" r="3.3"/>
+    <circle class="signal-point level-one" cx="345.92" cy="197.19" r="3.3"/>
+    <circle class="signal-point level-none" cx="353.08" cy="219" r="1.7"/>
+    <circle class="signal-point level-none" cx="360.23" cy="219" r="1.7"/>
+    <circle class="signal-point level-none" cx="367.38" cy="219" r="1.7"/>
+    <circle class="signal-point level-none" cx="374.54" cy="219" r="1.7"/>
+    <circle class="signal-point level-one" cx="381.69" cy="197.19" r="3.3"/>
+    <circle class="signal-point level-two" cx="388.85" cy="140.81" r="3.3"/>
+    <circle class="signal-point level-one" cx="396" cy="197.19" r="3.3"/>
+    <circle class="current-ring" cx="396" cy="197.19" r="7" fill="none" stroke="#15191D" stroke-width="1.5"/>
+    <g class="signal-cursor">
+      <path d="M24 113V225" stroke="#D4DE3F" stroke-width="2"/>
+      <circle cx="24" cy="113" r="3" fill="#D4DE3F" stroke="#15191D"/>
+    </g>
+  </g>
+
+    <text x="31.15" y="241" class="mono month">AUG</text>
+    <text x="66.92" y="241" class="mono month">SEP</text>
+    <text x="95.54" y="241" class="mono month">OCT</text>
+    <text x="124.15" y="241" class="mono month">NOV</text>
+    <text x="159.92" y="241" class="mono month">DEC</text>
+    <text x="188.54" y="241" class="mono month">JAN</text>
+    <text x="224.31" y="241" class="mono month">FEB</text>
+    <text x="252.92" y="241" class="mono month">MAR</text>
+    <text x="281.54" y="241" class="mono month">APR</text>
+    <text x="310.15" y="241" class="mono month">MAY</text>
+    <text x="345.92" y="241" class="mono month">JUN</text>
+    <text x="374.54" y="241" class="mono month">JUL</text>
+  <g class="mono" fill="#697174" font-size="8" font-weight="700">
+    <text x="24" y="286">SMALL COMMITS, A GROWING MAP.</text>
+    <text x="396" y="286" text-anchor="end">2026-07-21</text>
+  </g>
+</svg>

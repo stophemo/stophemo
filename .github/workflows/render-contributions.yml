@@ -10,8 +10,6 @@ on:
     paths:
       - ".github/scripts/render-contributions.mjs"
       - ".github/workflows/render-contributions.yml"
-      - "assets/hero-v5.svg"
-      - "assets/hero-v5-mobile.svg"
 
 permissions:
   contents: write
@@ -39,7 +37,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/contributions.svg assets/contributions-mobile.svg assets/profile-v6.svg assets/profile-v6-mobile.svg
+          git add assets/atlas-trace.svg assets/atlas-trace-mobile.svg
           if git diff --cached --quiet; then
             echo "贡献轨迹没有变化"
             exit 0

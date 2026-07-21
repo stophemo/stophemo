@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="960"
+     height="560"
+     viewBox="0 0 960 560"
+     role="img"
+     aria-labelledby="atlas-title atlas-desc"
+     focusable="false">
+  <title id="atlas-title">Stophemo 的开放探索图谱</title>
+  <desc id="atlas-desc">Stophemo 是一名发现者与探索者，沿着问题前进，并将探索连接到 Woo、woo-todo 和 digital-brain 三个项目。</desc>
+
+  <style>
+    .sans {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      letter-spacing: 0;
+    }
+
+    .mono {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      letter-spacing: 0;
+    }
+
+    .route {
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 2;
+      vector-effect: non-scaling-stroke;
+    }
+
+    .route-flow {
+      animation: route-flow 18s linear infinite;
+    }
+
+    .pulse-one { animation: pulse 6s ease-out infinite; }
+    .pulse-two { animation: pulse 6s 2s ease-out infinite; }
+    .pulse-three { animation: pulse 6s 4s ease-out infinite; }
+
+    @keyframes route-flow {
+      to { stroke-dashoffset: -56; }
+    }
+
+    @keyframes pulse {
+      0%, 18% { opacity: .58; transform: scale(1); }
+      34% { opacity: 0; transform: scale(1.7); }
+      35%, 100% { opacity: 0; transform: scale(1); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .route-flow,
+      .pulse-one,
+      .pulse-two,
+      .pulse-three { animation: none !important; }
+
+      .pulse-one,
+      .pulse-two,
+      .pulse-three { opacity: .32; }
+    }
+  </style>
+
+  <defs>
+    <pattern id="atlas-dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#15191D" opacity=".1"/>
+    </pattern>
+    <clipPath id="atlas-map-clip">
+      <rect x="468" y="74" width="492" height="446"/>
+    </clipPath>
+  </defs>
+
+  <rect width="960" height="560" fill="#F5F5F0"/>
+  <rect x="0" y="0" width="352" height="7" fill="#F25F4B"/>
+  <rect x="352" y="0" width="304" height="7" fill="#1D9CB0"/>
+  <rect x="656" y="0" width="304" height="7" fill="#7568C8"/>
+
+  <g aria-hidden="true" clip-path="url(#atlas-map-clip)">
+    <rect x="468" y="74" width="492" height="446" fill="url(#atlas-dots)"/>
+    <circle cx="608" cy="298" r="164" fill="none" stroke="#15191D" stroke-width="1" opacity=".09"/>
+    <circle cx="608" cy="298" r="112" fill="none" stroke="#15191D" stroke-width="1" opacity=".08"/>
+    <path d="M483 122C580 85 702 94 787 145C872 196 915 292 893 387" fill="none" stroke="#15191D" opacity=".08"/>
+    <path d="M494 464C561 502 663 518 747 489C826 462 883 401 911 329" fill="none" stroke="#15191D" opacity=".08"/>
+  </g>
+
+  <g class="mono" font-size="10" font-weight="700">
+    <text x="48" y="42" fill="#15191D">STOPHEMO / OPEN FILE 001</text>
+    <text x="912" y="42" fill="#596165" text-anchor="end">A DISCOVERER / AN EXPLORER</text>
+  </g>
+  <path d="M48 64H912" stroke="#15191D" opacity=".22"/>
+
+  <g class="sans">
+    <text x="48" y="133" fill="#596165" font-size="12" font-weight="700">OPEN QUESTION</text>
+    <text x="48" y="205" fill="#15191D" font-size="64" font-weight="850">I FOLLOW</text>
+    <text x="48" y="272" fill="#15191D" font-size="64" font-weight="850">QUESTIONS.</text>
+    <rect x="49" y="288" width="178" height="7" fill="#F25F4B"/>
+    <rect x="235" y="288" width="79" height="7" fill="#1D9CB0"/>
+    <rect x="322" y="288" width="31" height="7" fill="#7568C8"/>
+
+    <text x="48" y="339" fill="#15191D" font-size="20" font-weight="650">沿着问题走，直到它长成有用的东西。</text>
+    <text x="48" y="370" fill="#596165" font-size="14">Discovering, exploring, making sense of things.</text>
+  </g>
+
+  <g transform="translate(48 420)">
+    <path d="M0 0H363" stroke="#15191D" opacity=".2"/>
+    <text x="0" y="25" class="mono" fill="#596165" font-size="9" font-weight="700">CURRENT QUESTION / 001</text>
+    <text x="0" y="52" class="sans" fill="#15191D" font-size="15" font-weight="650">What could feel simpler tomorrow?</text>
+    <path d="M0 68H239" stroke="#15191D" stroke-dasharray="4 6" opacity=".34"/>
+    <circle cx="250" cy="68" r="3" fill="#D4DE3F" stroke="#15191D"/>
+    <path d="M261 68H363" stroke="#15191D" stroke-dasharray="4 6" opacity=".34"/>
+  </g>
+
+  <g aria-hidden="true">
+    <path d="M430 510C489 493 524 438 550 380C570 337 586 313 608 298" class="route" stroke="#15191D" stroke-dasharray="2 9" opacity=".34"/>
+    <path d="M608 298C665 239 711 170 784 142" class="route route-flow" stroke="#F25F4B" stroke-dasharray="10 8"/>
+    <path d="M608 298C678 286 756 298 836 304" class="route route-flow" stroke="#1D9CB0" stroke-dasharray="10 8"/>
+    <path d="M608 298C642 351 681 422 758 466" class="route route-flow" stroke="#7568C8" stroke-dasharray="10 8"/>
+
+    <circle cx="608" cy="298" r="17" fill="#F5F5F0" stroke="#15191D" stroke-width="2"/>
+    <circle cx="608" cy="298" r="5" fill="#15191D"/>
+    <path d="M608 274V256M584 298H566M632 298H650M608 322V340" stroke="#15191D" opacity=".38"/>
+
+    <circle class="pulse-one" cx="784" cy="142" r="19" fill="none" stroke="#F25F4B" stroke-width="2" transform-origin="784px 142px"/>
+    <path d="M784 132L794 142L784 152L774 142Z" fill="#F25F4B"/>
+
+    <circle class="pulse-two" cx="836" cy="304" r="19" fill="none" stroke="#1D9CB0" stroke-width="2" transform-origin="836px 304px"/>
+    <rect x="827" y="295" width="18" height="18" fill="#1D9CB0"/>
+
+    <circle class="pulse-three" cx="758" cy="466" r="19" fill="none" stroke="#7568C8" stroke-width="2" transform-origin="758px 466px"/>
+    <path d="M758 455L769 476H747Z" fill="#7568C8"/>
+  </g>
+
+  <g class="mono" font-weight="700">
+    <text x="625" y="286" fill="#596165" font-size="9">YOU ARE HERE</text>
+
+    <text x="809" y="120" fill="#F25F4B" font-size="9">01 / NOTES</text>
+    <text x="809" y="143" fill="#15191D" font-size="15">WOO</text>
+
+    <text x="735" y="288" fill="#1D9CB0" font-size="9">02 / ACTION</text>
+    <text x="735" y="311" fill="#15191D" font-size="15">WOO-TODO</text>
+
+    <text x="782" y="450" fill="#7568C8" font-size="9">03 / MEMORY</text>
+    <text x="782" y="473" fill="#15191D" font-size="15">DIGITAL-BRAIN</text>
+  </g>
+
+  <path d="M48 520H912" stroke="#15191D" opacity=".22"/>
+  <g class="mono" fill="#596165" font-size="9" font-weight="700">
+    <text x="48" y="544">THE OPEN ATLAS / PLATE 001</text>
+    <text x="912" y="544" text-anchor="end">ALWAYS IN PROGRESS</text>
+  </g>
+</svg>
