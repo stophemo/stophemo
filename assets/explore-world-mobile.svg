@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1000" viewBox="0 0 720 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Stophemo: beyond the horizon</title>
+  <desc id="desc">A slow animated horizon. A lone traveler moves across a mountain world toward a warm signal beyond the ridge.</desc>
+  <style>
+    .hairline { fill: none; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+    .arc-drift { animation: arcDrift 24s ease-in-out infinite; }
+    .ridge-far { animation: ridgeFar 18s ease-in-out infinite; }
+    .ridge-mid { animation: ridgeMid 14s ease-in-out infinite; }
+    .route-flow { animation: routeFlow 12s linear infinite; }
+    .route-reveal { animation: routeReveal 12s ease-in-out infinite; opacity: .16; stroke-dasharray: .12 .88; }
+    .horizon-beam { animation: beamSweep 12s ease-in-out infinite; opacity: .12; }
+    .beacon { animation: beaconPulse 4.2s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+    .beacon-halo { animation: haloPulse 4.2s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+    .traveler-step { animation: travelerStep 18s ease-in-out infinite; }
+    .traveler-bob { animation: travelerBob 2.4s ease-in-out infinite; }
+    .leg-left { animation: legLeft 1.2s ease-in-out infinite; transform-box: fill-box; transform-origin: 100% 0; }
+    .leg-right { animation: legRight 1.2s ease-in-out infinite; transform-box: fill-box; transform-origin: 0 0; }
+    .scarf { animation: scarfWind 2.8s ease-in-out infinite; opacity: .6; }
+    .sky-pin { animation: skyPin 7s ease-in-out infinite; opacity: .45; }
+
+    @keyframes arcDrift { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(-14px); } }
+    @keyframes ridgeFar { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(-12px); } }
+    @keyframes ridgeMid { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(9px); } }
+    @keyframes routeFlow { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -140; } }
+    @keyframes routeReveal { 0%, 12% { stroke-dasharray: .12 .88; opacity: .16; } 48% { stroke-dasharray: .46 .54; opacity: .38; } 76%, 88% { stroke-dasharray: 1 0; opacity: .58; } 100% { stroke-dasharray: .12 .88; opacity: .16; } }
+    @keyframes beamSweep { 0%, 100% { opacity: .04; transform: translateX(-16px); } 50% { opacity: .2; transform: translateX(15px); } }
+    @keyframes beaconPulse { 0%, 100% { opacity: .35; transform: scale(.76); } 50% { opacity: 1; transform: scale(1); } }
+    @keyframes haloPulse { 0%, 100% { opacity: .2; transform: scale(.7); } 50% { opacity: 0; transform: scale(2.1); } }
+    @keyframes travelerStep { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(28px); } }
+    @keyframes travelerBob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-2px); } }
+    @keyframes legLeft { 0%, 100% { transform: rotate(12deg); } 50% { transform: rotate(-13deg); } }
+    @keyframes legRight { 0%, 100% { transform: rotate(-13deg); } 50% { transform: rotate(12deg); } }
+    @keyframes scarfWind { 0%, 100% { transform: translateX(0); opacity: .38; } 50% { transform: translateX(7px); opacity: .85; } }
+    @keyframes skyPin { 0%, 100% { opacity: .25; } 50% { opacity: .72; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .arc-drift, .ridge-far, .ridge-mid, .route-flow, .route-reveal, .horizon-beam, .beacon, .beacon-halo, .traveler-step, .traveler-bob, .leg-left, .leg-right, .scarf, .sky-pin { animation: none !important; }
+      .route-reveal { stroke-dasharray: .55 .45; opacity: .38; }
+      .beacon { opacity: .8; transform: none; }
+      .beacon-halo { opacity: .14; transform: none; }
+    }
+  </style>
+
+  <rect width="720" height="1000" fill="#0B1012" />
+
+  <g fill="#D2D8CF">
+    <circle class="sky-pin" cx="96" cy="132" r="1.5" />
+    <circle cx="336" cy="88" r="1" opacity=".28" />
+    <circle class="sky-pin" cx="602" cy="188" r="1.3" style="animation-delay:-3s" />
+  </g>
+
+  <g class="hairline arc-drift" stroke="#415352" opacity=".34">
+    <path d="M-60 558 C4 268 232 107 470 142 C652 169 761 331 786 558" stroke-width="1.3" />
+    <path d="M24 548 C94 326 266 204 456 226 C602 243 692 365 724 548" stroke-width=".75" opacity=".62" />
+  </g>
+
+  <g class="ridge-far">
+    <path d="M-70 626 C16 596 71 564 137 579 L223 474 L276 557 L349 510 L403 561 L486 424 L543 548 L602 493 L661 555 L746 488 L790 541 L790 1000 L-70 1000 Z" fill="#2A3434" />
+    <path class="hairline" d="M-70 626 C16 596 71 564 137 579 L223 474 L276 557 L349 510 L403 561 L486 424 L543 548 L602 493 L661 555 L746 488 L790 541" stroke="#72807A" opacity=".52" stroke-width="1.15" />
+    <path class="hairline" d="M-60 661 C38 624 100 614 170 628 L236 552 L302 620 L370 572 L427 626 L493 511 L556 617 L622 555 L681 616 L750 557" stroke="#4C5C59" opacity=".7" />
+  </g>
+
+  <g class="ridge-mid">
+    <path d="M-80 747 C38 706 124 693 218 722 C321 753 367 668 464 695 C562 723 619 660 790 690 L790 1000 L-80 1000 Z" fill="#1B3936" />
+    <path class="hairline" d="M-80 747 C38 706 124 693 218 722 C321 753 367 668 464 695 C562 723 619 660 790 690" stroke="#617A71" opacity=".47" stroke-width="1.2" />
+    <path class="hairline" d="M-60 798 C67 763 150 766 248 785 C352 805 414 748 510 770 C611 793 678 752 790 765" stroke="#31534D" opacity=".72" />
+  </g>
+
+  <path class="hairline ridge-mid" d="M-40 665 C142 641 286 656 430 640 S642 640 770 659" stroke="#B4C0B8" opacity=".08" stroke-width="13" />
+
+  <path d="M-80 892 C62 849 189 858 296 887 C418 920 515 852 790 872 L790 1000 L-80 1000 Z" fill="#0E1819" />
+  <path class="hairline" d="M-80 892 C62 849 189 858 296 887 C418 920 515 852 790 872" stroke="#718079" opacity=".36" stroke-width="1.2" />
+  <path class="hairline route-flow" d="M-20 956 C120 930 233 935 344 954 S585 930 760 945" stroke="#344B47" opacity=".62" stroke-dasharray="2 18" />
+
+  <path class="hairline route-flow" d="M162 880 C264 832 352 777 429 711 C492 657 545 587 621 528" stroke="#C2CBC2" opacity=".32" stroke-width="1.5" stroke-dasharray="2 14" />
+  <path class="hairline route-reveal" d="M162 880 C264 832 352 777 429 711 C492 657 545 587 621 528" pathLength="1" stroke="#E8A24A" stroke-width="1.9" />
+
+  <path class="hairline horizon-beam" d="M478 541 C536 530 590 531 680 542" stroke="#E8A24A" stroke-width="1.1" />
+  <g>
+    <path class="hairline" d="M588 533 A34 34 0 0 1 656 533" stroke="#E8A24A" stroke-width="1.4" opacity=".5" />
+    <g class="beacon"><circle cx="622" cy="521" r="4" fill="#E8A24A" /></g>
+    <g class="beacon-halo"><circle cx="622" cy="521" r="15" fill="none" stroke="#E8A24A" stroke-width="1" /></g>
+  </g>
+
+  <g class="traveler-step">
+    <g class="traveler-bob">
+      <g transform="translate(104 690) scale(1.42)">
+        <path d="M4 48 C0 54 -2 76 1 91 L16 95 L23 67 L21 47 Z" fill="#152524" stroke="#73847C" stroke-width="1.1" />
+        <path d="M18 43 C26 35 42 34 51 41 L59 86 C47 96 23 96 11 87 L14 57 Z" fill="#080D0F" stroke="#B0B9B0" stroke-width="1.1" />
+        <path d="M19 29 C19 14 28 7 39 9 C52 11 56 22 52 36 L43 43 L25 39 Z" fill="#0A1112" stroke="#84928A" stroke-width="1.2" />
+        <path d="M20 27 C28 20 42 20 53 27" class="hairline" stroke="#D0D5CC" opacity=".48" stroke-width="1" />
+        <path d="M13 53 C23 58 45 58 55 52" class="hairline" stroke="#526761" opacity=".55" />
+        <g transform="translate(23 87)"><g class="leg-left"><path d="M0 0 L-8 39" class="hairline" stroke="#080D0F" stroke-width="6" /><path d="M-11 39 L0 39" class="hairline" stroke="#080D0F" stroke-width="5" /></g></g>
+        <g transform="translate(43 87)"><g class="leg-right"><path d="M0 0 L10 39" class="hairline" stroke="#080D0F" stroke-width="6" /><path d="M8 39 L19 39" class="hairline" stroke="#080D0F" stroke-width="5" /></g></g>
+        <path d="M48 53 L70 66" class="hairline" stroke="#080D0F" stroke-width="6" />
+        <path d="M65 63 L83 99" class="hairline" stroke="#B7C2B9" stroke-width="1.5" opacity=".8" />
+        <path d="M45 43 C63 37 75 39 89 47" class="hairline scarf" stroke="#E8A24A" stroke-width="2.2" />
+        <path d="M51 51 L68 50" class="hairline" stroke="#E8A24A" stroke-width="1.5" opacity=".72" />
+      </g>
+    </g>
+  </g>
+
+  <path class="hairline" d="M0 562 C146 557 286 561 438 557 S624 554 720 559" stroke="#D2D8CF" opacity=".14" />
+</svg>
