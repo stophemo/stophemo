@@ -437,7 +437,6 @@
     <text x="594.57" y="109" class="mono month">JUN</text>
     <text x="645.28" y="109" class="mono month">JUL</text>
     <g aria-hidden="true">
-      <rect class="cell" x="24" y="162" width="9" height="12" fill="#191B1E"/>
       <rect class="cell" x="24" y="180" width="9" height="12" fill="#191B1E"/>
       <rect class="cell" x="24" y="198" width="9" height="12" fill="#191B1E"/>
       <rect class="cell" x="24" y="216" width="9" height="12" fill="#191B1E"/>
@@ -802,10 +801,11 @@
       <rect class="cell" x="683.32" y="126" width="9" height="12" fill="#191B1E"/>
       <rect class="cell" x="683.32" y="144" width="9" height="12" fill="#2B452D"/>
       <rect class="cell" x="683.32" y="162" width="9" height="12" fill="#191B1E"/>
-      <rect class="current" x="681.32" y="160" width="13" height="16" fill="none" stroke="#FF4F5E" stroke-width="2"/>
+      <rect class="cell" x="683.32" y="180" width="9" height="12" fill="#191B1E"/>
+      <rect class="current" x="681.32" y="178" width="13" height="16" fill="none" stroke="#FF4F5E" stroke-width="2"/>
     </g>
     <text x="24" y="288" fill="#747A81" font-size="9" font-weight="700">365 DAYS</text>
-    <text x="555" y="288" fill="#747A81" font-size="9" font-weight="700">2026-07-21</text>
+    <text x="555" y="288" fill="#747A81" font-size="9" font-weight="700">2026-07-22</text>
     <g transform="translate(449 280)" aria-hidden="true">
       <rect width="8" height="8" fill="#191B1E"/>
       <rect x="13" width="8" height="8" fill="#2B452D"/>
