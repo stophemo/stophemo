@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="960"
+     height="460"
+     viewBox="0 0 960 460"
+     role="img"
+     aria-labelledby="field-title field-desc"
+     focusable="false">
+  <title id="field-title">Stophemo Field Log</title>
+  <desc id="field-desc">An animated field map. A small probe visits Woo, Woo Todo and Digital Brain before following an unfinished route toward AI.</desc>
+
+  <style>
+    .mono {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      letter-spacing: 0;
+    }
+
+    .grid-drift { animation: grid-drift 16s linear infinite; }
+    .scan-line { animation: scan-line 12s ease-in-out infinite; }
+    .route-live { animation: route-live 12s ease-in-out infinite; }
+    .route-next { animation: route-next 3.2s linear infinite; }
+    .probe { animation: probe-route 12s cubic-bezier(.45, 0, .2, 1) infinite; }
+    .probe-core { animation: probe-core 1.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+    .probe-ring { animation: probe-ring 2.4s ease-out infinite; transform-box: fill-box; transform-origin: center; }
+    .node-woo { animation: node-woo 12s ease-out infinite; transform-box: fill-box; transform-origin: center; }
+    .node-todo { animation: node-todo 12s ease-out infinite; transform-box: fill-box; transform-origin: center; }
+    .node-brain { animation: node-brain 12s ease-out infinite; transform-box: fill-box; transform-origin: center; }
+    .node-ai { animation: node-ai 4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+    .log-0 { animation: log-0 12s steps(1, end) infinite; }
+    .log-1 { animation: log-1 12s steps(1, end) infinite; }
+    .log-2 { animation: log-2 12s steps(1, end) infinite; }
+    .log-3 { animation: log-3 12s steps(1, end) infinite; }
+    .log-4 { animation: log-4 12s steps(1, end) infinite; }
+    .signal { animation: signal 2.4s steps(2, end) infinite; }
+    .tick-a { animation: tick 3.6s ease-in-out infinite; }
+    .tick-b { animation: tick 3.6s ease-in-out -1.2s infinite; }
+    .tick-c { animation: tick 3.6s ease-in-out -2.4s infinite; }
+
+    @keyframes grid-drift {
+      from { transform: translate(0, 0); }
+      to { transform: translate(24px, 24px); }
+    }
+
+    @keyframes scan-line {
+      0%, 8% { transform: translateX(0); opacity: 0; }
+      14% { opacity: .38; }
+      82% { opacity: .16; }
+      92%, 100% { transform: translateX(690px); opacity: 0; }
+    }
+
+    @keyframes route-live {
+      0%, 8% { stroke-dashoffset: 1; opacity: .2; }
+      67%, 88% { stroke-dashoffset: .06; opacity: .9; }
+      100% { stroke-dashoffset: 0; opacity: 0; }
+    }
+
+    @keyframes route-next {
+      to { stroke-dashoffset: -28; }
+    }
+
+    @keyframes probe-route {
+      0%, 7% { transform: translate(270px, 318px); opacity: 0; }
+      10% { opacity: 1; }
+      23% { transform: translate(390px, 255px); opacity: 1; }
+      40% { transform: translate(525px, 305px); }
+      58% { transform: translate(665px, 205px); }
+      76%, 90% { transform: translate(816px, 142px); opacity: 1; }
+      100% { transform: translate(816px, 142px); opacity: 0; }
+    }
+
+    @keyframes probe-core {
+      0%, 100% { transform: scale(.82); opacity: .72; }
+      50% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes probe-ring {
+      0% { transform: scale(.45); opacity: .7; }
+      72%, 100% { transform: scale(1.9); opacity: 0; }
+    }
+
+    @keyframes node-woo {
+      0%, 17% { transform: scale(.65); opacity: .22; }
+      23% { transform: scale(1.35); opacity: 1; }
+      29%, 100% { transform: scale(1); opacity: .72; }
+    }
+
+    @keyframes node-todo {
+      0%, 34% { transform: scale(.65); opacity: .22; }
+      40% { transform: scale(1.35); opacity: 1; }
+      46%, 100% { transform: scale(1); opacity: .72; }
+    }
+
+    @keyframes node-brain {
+      0%, 52% { transform: scale(.65); opacity: .22; }
+      58% { transform: scale(1.35); opacity: 1; }
+      64%, 100% { transform: scale(1); opacity: .72; }
+    }
+
+    @keyframes node-ai {
+      0%, 100% { transform: scale(.78); opacity: .42; }
+      50% { transform: scale(1.08); opacity: 1; }
+    }
+
+    @keyframes log-0 { 0%, 11% { opacity: 1; } 12%, 100% { opacity: 0; } }
+    @keyframes log-1 { 0%, 11% { opacity: 0; } 12%, 34% { opacity: 1; } 35%, 100% { opacity: 0; } }
+    @keyframes log-2 { 0%, 34% { opacity: 0; } 35%, 54% { opacity: 1; } 55%, 100% { opacity: 0; } }
+    @keyframes log-3 { 0%, 54% { opacity: 0; } 55%, 74% { opacity: 1; } 75%, 100% { opacity: 0; } }
+    @keyframes log-4 { 0%, 74% { opacity: 0; } 75%, 100% { opacity: 1; } }
+
+    @keyframes signal {
+      0%, 72% { opacity: 1; }
+      73%, 100% { opacity: .28; }
+    }
+
+    @keyframes tick {
+      0%, 100% { opacity: .18; }
+      50% { opacity: .86; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .grid-drift,
+      .scan-line,
+      .route-live,
+      .route-next,
+      .probe,
+      .probe-core,
+      .probe-ring,
+      .node-woo,
+      .node-todo,
+      .node-brain,
+      .node-ai,
+      .log-0,
+      .log-1,
+      .log-2,
+      .log-3,
+      .log-4,
+      .signal,
+      .tick-a,
+      .tick-b,
+      .tick-c { animation: none !important; }
+
+      .scan-line,
+      .probe-ring,
+      .log-0,
+      .log-1,
+      .log-2,
+      .log-3 { display: none; }
+
+      .route-live { stroke-dashoffset: .06; opacity: .9; }
+      .probe { transform: translate(816px, 142px); opacity: 1; }
+      .node-woo,
+      .node-todo,
+      .node-brain { opacity: .72; }
+      .node-ai,
+      .log-4 { opacity: 1; }
+    }
+  </style>
+
+  <defs>
+    <clipPath id="map-clip">
+      <rect x="218" y="62" width="714" height="326"/>
+    </clipPath>
+    <pattern id="field-grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#232830" stroke-width="1"/>
+      <circle cx="1" cy="1" r="1" fill="#363D46"/>
+    </pattern>
+  </defs>
+
+  <rect width="960" height="460" fill="#0B0D10"/>
+  <rect x="1" y="1" width="958" height="458" fill="none" stroke="#2A3038"/>
+  <rect width="6" height="460" fill="#65D6A6"/>
+
+  <g class="mono">
+    <path d="M6 62H960 M6 388H960" stroke="#2A3038"/>
+    <path d="M218 62V388" stroke="#2A3038"/>
+
+    <text x="26" y="31" fill="#E7E9EC" font-size="14" font-weight="800">STOPHEMO</text>
+    <text x="113" y="31" fill="#69727D" font-size="10" font-weight="700">FIELD LOG / 07</text>
+    <g transform="translate(690 23)">
+      <circle class="signal" cx="0" cy="4" r="3" fill="#65D6A6"/>
+      <text x="12" y="8" fill="#8B949E" font-size="9" font-weight="700">FULL-STACK / EXPLORING AI</text>
+    </g>
+
+    <g transform="translate(26 96)">
+      <text y="0" fill="#69727D" font-size="9" font-weight="700">FIELD NOTE 001</text>
+      <text y="45" fill="#E7E9EC" font-size="28" font-weight="800">FOLLOW</text>
+      <text y="78" fill="#E7E9EC" font-size="28" font-weight="800">CURIOSITY.</text>
+      <path d="M0 94H82" stroke="#65D6A6" stroke-width="4"/>
+      <path d="M88 94H112" stroke="#E6B566" stroke-width="4"/>
+
+      <text y="132" fill="#69727D" font-size="9" font-weight="700">LIVE ENTRY</text>
+      <g fill="#C8CDD2" font-size="10" font-weight="700">
+        <text class="log-0" y="154">BOOTING FIELD SCAN</text>
+        <text class="log-1" y="154" opacity="0">SIGNAL / WOO</text>
+        <text class="log-2" y="154" opacity="0">SIGNAL / WOO-TODO</text>
+        <text class="log-3" y="154" opacity="0">SIGNAL / BRAIN</text>
+        <text class="log-4" y="154" opacity="0">NEXT / UNKNOWN</text>
+      </g>
+
+      <path d="M0 176H164" stroke="#2A3038"/>
+      <text y="202" fill="#69727D" font-size="9" font-weight="700">DISCOVERED</text>
+      <text x="122" y="202" fill="#65D6A6" font-size="11" font-weight="800">03</text>
+      <text y="226" fill="#69727D" font-size="9" font-weight="700">OPEN ROUTES</text>
+      <text x="122" y="226" fill="#E6B566" font-size="11" font-weight="800">01</text>
+      <text y="264" fill="#525B66" font-size="8" font-weight="700">BUILD / TEST / KEEP MOVING</text>
+    </g>
+
+    <g clip-path="url(#map-clip)">
+      <rect x="218" y="62" width="714" height="326" fill="#0E1115"/>
+      <g class="grid-drift">
+        <rect x="194" y="38" width="762" height="374" fill="url(#field-grid)" opacity=".68"/>
+      </g>
+
+      <g fill="#515B66" font-size="8" font-weight="700">
+        <text x="235" y="83">GRID / 07.24</text>
+        <text x="852" y="83">SIGNAL / OPEN</text>
+        <text x="235" y="372">ROUTE / ACTIVE</text>
+        <text x="839" y="372">SCALE 1:07</text>
+      </g>
+
+      <g opacity=".36" stroke="#65707B" fill="none">
+        <path d="M270 318L390 255L525 305L665 205L816 142L902 108" stroke-dasharray="3 9"/>
+        <circle cx="270" cy="318" r="15"/>
+        <circle cx="390" cy="255" r="22"/>
+        <circle cx="525" cy="305" r="22"/>
+        <circle cx="665" cy="205" r="22"/>
+      </g>
+
+      <path class="route-live"
+            d="M270 318L390 255L525 305L665 205L816 142"
+            pathLength="1"
+            fill="none"
+            stroke="#65D6A6"
+            stroke-width="2"
+            stroke-dasharray="1"
+            stroke-dashoffset="1"/>
+      <path class="route-next"
+            d="M816 142L902 108"
+            fill="none"
+            stroke="#E6B566"
+            stroke-width="1.5"
+            stroke-dasharray="3 8"/>
+
+      <g aria-hidden="true">
+        <g transform="translate(390 255)">
+          <circle class="node-woo" r="8" fill="#0E1115" stroke="#65D6A6" stroke-width="2"/>
+          <circle r="2.5" fill="#65D6A6"/>
+        </g>
+        <g transform="translate(525 305)">
+          <circle class="node-todo" r="8" fill="#0E1115" stroke="#65D6A6" stroke-width="2"/>
+          <circle r="2.5" fill="#65D6A6"/>
+        </g>
+        <g transform="translate(665 205)">
+          <circle class="node-brain" r="8" fill="#0E1115" stroke="#65D6A6" stroke-width="2"/>
+          <circle r="2.5" fill="#65D6A6"/>
+        </g>
+        <g transform="translate(816 142)">
+          <circle class="node-ai" r="16" fill="none" stroke="#E6B566"/>
+          <circle r="5" fill="#E6B566"/>
+          <path d="M-27 0H-20M20 0H27M0-27V-20M0 20V27" stroke="#E6B566"/>
+        </g>
+      </g>
+
+      <g fill="#8B949E" font-size="9" font-weight="700">
+        <text x="371" y="230">01 / WOO</text>
+        <text x="489" y="337">02 / WOO-TODO</text>
+        <text x="625" y="177">03 / DIGITAL-BRAIN</text>
+        <text x="836" y="145" fill="#E6B566">AI / NEXT</text>
+      </g>
+
+      <g class="probe" opacity="0" aria-hidden="true">
+        <circle class="probe-ring" r="14" fill="none" stroke="#76B7FF"/>
+        <g class="probe-core">
+          <path d="M0-9L7 0L0 9L-7 0Z" fill="#E7E9EC"/>
+          <path d="M0-4L3 0L0 4L-3 0Z" fill="#76B7FF"/>
+        </g>
+      </g>
+
+      <g class="scan-line" opacity="0" aria-hidden="true">
+        <rect x="218" y="62" width="28" height="326" fill="#76B7FF" opacity=".04"/>
+        <path d="M246 62V388" stroke="#76B7FF" opacity=".55"/>
+      </g>
+
+      <g fill="#76B7FF">
+        <circle class="tick-a" cx="300" cy="142" r="1.5"/>
+        <circle class="tick-b" cx="456" cy="116" r="1.5"/>
+        <circle class="tick-c" cx="747" cy="322" r="1.5"/>
+      </g>
+    </g>
+
+    <g transform="translate(26 422)">
+      <text fill="#E7E9EC" font-size="11" font-weight="700">BUILD SYSTEMS. FOLLOW CURIOSITY.</text>
+      <g transform="translate(638 0)">
+        <circle class="signal" cx="0" cy="-4" r="3" fill="#E6B566"/>
+        <text x="13" fill="#8B949E" font-size="9" font-weight="700">ROUTE STILL UNFOLDING</text>
+      </g>
+    </g>
+  </g>
+</svg>
