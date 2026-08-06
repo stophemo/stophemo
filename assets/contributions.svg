@@ -7,7 +7,7 @@
      aria-labelledby="trace-title trace-desc"
      focusable="false">
   <title id="trace-title">stophemo 的 GitHub 贡献轨迹</title>
-  <desc id="trace-desc">stophemo 过去 365 天共有 109 次贡献，分布在 32 个活跃日。</desc>
+  <desc id="trace-desc">stophemo 过去 365 天共有 120 次贡献，分布在 33 个活跃日。</desc>
 
   <style>
     .mono {
@@ -77,9 +77,9 @@
     <rect x="28" y="90" width="93" height="5" fill="#D7FF3F"/>
     <rect x="127" y="90" width="24" height="5" fill="#27D7F2"/>
     <text x="28" y="126" fill="#747A81" font-size="9" font-weight="700">TOTAL</text>
-    <text x="28" y="151" fill="#F4F2EA" font-size="22" font-weight="800">109</text>
+    <text x="28" y="151" fill="#F4F2EA" font-size="22" font-weight="800">120</text>
     <text x="110" y="126" fill="#747A81" font-size="9" font-weight="700">ACTIVE</text>
-    <text x="110" y="151" fill="#27D7F2" font-size="22" font-weight="800">32</text>
+    <text x="110" y="151" fill="#27D7F2" font-size="22" font-weight="800">33</text>
     <rect class="live" x="28" y="181" width="7" height="7" fill="#D7FF3F"/>
     <text x="44" y="188" fill="#D7FF3F" font-size="9" font-weight="700">DAILY SYNC</text>
     <text x="232" y="38" class="mono month">AUG</text>
@@ -96,7 +96,6 @@
     <text x="852.75" y="38" class="mono month">JUL</text>
     <text x="905.58" y="38" class="mono month">AUG</text>
     <g aria-hidden="true">
-      <rect class="cell" x="232" y="112" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="232" y="132" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="232" y="152" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="232" y="172" width="9" height="14" fill="#191B1E"/>
@@ -460,11 +459,12 @@
       <rect class="cell" x="918.79" y="52" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="918.79" y="72" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="918.79" y="92" width="9" height="14" fill="#2B452D"/>
-      <rect class="cell" x="918.79" y="112" width="9" height="14" fill="#91B52E"/>
-      <rect class="current" x="916.79" y="110" width="13" height="18" fill="none" stroke="#FF4F5E" stroke-width="2"/>
+      <rect class="cell peak phase-3" x="918.79" y="112" width="9" height="14" fill="#D7FF3F"/>
+      <rect class="cell" x="918.79" y="132" width="9" height="14" fill="#54742B"/>
+      <rect class="current" x="916.79" y="130" width="13" height="18" fill="none" stroke="#FF4F5E" stroke-width="2"/>
     </g>
     <text x="216" y="209" fill="#747A81" font-size="9" font-weight="700">365 DAYS</text>
-    <text x="797" y="209" fill="#747A81" font-size="9" font-weight="700">UPDATED / 2026-08-05</text>
+    <text x="797" y="209" fill="#747A81" font-size="9" font-weight="700">UPDATED / 2026-08-06</text>
     <g transform="translate(676 201)" aria-hidden="true">
       <rect width="8" height="8" fill="#191B1E"/>
       <rect x="13" width="8" height="8" fill="#2B452D"/>
