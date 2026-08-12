@@ -440,7 +440,7 @@
     <rect x="28" y="90" width="93" height="5" fill="#D7FF3F"/>
     <rect x="127" y="90" width="24" height="5" fill="#27D7F2"/>
     <text x="28" y="126" fill="#747A81" font-size="9" font-weight="700">TOTAL</text>
-    <text x="28" y="151" fill="#F4F2EA" font-size="22" font-weight="800">139</text>
+    <text x="28" y="151" fill="#F4F2EA" font-size="22" font-weight="800">143</text>
     <text x="110" y="126" fill="#747A81" font-size="9" font-weight="700">ACTIVE</text>
     <text x="110" y="151" fill="#27D7F2" font-size="22" font-weight="800">34</text>
     <rect class="live" x="28" y="181" width="7" height="7" fill="#D7FF3F"/>
@@ -459,7 +459,6 @@
     <text x="839.55" y="38" class="mono month">JUL</text>
     <text x="892.38" y="38" class="mono month">AUG</text>
     <g aria-hidden="true">
-      <rect class="cell" x="232" y="92" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="232" y="112" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="232" y="132" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="232" y="152" width="9" height="14" fill="#191B1E"/>
@@ -823,11 +822,12 @@
       <rect class="cell" x="905.58" y="172" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="918.79" y="52" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="918.79" y="72" width="9" height="14" fill="#2B452D"/>
-      <rect class="cell" x="918.79" y="92" width="9" height="14" fill="#54742B"/>
-      <rect class="current" x="916.79" y="90" width="13" height="18" fill="none" stroke="#FF4F5E" stroke-width="2"/>
+      <rect class="cell" x="918.79" y="92" width="9" height="14" fill="#91B52E"/>
+      <rect class="cell" x="918.79" y="112" width="9" height="14" fill="#191B1E"/>
+      <rect class="current" x="916.79" y="110" width="13" height="18" fill="none" stroke="#FF4F5E" stroke-width="2"/>
     </g>
     <text x="216" y="209" fill="#747A81" font-size="9" font-weight="700">365 DAYS</text>
-    <text x="797" y="209" fill="#747A81" font-size="9" font-weight="700">UPDATED / 2026-08-11</text>
+    <text x="797" y="209" fill="#747A81" font-size="9" font-weight="700">UPDATED / 2026-08-12</text>
     <g transform="translate(676 201)" aria-hidden="true">
       <rect width="8" height="8" fill="#191B1E"/>
       <rect x="13" width="8" height="8" fill="#2B452D"/>
