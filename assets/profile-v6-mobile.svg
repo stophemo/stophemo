@@ -419,9 +419,9 @@
     <rect x="154" y="61" width="70" height="5" fill="#D7FF3F"/>
     <rect x="230" y="61" width="21" height="5" fill="#27D7F2"/>
     <text x="413" y="31" fill="#747A81" font-size="9" font-weight="700">TOTAL</text>
-    <text x="413" y="60" fill="#F4F2EA" font-size="23" font-weight="800">143</text>
+    <text x="413" y="60" fill="#F4F2EA" font-size="23" font-weight="800">145</text>
     <text x="552" y="31" fill="#747A81" font-size="9" font-weight="700">ACTIVE</text>
-    <text x="552" y="60" fill="#27D7F2" font-size="23" font-weight="800">34</text>
+    <text x="552" y="60" fill="#27D7F2" font-size="23" font-weight="800">35</text>
     <rect class="live" x="646" y="28" width="7" height="7" fill="#D7FF3F"/>
     <text x="662" y="35" fill="#D7FF3F" font-size="9" font-weight="700">SYNC</text>
     <text x="24" y="109" class="mono month">AUG</text>
@@ -438,7 +438,6 @@
     <text x="607.25" y="109" class="mono month">JUL</text>
     <text x="657.96" y="109" class="mono month">AUG</text>
     <g aria-hidden="true">
-      <rect class="cell" x="24" y="198" width="9" height="12" fill="#191B1E"/>
       <rect class="cell" x="24" y="216" width="9" height="12" fill="#191B1E"/>
       <rect class="cell" x="24" y="234" width="9" height="12" fill="#191B1E"/>
       <rect class="cell" x="36.68" y="126" width="9" height="12" fill="#191B1E"/>
@@ -802,11 +801,12 @@
       <rect class="cell" x="683.32" y="144" width="9" height="12" fill="#2B452D"/>
       <rect class="cell" x="683.32" y="162" width="9" height="12" fill="#91B52E"/>
       <rect class="cell" x="683.32" y="180" width="9" height="12" fill="#191B1E"/>
-      <rect class="cell" x="683.32" y="198" width="9" height="12" fill="#191B1E"/>
-      <rect class="current" x="681.32" y="196" width="13" height="16" fill="none" stroke="#FF4F5E" stroke-width="2"/>
+      <rect class="cell" x="683.32" y="198" width="9" height="12" fill="#2B452D"/>
+      <rect class="cell" x="683.32" y="216" width="9" height="12" fill="#191B1E"/>
+      <rect class="current" x="681.32" y="214" width="13" height="16" fill="none" stroke="#FF4F5E" stroke-width="2"/>
     </g>
     <text x="24" y="288" fill="#747A81" font-size="9" font-weight="700">365 DAYS</text>
-    <text x="555" y="288" fill="#747A81" font-size="9" font-weight="700">2026-08-13</text>
+    <text x="555" y="288" fill="#747A81" font-size="9" font-weight="700">2026-08-14</text>
     <g transform="translate(449 280)" aria-hidden="true">
       <rect width="8" height="8" fill="#191B1E"/>
       <rect x="13" width="8" height="8" fill="#2B452D"/>
