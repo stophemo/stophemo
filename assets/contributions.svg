@@ -7,7 +7,7 @@
      aria-labelledby="trace-title trace-desc"
      focusable="false">
   <title id="trace-title">stophemo 的 GitHub 贡献轨迹</title>
-  <desc id="trace-desc">stophemo 过去 365 天共有 145 次贡献，分布在 35 个活跃日。</desc>
+  <desc id="trace-desc">stophemo 过去 365 天共有 146 次贡献，分布在 36 个活跃日。</desc>
 
   <style>
     .mono {
@@ -77,24 +77,30 @@
     <rect x="28" y="90" width="93" height="5" fill="#D7FF3F"/>
     <rect x="127" y="90" width="24" height="5" fill="#27D7F2"/>
     <text x="28" y="126" fill="#747A81" font-size="9" font-weight="700">TOTAL</text>
-    <text x="28" y="151" fill="#F4F2EA" font-size="22" font-weight="800">145</text>
+    <text x="28" y="151" fill="#F4F2EA" font-size="22" font-weight="800">146</text>
     <text x="110" y="126" fill="#747A81" font-size="9" font-weight="700">ACTIVE</text>
-    <text x="110" y="151" fill="#27D7F2" font-size="22" font-weight="800">35</text>
+    <text x="110" y="151" fill="#27D7F2" font-size="22" font-weight="800">36</text>
     <rect class="live" x="28" y="181" width="7" height="7" fill="#D7FF3F"/>
     <text x="44" y="188" fill="#D7FF3F" font-size="9" font-weight="700">DAILY SYNC</text>
-    <text x="258.42" y="38" class="mono month">SEP</text>
-    <text x="311.25" y="38" class="mono month">OCT</text>
-    <text x="364.08" y="38" class="mono month">NOV</text>
-    <text x="430.11" y="38" class="mono month">DEC</text>
-    <text x="482.94" y="38" class="mono month">JAN</text>
-    <text x="548.98" y="38" class="mono month">FEB</text>
-    <text x="601.81" y="38" class="mono month">MAR</text>
-    <text x="654.64" y="38" class="mono month">APR</text>
-    <text x="707.47" y="38" class="mono month">MAY</text>
-    <text x="773.51" y="38" class="mono month">JUN</text>
-    <text x="826.34" y="38" class="mono month">JUL</text>
-    <text x="879.17" y="38" class="mono month">AUG</text>
+    <text x="245.21" y="38" class="mono month">SEP</text>
+    <text x="298.04" y="38" class="mono month">OCT</text>
+    <text x="350.87" y="38" class="mono month">NOV</text>
+    <text x="416.91" y="38" class="mono month">DEC</text>
+    <text x="469.74" y="38" class="mono month">JAN</text>
+    <text x="535.77" y="38" class="mono month">FEB</text>
+    <text x="588.6" y="38" class="mono month">MAR</text>
+    <text x="641.43" y="38" class="mono month">APR</text>
+    <text x="694.26" y="38" class="mono month">MAY</text>
+    <text x="760.3" y="38" class="mono month">JUN</text>
+    <text x="813.13" y="38" class="mono month">JUL</text>
+    <text x="865.96" y="38" class="mono month">AUG</text>
     <g aria-hidden="true">
+      <rect class="cell" x="232" y="52" width="9" height="14" fill="#191B1E"/>
+      <rect class="cell" x="232" y="72" width="9" height="14" fill="#191B1E"/>
+      <rect class="cell" x="232" y="92" width="9" height="14" fill="#191B1E"/>
+      <rect class="cell" x="232" y="112" width="9" height="14" fill="#191B1E"/>
+      <rect class="cell" x="232" y="132" width="9" height="14" fill="#191B1E"/>
+      <rect class="cell" x="232" y="152" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="232" y="172" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="245.21" y="52" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="245.21" y="72" width="9" height="14" fill="#191B1E"/>
@@ -295,14 +301,14 @@
       <rect class="cell" x="615.02" y="52" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="615.02" y="72" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="615.02" y="92" width="9" height="14" fill="#191B1E"/>
-      <rect class="cell" x="615.02" y="112" width="9" height="14" fill="#191B1E"/>
+      <rect class="cell" x="615.02" y="112" width="9" height="14" fill="#2B452D"/>
       <rect class="cell" x="615.02" y="132" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="615.02" y="152" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="615.02" y="172" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="628.23" y="52" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="628.23" y="72" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="628.23" y="92" width="9" height="14" fill="#191B1E"/>
-      <rect class="cell" x="628.23" y="112" width="9" height="14" fill="#2B452D"/>
+      <rect class="cell" x="628.23" y="112" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="628.23" y="132" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="628.23" y="152" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="628.23" y="172" width="9" height="14" fill="#191B1E"/>
@@ -312,14 +318,14 @@
       <rect class="cell" x="641.43" y="112" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="641.43" y="132" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="641.43" y="152" width="9" height="14" fill="#191B1E"/>
-      <rect class="cell" x="641.43" y="172" width="9" height="14" fill="#191B1E"/>
+      <rect class="cell" x="641.43" y="172" width="9" height="14" fill="#2B452D"/>
       <rect class="cell" x="654.64" y="52" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="654.64" y="72" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="654.64" y="92" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="654.64" y="112" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="654.64" y="132" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="654.64" y="152" width="9" height="14" fill="#191B1E"/>
-      <rect class="cell" x="654.64" y="172" width="9" height="14" fill="#2B452D"/>
+      <rect class="cell" x="654.64" y="172" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="667.85" y="52" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="667.85" y="72" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="667.85" y="92" width="9" height="14" fill="#191B1E"/>
@@ -332,55 +338,55 @@
       <rect class="cell" x="681.06" y="92" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="681.06" y="112" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="681.06" y="132" width="9" height="14" fill="#191B1E"/>
-      <rect class="cell" x="681.06" y="152" width="9" height="14" fill="#191B1E"/>
+      <rect class="cell" x="681.06" y="152" width="9" height="14" fill="#54742B"/>
       <rect class="cell" x="681.06" y="172" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="694.26" y="52" width="9" height="14" fill="#191B1E"/>
-      <rect class="cell" x="694.26" y="72" width="9" height="14" fill="#191B1E"/>
-      <rect class="cell" x="694.26" y="92" width="9" height="14" fill="#191B1E"/>
-      <rect class="cell" x="694.26" y="112" width="9" height="14" fill="#191B1E"/>
+      <rect class="cell" x="694.26" y="72" width="9" height="14" fill="#2B452D"/>
+      <rect class="cell" x="694.26" y="92" width="9" height="14" fill="#54742B"/>
+      <rect class="cell" x="694.26" y="112" width="9" height="14" fill="#54742B"/>
       <rect class="cell" x="694.26" y="132" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="694.26" y="152" width="9" height="14" fill="#54742B"/>
-      <rect class="cell" x="694.26" y="172" width="9" height="14" fill="#191B1E"/>
+      <rect class="cell" x="694.26" y="172" width="9" height="14" fill="#54742B"/>
       <rect class="cell" x="707.47" y="52" width="9" height="14" fill="#191B1E"/>
-      <rect class="cell" x="707.47" y="72" width="9" height="14" fill="#2B452D"/>
-      <rect class="cell" x="707.47" y="92" width="9" height="14" fill="#54742B"/>
-      <rect class="cell" x="707.47" y="112" width="9" height="14" fill="#54742B"/>
-      <rect class="cell" x="707.47" y="132" width="9" height="14" fill="#191B1E"/>
-      <rect class="cell" x="707.47" y="152" width="9" height="14" fill="#54742B"/>
-      <rect class="cell" x="707.47" y="172" width="9" height="14" fill="#54742B"/>
+      <rect class="cell" x="707.47" y="72" width="9" height="14" fill="#191B1E"/>
+      <rect class="cell" x="707.47" y="92" width="9" height="14" fill="#191B1E"/>
+      <rect class="cell peak phase-3" x="707.47" y="112" width="9" height="14" fill="#D7FF3F"/>
+      <rect class="cell" x="707.47" y="132" width="9" height="14" fill="#2B452D"/>
+      <rect class="cell" x="707.47" y="152" width="9" height="14" fill="#2B452D"/>
+      <rect class="cell" x="707.47" y="172" width="9" height="14" fill="#2B452D"/>
       <rect class="cell" x="720.68" y="52" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="720.68" y="72" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="720.68" y="92" width="9" height="14" fill="#191B1E"/>
-      <rect class="cell peak phase-0" x="720.68" y="112" width="9" height="14" fill="#D7FF3F"/>
-      <rect class="cell" x="720.68" y="132" width="9" height="14" fill="#2B452D"/>
+      <rect class="cell" x="720.68" y="112" width="9" height="14" fill="#54742B"/>
+      <rect class="cell" x="720.68" y="132" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="720.68" y="152" width="9" height="14" fill="#2B452D"/>
-      <rect class="cell" x="720.68" y="172" width="9" height="14" fill="#2B452D"/>
+      <rect class="cell" x="720.68" y="172" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="733.89" y="52" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="733.89" y="72" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="733.89" y="92" width="9" height="14" fill="#191B1E"/>
-      <rect class="cell" x="733.89" y="112" width="9" height="14" fill="#54742B"/>
-      <rect class="cell" x="733.89" y="132" width="9" height="14" fill="#191B1E"/>
-      <rect class="cell" x="733.89" y="152" width="9" height="14" fill="#2B452D"/>
+      <rect class="cell" x="733.89" y="112" width="9" height="14" fill="#191B1E"/>
+      <rect class="cell" x="733.89" y="132" width="9" height="14" fill="#2B452D"/>
+      <rect class="cell" x="733.89" y="152" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="733.89" y="172" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="747.09" y="52" width="9" height="14" fill="#191B1E"/>
-      <rect class="cell" x="747.09" y="72" width="9" height="14" fill="#191B1E"/>
-      <rect class="cell" x="747.09" y="92" width="9" height="14" fill="#191B1E"/>
-      <rect class="cell" x="747.09" y="112" width="9" height="14" fill="#191B1E"/>
+      <rect class="cell" x="747.09" y="72" width="9" height="14" fill="#54742B"/>
+      <rect class="cell" x="747.09" y="92" width="9" height="14" fill="#2B452D"/>
+      <rect class="cell" x="747.09" y="112" width="9" height="14" fill="#54742B"/>
       <rect class="cell" x="747.09" y="132" width="9" height="14" fill="#2B452D"/>
-      <rect class="cell" x="747.09" y="152" width="9" height="14" fill="#191B1E"/>
+      <rect class="cell" x="747.09" y="152" width="9" height="14" fill="#54742B"/>
       <rect class="cell" x="747.09" y="172" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="760.3" y="52" width="9" height="14" fill="#191B1E"/>
-      <rect class="cell" x="760.3" y="72" width="9" height="14" fill="#54742B"/>
-      <rect class="cell" x="760.3" y="92" width="9" height="14" fill="#2B452D"/>
-      <rect class="cell" x="760.3" y="112" width="9" height="14" fill="#54742B"/>
+      <rect class="cell" x="760.3" y="72" width="9" height="14" fill="#191B1E"/>
+      <rect class="cell" x="760.3" y="92" width="9" height="14" fill="#191B1E"/>
+      <rect class="cell" x="760.3" y="112" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="760.3" y="132" width="9" height="14" fill="#2B452D"/>
-      <rect class="cell" x="760.3" y="152" width="9" height="14" fill="#54742B"/>
+      <rect class="cell" x="760.3" y="152" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="760.3" y="172" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="773.51" y="52" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="773.51" y="72" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="773.51" y="92" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="773.51" y="112" width="9" height="14" fill="#191B1E"/>
-      <rect class="cell" x="773.51" y="132" width="9" height="14" fill="#2B452D"/>
+      <rect class="cell" x="773.51" y="132" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="773.51" y="152" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="773.51" y="172" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="786.72" y="52" width="9" height="14" fill="#191B1E"/>
@@ -408,62 +414,56 @@
       <rect class="cell" x="826.34" y="72" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="826.34" y="92" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="826.34" y="112" width="9" height="14" fill="#191B1E"/>
-      <rect class="cell" x="826.34" y="132" width="9" height="14" fill="#191B1E"/>
+      <rect class="cell" x="826.34" y="132" width="9" height="14" fill="#2B452D"/>
       <rect class="cell" x="826.34" y="152" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="826.34" y="172" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="839.55" y="52" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="839.55" y="72" width="9" height="14" fill="#191B1E"/>
-      <rect class="cell" x="839.55" y="92" width="9" height="14" fill="#191B1E"/>
-      <rect class="cell" x="839.55" y="112" width="9" height="14" fill="#191B1E"/>
+      <rect class="cell" x="839.55" y="92" width="9" height="14" fill="#2B452D"/>
+      <rect class="cell" x="839.55" y="112" width="9" height="14" fill="#54742B"/>
       <rect class="cell" x="839.55" y="132" width="9" height="14" fill="#2B452D"/>
-      <rect class="cell" x="839.55" y="152" width="9" height="14" fill="#191B1E"/>
+      <rect class="cell" x="839.55" y="152" width="9" height="14" fill="#2B452D"/>
       <rect class="cell" x="839.55" y="172" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="852.75" y="52" width="9" height="14" fill="#191B1E"/>
-      <rect class="cell" x="852.75" y="72" width="9" height="14" fill="#191B1E"/>
-      <rect class="cell" x="852.75" y="92" width="9" height="14" fill="#2B452D"/>
-      <rect class="cell" x="852.75" y="112" width="9" height="14" fill="#54742B"/>
-      <rect class="cell" x="852.75" y="132" width="9" height="14" fill="#2B452D"/>
-      <rect class="cell" x="852.75" y="152" width="9" height="14" fill="#2B452D"/>
+      <rect class="cell" x="852.75" y="72" width="9" height="14" fill="#2B452D"/>
+      <rect class="cell" x="852.75" y="92" width="9" height="14" fill="#191B1E"/>
+      <rect class="cell" x="852.75" y="112" width="9" height="14" fill="#191B1E"/>
+      <rect class="cell" x="852.75" y="132" width="9" height="14" fill="#191B1E"/>
+      <rect class="cell" x="852.75" y="152" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="852.75" y="172" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="865.96" y="52" width="9" height="14" fill="#191B1E"/>
-      <rect class="cell" x="865.96" y="72" width="9" height="14" fill="#2B452D"/>
+      <rect class="cell" x="865.96" y="72" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="865.96" y="92" width="9" height="14" fill="#191B1E"/>
-      <rect class="cell" x="865.96" y="112" width="9" height="14" fill="#191B1E"/>
+      <rect class="cell" x="865.96" y="112" width="9" height="14" fill="#2B452D"/>
       <rect class="cell" x="865.96" y="132" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="865.96" y="152" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="865.96" y="172" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="879.17" y="52" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="879.17" y="72" width="9" height="14" fill="#191B1E"/>
-      <rect class="cell" x="879.17" y="92" width="9" height="14" fill="#191B1E"/>
-      <rect class="cell" x="879.17" y="112" width="9" height="14" fill="#2B452D"/>
-      <rect class="cell" x="879.17" y="132" width="9" height="14" fill="#191B1E"/>
-      <rect class="cell" x="879.17" y="152" width="9" height="14" fill="#191B1E"/>
+      <rect class="cell" x="879.17" y="92" width="9" height="14" fill="#2B452D"/>
+      <rect class="cell peak phase-0" x="879.17" y="112" width="9" height="14" fill="#D7FF3F"/>
+      <rect class="cell" x="879.17" y="132" width="9" height="14" fill="#54742B"/>
+      <rect class="cell peak phase-2" x="879.17" y="152" width="9" height="14" fill="#D7FF3F"/>
       <rect class="cell" x="879.17" y="172" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="892.38" y="52" width="9" height="14" fill="#191B1E"/>
-      <rect class="cell" x="892.38" y="72" width="9" height="14" fill="#191B1E"/>
-      <rect class="cell" x="892.38" y="92" width="9" height="14" fill="#2B452D"/>
-      <rect class="cell peak phase-1" x="892.38" y="112" width="9" height="14" fill="#D7FF3F"/>
-      <rect class="cell" x="892.38" y="132" width="9" height="14" fill="#54742B"/>
-      <rect class="cell peak phase-3" x="892.38" y="152" width="9" height="14" fill="#D7FF3F"/>
+      <rect class="cell" x="892.38" y="72" width="9" height="14" fill="#2B452D"/>
+      <rect class="cell" x="892.38" y="92" width="9" height="14" fill="#91B52E"/>
+      <rect class="cell" x="892.38" y="112" width="9" height="14" fill="#191B1E"/>
+      <rect class="cell" x="892.38" y="132" width="9" height="14" fill="#2B452D"/>
+      <rect class="cell" x="892.38" y="152" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="892.38" y="172" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="905.58" y="52" width="9" height="14" fill="#191B1E"/>
-      <rect class="cell" x="905.58" y="72" width="9" height="14" fill="#2B452D"/>
-      <rect class="cell" x="905.58" y="92" width="9" height="14" fill="#91B52E"/>
+      <rect class="cell" x="905.58" y="72" width="9" height="14" fill="#191B1E"/>
+      <rect class="cell" x="905.58" y="92" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="905.58" y="112" width="9" height="14" fill="#191B1E"/>
-      <rect class="cell" x="905.58" y="132" width="9" height="14" fill="#2B452D"/>
+      <rect class="cell" x="905.58" y="132" width="9" height="14" fill="#191B1E"/>
       <rect class="cell" x="905.58" y="152" width="9" height="14" fill="#191B1E"/>
-      <rect class="cell" x="905.58" y="172" width="9" height="14" fill="#191B1E"/>
+      <rect class="cell" x="905.58" y="172" width="9" height="14" fill="#2B452D"/>
       <rect class="cell" x="918.79" y="52" width="9" height="14" fill="#191B1E"/>
-      <rect class="cell" x="918.79" y="72" width="9" height="14" fill="#191B1E"/>
-      <rect class="cell" x="918.79" y="92" width="9" height="14" fill="#191B1E"/>
-      <rect class="cell" x="918.79" y="112" width="9" height="14" fill="#191B1E"/>
-      <rect class="cell" x="918.79" y="132" width="9" height="14" fill="#191B1E"/>
-      <rect class="cell" x="918.79" y="152" width="9" height="14" fill="#191B1E"/>
-      <rect class="cell" x="918.79" y="172" width="9" height="14" fill="#191B1E"/>
-      <rect class="current" x="916.79" y="170" width="13" height="18" fill="none" stroke="#FF4F5E" stroke-width="2"/>
+      <rect class="current" x="916.79" y="50" width="13" height="18" fill="none" stroke="#FF4F5E" stroke-width="2"/>
     </g>
     <text x="216" y="209" fill="#747A81" font-size="9" font-weight="700">365 DAYS</text>
-    <text x="797" y="209" fill="#747A81" font-size="9" font-weight="700">UPDATED / 2026-08-22</text>
+    <text x="797" y="209" fill="#747A81" font-size="9" font-weight="700">UPDATED / 2026-08-23</text>
     <g transform="translate(676 201)" aria-hidden="true">
       <rect width="8" height="8" fill="#191B1E"/>
       <rect x="13" width="8" height="8" fill="#2B452D"/>
