@@ -7,7 +7,7 @@
      aria-labelledby="field-title field-desc"
      focusable="false">
   <title id="field-title">Stophemo Field Log</title>
-  <desc id="field-desc">An animated field map. A small probe visits Woo, Woo Todo and Digital Brain before following an unfinished route toward AI.</desc>
+  <desc id="field-desc">An animated field map. A small probe visits Woo, Woo Todo, Digital Brain, T101 and New API before following an unfinished route toward AI.</desc>
 
   <style>
     .mono {
@@ -25,12 +25,15 @@
     .node-woo { animation: node-woo 12s ease-out infinite; transform-box: fill-box; transform-origin: center; }
     .node-todo { animation: node-todo 12s ease-out infinite; transform-box: fill-box; transform-origin: center; }
     .node-brain { animation: node-brain 12s ease-out infinite; transform-box: fill-box; transform-origin: center; }
+    .node-t101 { animation: node-t101 12s ease-out infinite; transform-box: fill-box; transform-origin: center; }
+    .node-newapi { animation: node-newapi 12s ease-out infinite; transform-box: fill-box; transform-origin: center; }
     .node-ai { animation: node-ai 4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
     .log-0 { animation: log-0 12s steps(1, end) infinite; }
     .log-1 { animation: log-1 12s steps(1, end) infinite; }
     .log-2 { animation: log-2 12s steps(1, end) infinite; }
     .log-3 { animation: log-3 12s steps(1, end) infinite; }
     .log-4 { animation: log-4 12s steps(1, end) infinite; }
+    .log-5 { animation: log-5 12s steps(1, end) infinite; }
     .signal { animation: signal 2.4s steps(2, end) infinite; }
     .tick-a { animation: tick 3.6s ease-in-out infinite; }
     .tick-b { animation: tick 3.6s ease-in-out -1.2s infinite; }
@@ -64,7 +67,9 @@
       23% { transform: translate(390px, 255px); opacity: 1; }
       40% { transform: translate(525px, 305px); }
       58% { transform: translate(665px, 205px); }
-      76%, 90% { transform: translate(816px, 142px); opacity: 1; }
+      68% { transform: translate(718px, 212px); }
+      79% { transform: translate(770px, 180px); }
+      90% { transform: translate(816px, 142px); opacity: 1; }
       100% { transform: translate(816px, 142px); opacity: 0; }
     }
 
@@ -95,17 +100,28 @@
       58% { transform: scale(1.35); opacity: 1; }
       64%, 100% { transform: scale(1); opacity: .72; }
     }
+    @keyframes node-t101 {
+      0%, 62% { transform: scale(.65); opacity: .22; }
+      68% { transform: scale(1.35); opacity: 1; }
+      74%, 100% { transform: scale(1); opacity: .72; }
+    }
+    @keyframes node-newapi {
+      0%, 73% { transform: scale(.65); opacity: .22; }
+      79% { transform: scale(1.35); opacity: 1; }
+      85%, 100% { transform: scale(1); opacity: .72; }
+    }
 
     @keyframes node-ai {
       0%, 100% { transform: scale(.78); opacity: .42; }
       50% { transform: scale(1.08); opacity: 1; }
     }
 
-    @keyframes log-0 { 0%, 11% { opacity: 1; } 12%, 100% { opacity: 0; } }
-    @keyframes log-1 { 0%, 11% { opacity: 0; } 12%, 34% { opacity: 1; } 35%, 100% { opacity: 0; } }
-    @keyframes log-2 { 0%, 34% { opacity: 0; } 35%, 54% { opacity: 1; } 55%, 100% { opacity: 0; } }
-    @keyframes log-3 { 0%, 54% { opacity: 0; } 55%, 74% { opacity: 1; } 75%, 100% { opacity: 0; } }
-    @keyframes log-4 { 0%, 74% { opacity: 0; } 75%, 100% { opacity: 1; } }
+    @keyframes log-0 { 0%, 10% { opacity: 1; } 11%, 100% { opacity: 0; } }
+    @keyframes log-1 { 0%, 10% { opacity: 0; } 11%, 27% { opacity: 1; } 28%, 100% { opacity: 0; } }
+    @keyframes log-2 { 0%, 27% { opacity: 0; } 28%, 44% { opacity: 1; } 45%, 100% { opacity: 0; } }
+    @keyframes log-3 { 0%, 44% { opacity: 0; } 45%, 61% { opacity: 1; } 62%, 100% { opacity: 0; } }
+    @keyframes log-4 { 0%, 61% { opacity: 0; } 62%, 78% { opacity: 1; } 79%, 100% { opacity: 0; } }
+    @keyframes log-5 { 0%, 78% { opacity: 0; } 79%, 100% { opacity: 1; } }
 
     @keyframes signal {
       0%, 72% { opacity: 1; }
@@ -128,12 +144,15 @@
       .node-woo,
       .node-todo,
       .node-brain,
+      .node-t101,
+      .node-newapi,
       .node-ai,
       .log-0,
       .log-1,
       .log-2,
       .log-3,
       .log-4,
+      .log-5,
       .signal,
       .tick-a,
       .tick-b,
@@ -144,15 +163,18 @@
       .log-0,
       .log-1,
       .log-2,
-      .log-3 { display: none; }
+      .log-3,
+      .log-4 { display: none; }
 
       .route-live { stroke-dashoffset: .06; opacity: .9; }
       .probe { transform: translate(816px, 142px); opacity: 1; }
       .node-woo,
       .node-todo,
-      .node-brain { opacity: .72; }
+      .node-brain,
+      .node-t101,
+      .node-newapi { opacity: .72; }
       .node-ai,
-      .log-4 { opacity: 1; }
+      .log-5 { opacity: 1; }
     }
   </style>
 
@@ -194,12 +216,13 @@
         <text class="log-1" y="154" opacity="0">SIGNAL / WOO</text>
         <text class="log-2" y="154" opacity="0">SIGNAL / WOO-TODO</text>
         <text class="log-3" y="154" opacity="0">SIGNAL / BRAIN</text>
-        <text class="log-4" y="154" opacity="0">NEXT / UNKNOWN</text>
+        <text class="log-4" y="154" opacity="0">SIGNAL / T101</text>
+        <text class="log-5" y="154" opacity="0">SIGNAL / NEW-API</text>
       </g>
 
       <path d="M0 176H164" stroke="#2A3038"/>
       <text y="202" fill="#69727D" font-size="9" font-weight="700">DISCOVERED</text>
-      <text x="122" y="202" fill="#65D6A6" font-size="11" font-weight="800">03</text>
+      <text x="122" y="202" fill="#65D6A6" font-size="11" font-weight="800">05</text>
       <text y="226" fill="#69727D" font-size="9" font-weight="700">OPEN ROUTES</text>
       <text x="122" y="226" fill="#E6B566" font-size="11" font-weight="800">01</text>
       <text y="264" fill="#525B66" font-size="8" font-weight="700">BUILD / TEST / KEEP MOVING</text>
@@ -219,15 +242,17 @@
       </g>
 
       <g opacity=".36" stroke="#65707B" fill="none">
-        <path d="M270 318L390 255L525 305L665 205L816 142L902 108" stroke-dasharray="3 9"/>
+        <path d="M270 318L390 255L525 305L665 205L718 212L770 180L816 142L902 108" stroke-dasharray="3 9"/>
         <circle cx="270" cy="318" r="15"/>
         <circle cx="390" cy="255" r="22"/>
         <circle cx="525" cy="305" r="22"/>
         <circle cx="665" cy="205" r="22"/>
+        <circle cx="718" cy="212" r="22"/>
+        <circle cx="770" cy="180" r="22"/>
       </g>
 
       <path class="route-live"
-            d="M270 318L390 255L525 305L665 205L816 142"
+            d="M270 318L390 255L525 305L665 205L718 212L770 180L816 142"
             pathLength="1"
             fill="none"
             stroke="#65D6A6"
@@ -254,6 +279,14 @@
           <circle class="node-brain" r="8" fill="#0E1115" stroke="#65D6A6" stroke-width="2"/>
           <circle r="2.5" fill="#65D6A6"/>
         </g>
+        <g transform="translate(718 212)">
+          <circle class="node-t101" r="8" fill="#0E1115" stroke="#65D6A6" stroke-width="2"/>
+          <circle r="2.5" fill="#65D6A6"/>
+        </g>
+        <g transform="translate(770 180)">
+          <circle class="node-newapi" r="8" fill="#0E1115" stroke="#65D6A6" stroke-width="2"/>
+          <circle r="2.5" fill="#65D6A6"/>
+        </g>
         <g transform="translate(816 142)">
           <circle class="node-ai" r="16" fill="none" stroke="#E6B566"/>
           <circle r="5" fill="#E6B566"/>
@@ -265,6 +298,8 @@
         <text x="371" y="230">01 / WOO</text>
         <text x="489" y="337">02 / WOO-TODO</text>
         <text x="625" y="177">03 / DIGITAL-BRAIN</text>
+        <text x="753" y="244">04 / T101</text>
+        <text x="805" y="212">05 / NEW-API</text>
         <text x="836" y="145" fill="#E6B566">AI / NEXT</text>
       </g>
 
