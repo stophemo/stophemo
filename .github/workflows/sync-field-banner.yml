@@ -1,0 +1,66 @@
+name: 同步 banner
+
+# 1. 把 banner 上的 PUBLIC REPOS / OPEN ROUTES 换成实时数据（数字没变就不提交）
+# 2. 把 README 里的图片地址钉到"最后一次改动这三张 SVG 的提交"，
+#    避免 jsDelivr 的分支缓存和 GitHub camo 缓存导致显示旧图。
+
+on:
+  schedule:
+    - cron: "23 2 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/scripts/update-field-stats.mjs"
+      - ".github/scripts/pin-asset-version.mjs"
+      - ".github/workflows/sync-field-banner.yml"
+      - "assets/field-log*.svg"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: field-banner
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出仓库
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: 写入实时数字
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_USER: ${{ github.repository_owner }}
+        run: node .github/scripts/update-field-stats.mjs
+
+      - name: 提交数字变化
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet; then
+            echo "数字没有变化，跳过提交"
+            exit 0
+          fi
+          git add assets/field-log.svg assets/field-log-mobile.svg assets/field-log-compact.svg
+          git commit -m "chore(profile): 同步 banner 数字"
+          git push
+
+      # 上一步的提交若让图片内容变了，这里把 README 指到那个提交
+      - name: 钉住图片版本
+        run: node .github/scripts/pin-asset-version.mjs
+
+      - name: 提交地址变化
+        run: |
+          if git diff --quiet; then
+            echo "图片地址已是最新版本"
+            exit 0
+          fi
+          git add README.md
+          git commit -m "chore(profile): 更新 banner 图片版本号"
+          git push

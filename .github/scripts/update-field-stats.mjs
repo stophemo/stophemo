@@ -10,9 +10,7 @@ import { readFileSync, writeFileSync } from "node:fs";
  * 脚本只改标记元素内部的文本，其余内容原样保留，因此是幂等的：
  * 数字没变就一个字都不写，不会产生空提交。
  *
- * 数字变了还要给 README 里的图片地址换一个 ?v= 时间戳 ——
- * GitHub 用 camo 代理外部图片并按完整 URL 缓存，
- * 不换 URL 的话 banner 会一直显示旧图。
+ * 图片地址的版本号由 pin-asset-version.mjs 负责，本脚本只管数字。
  */
 
 const login = process.env.GITHUB_USER || process.env.GITHUB_REPOSITORY_OWNER;
@@ -26,7 +24,6 @@ const SVG_FILES = [
   "assets/field-log-mobile.svg",
   "assets/field-log-compact.svg",
 ];
-const README_FILE = "README.md";
 
 const query = `
   query FieldStats($login: String!) {
@@ -94,23 +91,10 @@ for (const file of SVG_FILES) {
   }
 }
 
-if (touched.length > 0) {
-  const readme = readFileSync(README_FILE, "utf8");
-  const stamp = new Date().toISOString().replace(/\D/g, "").slice(0, 12);
-  const bumped = readme.replace(
-    /(cdn\.jsdelivr\.net\/gh\/[^"'\s]+?)(\?v=[0-9A-Za-z]+)?(?=["'\s])/g,
-    (_match, base) => `${base}?v=${stamp}`,
-  );
-  if (bumped !== readme) {
-    writeFileSync(README_FILE, bumped, "utf8");
-    touched.push(README_FILE);
-  }
-}
-
 console.log(`统计结果：公开仓库 ${stats.repos} · 未完成路线 ${stats.open}`);
 
 if (touched.length === 0) {
   console.log("数字没有变化，不修改任何文件。");
 } else {
-  console.log(`已更新：${touched.join("、")}（已更换图片 ?v= 让 camo 重新取图）`);
+  console.log(`已更新：${touched.join("、")}`);
 }
