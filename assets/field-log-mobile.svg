@@ -162,16 +162,16 @@
   <rect width="480" height="6" fill="#65D6A6"/>
 
   <g class="mono">
-    <text x="20" y="34" fill="#E7E9EC" font-size="15" font-weight="800">STOPHEMO</text>
-    <text x="116" y="34" fill="#7F8994" font-size="12" font-weight="700">FIELD LOG / 07</text>
+    <text x="20" y="34" fill="#E7E9EC" font-size="17" font-weight="800">STOPHEMO</text>
+    <text x="116" y="34" fill="#8B949E" font-size="14" font-weight="700">FIELD LOG / 07</text>
     <circle class="signal" cx="451" cy="29" r="3" fill="#65D6A6"/>
     <path d="M18 54H462" stroke="#2A3038"/>
 
-    <text x="20" y="81" fill="#7F8994" font-size="11" font-weight="700">FIELD NOTE 001</text>
+    <text x="20" y="81" fill="#8B949E" font-size="13" font-weight="700">FIELD NOTE 001</text>
     <text x="20" y="116" fill="#E7E9EC" font-size="27" font-weight="800">FOLLOW CURIOSITY.</text>
     <path d="M20 132H102" stroke="#65D6A6" stroke-width="4"/>
     <path d="M108 132H132" stroke="#E6B566" stroke-width="4"/>
-    <text x="300" y="130" fill="#7F8994" font-size="10" font-weight="700">EXPLORING AI</text>
+    <text x="300" y="130" fill="#8B949E" font-size="13" font-weight="700">EXPLORING AI</text>
 
     <g clip-path="url(#map-clip)">
       <rect x="18" y="162" width="444" height="386" fill="#0E1115"/>
@@ -179,7 +179,7 @@
         <rect x="-4" y="140" width="488" height="430" fill="url(#field-grid)" opacity=".68"/>
       </g>
 
-      <g fill="#7F8994" font-size="10" font-weight="700">
+      <g fill="#8B949E" font-size="13" font-weight="700">
         <text x="31" y="182">ROUTE / ACTIVE</text>
         <text x="378" y="182">05 + 01</text>
         <text x="31" y="531">SCALE 1:07</text>
@@ -238,7 +238,7 @@
         </g>
       </g>
 
-      <g fill="#A7B0BA" font-size="12" font-weight="700">
+      <g fill="#A7B0BA" font-size="14" font-weight="700">
         <text x="115" y="379">01 / WOO</text>
         <text x="270" y="472">02 / WOO-TODO</text>
         <text x="185" y="278">03 / DIGITAL-BRAIN</text>
@@ -262,8 +262,8 @@
     </g>
 
     <path d="M18 570H462" stroke="#2A3038"/>
-    <text x="20" y="596" fill="#7F8994" font-size="10" font-weight="700">LIVE ENTRY</text>
-    <g fill="#C8CDD2" font-size="12" font-weight="700">
+    <text x="20" y="596" fill="#8B949E" font-size="13" font-weight="700">LIVE ENTRY</text>
+    <g fill="#C8CDD2" font-size="14" font-weight="700">
       <text class="log-0" x="20" y="617">BOOTING FIELD SCAN</text>
       <text class="log-1" x="20" y="617" opacity="0">SIGNAL / WOO</text>
       <text class="log-2" x="20" y="617" opacity="0">SIGNAL / WOO-TODO</text>
@@ -271,6 +271,6 @@
       <text class="log-4" x="20" y="617" opacity="0">SIGNAL / T101</text>
       <text class="log-5" x="20" y="617" opacity="0">SIGNAL / NEW-API</text>
     </g>
-    <text x="324" y="617" fill="#A7B0BA" font-size="10" font-weight="700">ROUTE UNFOLDING</text>
+    <text x="324" y="617" fill="#A7B0BA" font-size="13" font-weight="700">ROUTE UNFOLDING</text>
   </g>
 </svg>

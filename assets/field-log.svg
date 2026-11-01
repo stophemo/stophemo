@@ -196,22 +196,22 @@
     <path d="M6 62H960 M6 388H960" stroke="#2A3038"/>
     <path d="M218 62V388" stroke="#2A3038"/>
 
-    <text x="26" y="31" fill="#E7E9EC" font-size="14" font-weight="800">STOPHEMO</text>
-    <text x="113" y="31" fill="#69727D" font-size="10" font-weight="700">FIELD LOG / 07</text>
+    <text x="26" y="31" fill="#E7E9EC" font-size="18" font-weight="800">STOPHEMO</text>
+    <text x="113" y="31" fill="#8B949E" font-size="14" font-weight="700">FIELD LOG / 07</text>
     <g transform="translate(690 23)">
       <circle class="signal" cx="0" cy="4" r="3" fill="#65D6A6"/>
-      <text x="12" y="8" fill="#8B949E" font-size="9" font-weight="700">FULL-STACK / EXPLORING AI</text>
+      <text x="12" y="8" fill="#8B949E" font-size="13" font-weight="700">FULL-STACK / EXPLORING AI</text>
     </g>
 
     <g transform="translate(26 96)">
-      <text y="0" fill="#69727D" font-size="9" font-weight="700">FIELD NOTE 001</text>
+      <text y="0" fill="#8B949E" font-size="13" font-weight="700">FIELD NOTE 001</text>
       <text y="45" fill="#E7E9EC" font-size="28" font-weight="800">FOLLOW</text>
       <text y="78" fill="#E7E9EC" font-size="28" font-weight="800">CURIOSITY.</text>
       <path d="M0 94H82" stroke="#65D6A6" stroke-width="4"/>
       <path d="M88 94H112" stroke="#E6B566" stroke-width="4"/>
 
-      <text y="132" fill="#69727D" font-size="9" font-weight="700">LIVE ENTRY</text>
-      <g fill="#C8CDD2" font-size="10" font-weight="700">
+      <text y="132" fill="#8B949E" font-size="13" font-weight="700">LIVE ENTRY</text>
+      <g fill="#C8CDD2" font-size="14" font-weight="700">
         <text class="log-0" y="154">BOOTING FIELD SCAN</text>
         <text class="log-1" y="154" opacity="0">SIGNAL / WOO</text>
         <text class="log-2" y="154" opacity="0">SIGNAL / WOO-TODO</text>
@@ -221,11 +221,11 @@
       </g>
 
       <path d="M0 176H164" stroke="#2A3038"/>
-      <text y="202" fill="#69727D" font-size="9" font-weight="700">DISCOVERED</text>
-      <text x="122" y="202" fill="#65D6A6" font-size="11" font-weight="800">05</text>
-      <text y="226" fill="#69727D" font-size="9" font-weight="700">OPEN ROUTES</text>
-      <text x="122" y="226" fill="#E6B566" font-size="11" font-weight="800">01</text>
-      <text y="264" fill="#525B66" font-size="8" font-weight="700">BUILD / TEST / KEEP MOVING</text>
+      <text y="202" fill="#8B949E" font-size="13" font-weight="700">DISCOVERED</text>
+      <text x="122" y="202" fill="#65D6A6" font-size="15" font-weight="800">05</text>
+      <text y="226" fill="#8B949E" font-size="13" font-weight="700">OPEN ROUTES</text>
+      <text x="122" y="226" fill="#E6B566" font-size="15" font-weight="800">01</text>
+      <text y="264" fill="#8B949E" font-size="12" font-weight="700">BUILD / TEST / KEEP MOVING</text>
     </g>
 
     <g clip-path="url(#map-clip)">
@@ -234,9 +234,9 @@
         <rect x="194" y="38" width="762" height="374" fill="url(#field-grid)" opacity=".68"/>
       </g>
 
-      <g fill="#515B66" font-size="8" font-weight="700">
+      <g fill="#8B949E" font-size="12" font-weight="700">
         <text x="235" y="83">GRID / 07.24</text>
-        <text x="852" y="83">SIGNAL / OPEN</text>
+        <text x="820" y="83">SIGNAL / OPEN</text>
         <text x="235" y="372">ROUTE / ACTIVE</text>
         <text x="839" y="372">SCALE 1:07</text>
       </g>
@@ -294,7 +294,7 @@
         </g>
       </g>
 
-      <g fill="#8B949E" font-size="9" font-weight="700">
+      <g fill="#8B949E" font-size="13" font-weight="700">
         <text x="371" y="230">01 / WOO</text>
         <text x="489" y="337">02 / WOO-TODO</text>
         <text x="625" y="177">03 / DIGITAL-BRAIN</text>
@@ -324,10 +324,10 @@
     </g>
 
     <g transform="translate(26 422)">
-      <text fill="#E7E9EC" font-size="11" font-weight="700">BUILD SYSTEMS. FOLLOW CURIOSITY.</text>
+      <text fill="#E7E9EC" font-size="15" font-weight="700">BUILD SYSTEMS. FOLLOW CURIOSITY.</text>
       <g transform="translate(638 0)">
         <circle class="signal" cx="0" cy="-4" r="3" fill="#E6B566"/>
-        <text x="13" fill="#8B949E" font-size="9" font-weight="700">ROUTE STILL UNFOLDING</text>
+        <text x="13" fill="#8B949E" font-size="13" font-weight="700">ROUTE STILL UNFOLDING</text>
       </g>
     </g>
   </g>
