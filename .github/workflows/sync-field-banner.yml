@@ -32,6 +32,10 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: main
+          # pin-asset-version.mjs 靠 git log -- assets/ 找"最后一次改动图片的提交"，
+          # 默认的浅克隆（fetch-depth: 1）会让它永远返回 HEAD，
+          # 于是一个与图片无关的 push 也会把版本号重钉一遍，产生空提交。
+          fetch-depth: 0
 
       - name: 写入实时数字
         env:
