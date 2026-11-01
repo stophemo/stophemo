@@ -50,15 +50,15 @@
     }
     @keyframes route-next { to { stroke-dashoffset: -28; } }
     @keyframes probe-route {
-      0%, 7% { transform: translate(70px, 485px); opacity: 0; }
+      0%, 7% { transform: translate(48px, 500px); opacity: 0; }
       10% { opacity: 1; }
-      23% { transform: translate(145px, 405px); opacity: 1; }
-      40% { transform: translate(302px, 442px); }
-      58% { transform: translate(238px, 305px); }
-      68% { transform: translate(295px, 268px); }
-      79% { transform: translate(345px, 235px); }
-      90% { transform: translate(385px, 205px); opacity: 1; }
-      100% { transform: translate(385px, 205px); opacity: 0; }
+      23% { transform: translate(107.7px, 458.2px); opacity: 1; }
+      40% { transform: translate(179px, 473.3px); }
+      58% { transform: translate(238.7px, 431.5px); }
+      68% { transform: translate(298.5px, 389.7px); }
+      79% { transform: translate(358.2px, 347.9px); }
+      90% { transform: translate(417.9px, 306.1px); }
+      100% { transform: translate(417.9px, 306.1px); opacity: 0; }
     }
     @keyframes probe-core {
       0%, 100% { transform: scale(.82); opacity: .72; }
@@ -136,7 +136,7 @@
       .log-4 { display: none; }
 
       .route-live { stroke-dashoffset: .06; opacity: .9; }
-      .probe { transform: translate(385px, 205px); opacity: 1; }
+      .probe { transform: translate(417.9px, 306.1px); opacity: 1; }
       .node-woo,
       .node-todo,
       .node-brain,
@@ -186,17 +186,17 @@
       </g>
 
       <g opacity=".36" stroke="#65707B" fill="none">
-        <path d="M70 485L145 405L302 442L238 305L295 268L345 235L385 205L436 177" stroke-dasharray="3 9"/>
-        <circle cx="70" cy="485" r="14"/>
-        <circle cx="145" cy="405" r="21"/>
-        <circle cx="302" cy="442" r="21"/>
-        <circle cx="238" cy="305" r="21"/>
-        <circle cx="295" cy="268" r="21"/>
-        <circle cx="345" cy="235" r="21"/>
+        <path d="M48 500L107.7 458.2L179 473.3L238.7 431.5L298.5 389.7L358.2 347.9L417.9 306.1L449 284.3" stroke-dasharray="3 9"/>
+        <circle cx="48" cy="500" r="14"/>
+        <circle cx="107.7" cy="458.2" r="21"/>
+        <circle cx="179" cy="473.3" r="21"/>
+        <circle cx="238.7" cy="431.5" r="21"/>
+        <circle cx="298.5" cy="389.7" r="21"/>
+        <circle cx="358.2" cy="347.9" r="21"/>
       </g>
 
       <path class="route-live"
-            d="M70 485L145 405L302 442L238 305L295 268L345 235L385 205"
+            d="M48 500L107.7 458.2L179 473.3L238.7 431.5L298.5 389.7L358.2 347.9L417.9 306.1"
             pathLength="1"
             fill="none"
             stroke="#65D6A6"
@@ -204,34 +204,34 @@
             stroke-dasharray="1"
             stroke-dashoffset="1"/>
       <path class="route-next"
-            d="M385 205L436 177"
+            d="M417.9 306.1L449 284.3"
             fill="none"
             stroke="#E6B566"
             stroke-width="1.5"
             stroke-dasharray="3 8"/>
 
       <g aria-hidden="true">
-        <g transform="translate(145 405)">
+        <g transform="translate(107.7 458.2)">
           <circle class="node-woo" r="8" fill="#0E1115" stroke="#65D6A6" stroke-width="2"/>
           <circle r="2.5" fill="#65D6A6"/>
         </g>
-        <g transform="translate(302 442)">
+        <g transform="translate(179 473.3)">
           <circle class="node-todo" r="8" fill="#0E1115" stroke="#65D6A6" stroke-width="2"/>
           <circle r="2.5" fill="#65D6A6"/>
         </g>
-        <g transform="translate(238 305)">
+        <g transform="translate(238.7 431.5)">
           <circle class="node-brain" r="8" fill="#0E1115" stroke="#65D6A6" stroke-width="2"/>
           <circle r="2.5" fill="#65D6A6"/>
         </g>
-        <g transform="translate(295 268)">
+        <g transform="translate(298.5 389.7)">
           <circle class="node-t101" r="8" fill="#0E1115" stroke="#65D6A6" stroke-width="2"/>
           <circle r="2.5" fill="#65D6A6"/>
         </g>
-        <g transform="translate(345 235)">
+        <g transform="translate(358.2 347.9)">
           <circle class="node-newapi" r="8" fill="#0E1115" stroke="#65D6A6" stroke-width="2"/>
           <circle r="2.5" fill="#65D6A6"/>
         </g>
-        <g transform="translate(385 205)">
+        <g transform="translate(417.9 306.1)">
           <circle class="node-ai" r="16" fill="none" stroke="#E6B566"/>
           <circle r="5" fill="#E6B566"/>
           <path d="M-27 0H-20M20 0H27M0-27V-20M0 20V27" stroke="#E6B566"/>
@@ -239,12 +239,12 @@
       </g>
 
       <g fill="#A7B0BA" font-size="14" font-weight="700">
-        <text x="115" y="379">01 / WOO</text>
-        <text x="270" y="472">02 / WOO-TODO</text>
-        <text x="185" y="278">03 / DIGITAL-BRAIN</text>
-        <text x="195" y="240">04 / T101</text>
-        <text x="275" y="190">05 / NEW-API</text>
-        <text x="343" y="236" fill="#E6B566">AI / NEXT</text>
+        <text x="93.7" y="438.2" text-anchor="end">01 WOO</text>
+        <text x="193" y="519.3" text-anchor="start">02 WOO-TODO</text>
+        <text x="224.7" y="411.5" text-anchor="end" fill="#E6B566">03 BRAIN</text>
+        <text x="284.5" y="369.7" text-anchor="end">04 T101</text>
+        <text x="344.2" y="327.9" text-anchor="end">05 NEW-API</text>
+        <text x="403.9" y="262.1" text-anchor="end" fill="#E6B566">AI / NEXT</text>
       </g>
 
       <g class="probe" opacity="0" aria-hidden="true">

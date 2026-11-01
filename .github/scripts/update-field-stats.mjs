@@ -6,11 +6,13 @@ import { readFileSync, writeFileSync } from "node:fs";
  *   PUBLIC REPOS  公开 + 非 fork + 自己拥有的仓库数
  *   OPEN ROUTES   自己名下仍然 open 的 issue + PR（还没走完的路线）
  *
- * SVG 里用 data-stat="repos" / data-stat="open" 标记占位元素，
- * README 里用 <!-- stats:start --> ... <!-- stats:end --> 标记文案块。
- * 两者都是幂等的：重复运行时只改标记内的值，其余内容原样保留。
+ * SVG 里用 data-stat="repos" / data-stat="open" 标记占位元素。
+ * 脚本只改标记元素内部的文本，其余内容原样保留，因此是幂等的：
+ * 数字没变就一个字都不写，不会产生空提交。
  *
- * 只有在数字真的变化时才写文件，避免产生空提交。
+ * 数字变了还要给 README 里的图片地址换一个 ?v= 时间戳 ——
+ * GitHub 用 camo 代理外部图片并按完整 URL 缓存，
+ * 不换 URL 的话 banner 会一直显示旧图。
  */
 
 const login = process.env.GITHUB_USER || process.env.GITHUB_REPOSITORY_OWNER;
@@ -34,7 +36,6 @@ const query = `
       }
       pullRequests(states: OPEN, first: 1) { totalCount }
       issues(states: OPEN, first: 1) { totalCount }
-      followers { totalCount }
     }
   }
 `;
@@ -66,10 +67,7 @@ if (!account) throw new Error(`找不到账号 ${login}。`);
 const stats = {
   repos: account.repositories.totalCount,
   open: account.pullRequests.totalCount + account.issues.totalCount,
-  followers: account.followers.totalCount,
 };
-
-// ---- 更新三张 SVG 里的数字 ----
 
 const touched = [];
 
@@ -78,7 +76,6 @@ for (const file of SVG_FILES) {
   let after = before;
 
   for (const [key, value] of Object.entries(stats)) {
-    // 只替换带 data-stat 的元素内部文本，保留标签与属性（含 data-stat 本身）
     // 补零到两位，保持 field log 的设计观感（06 而非 6）
     const padded = String(value).padStart(2, "0");
     const pattern = new RegExp(
@@ -97,49 +94,23 @@ for (const file of SVG_FILES) {
   }
 }
 
-// ---- 更新 README 里的文字版数字 ----
-
-const readmeBefore = readFileSync(README_FILE, "utf8");
-
-const statsBlock = `<!-- stats:start -->
-公开仓库 **${stats.repos}** · 未完成路线 **${stats.open}** · 关注者 **${stats.followers}**
-<!-- stats:end -->`;
-
-let readmeAfter = readmeBefore.replace(
-  /<!-- stats:start -->[\s\S]*?<!-- stats:end -->/,
-  statsBlock,
-);
-
-if (!readmeAfter.includes("<!-- stats:end -->")) {
-  throw new Error("README.md 里没有找到 <!-- stats:start --> / <!-- stats:end --> 标记。");
-}
-
-// 数字变了才换 ?v= 时间戳，让 GitHub 的图片代理（camo）重新取图。
-// 数字没变就完全不动 URL，保证零提交。
-const statsChanged =
-  touched.length > 0 || readmeAfter !== readmeBefore;
-
-if (statsChanged) {
+if (touched.length > 0) {
+  const readme = readFileSync(README_FILE, "utf8");
   const stamp = new Date().toISOString().replace(/\D/g, "").slice(0, 12);
-  readmeAfter = readmeAfter.replace(
+  const bumped = readme.replace(
     /(cdn\.jsdelivr\.net\/gh\/[^"'\s]+?)(\?v=[0-9A-Za-z]+)?(?=["'\s])/g,
     (_match, base) => `${base}?v=${stamp}`,
   );
+  if (bumped !== readme) {
+    writeFileSync(README_FILE, bumped, "utf8");
+    touched.push(README_FILE);
+  }
 }
 
-if (readmeAfter !== readmeBefore) {
-  writeFileSync(README_FILE, readmeAfter, "utf8");
-  touched.push(README_FILE);
-}
-
-// ---- 报告 ----
-
-console.log(
-  `统计结果：公开仓库 ${stats.repos} · 未完成路线 ${stats.open} · 关注者 ${stats.followers}`,
-);
+console.log(`统计结果：公开仓库 ${stats.repos} · 未完成路线 ${stats.open}`);
 
 if (touched.length === 0) {
   console.log("数字没有变化，不修改任何文件。");
 } else {
-  console.log(`已更新：${touched.join("、")}`);
+  console.log(`已更新：${touched.join("、")}（已更换图片 ?v= 让 camo 重新取图）`);
 }
