@@ -182,7 +182,7 @@
     <text x="26" y="124" fill="#E7E9EC" font-size="26" font-weight="800">FOLLOW CURIOSITY.</text>
     <path d="M26 140H98" stroke="#65D6A6" stroke-width="4"/>
     <path d="M104 140H128" stroke="#E6B566" stroke-width="4"/>
-    <text x="452" y="96" fill="#8B949E" font-size="14" font-weight="700">DISCOVERED 05 · OPEN 01</text>
+    <text x="452" y="96" fill="#8B949E" font-size="14" font-weight="700">REPOS <tspan data-stat="repos">06</tspan> · OPEN <tspan data-stat="open">01</tspan></text>
 
     <g clip-path="url(#map-clip)">
       <rect x="26" y="148" width="668" height="108" fill="#0E1115"/>

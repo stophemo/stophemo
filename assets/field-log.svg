@@ -221,10 +221,10 @@
       </g>
 
       <path d="M0 176H164" stroke="#2A3038"/>
-      <text y="202" fill="#8B949E" font-size="13" font-weight="700">DISCOVERED</text>
-      <text x="122" y="202" fill="#65D6A6" font-size="15" font-weight="800">05</text>
+      <text y="202" fill="#8B949E" font-size="13" font-weight="700">PUBLIC REPOS</text>
+      <text data-stat="repos" x="164" y="202" text-anchor="end" fill="#65D6A6" font-size="15" font-weight="800">06</text>
       <text y="226" fill="#8B949E" font-size="13" font-weight="700">OPEN ROUTES</text>
-      <text x="122" y="226" fill="#E6B566" font-size="15" font-weight="800">01</text>
+      <text data-stat="open" x="164" y="226" text-anchor="end" fill="#E6B566" font-size="15" font-weight="800">01</text>
       <text y="264" fill="#8B949E" font-size="12" font-weight="700">BUILD / TEST / KEEP MOVING</text>
     </g>
 

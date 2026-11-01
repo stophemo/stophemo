@@ -181,8 +181,8 @@
 
       <g fill="#8B949E" font-size="13" font-weight="700">
         <text x="31" y="182">ROUTE / ACTIVE</text>
-        <text x="378" y="182">05 + 01</text>
-        <text x="31" y="531">SCALE 1:07</text>
+        <text x="378" y="182">REPOS <tspan data-stat="repos">06</tspan></text>
+        <text x="31" y="531">OPEN ROUTES <tspan data-stat="open">01</tspan></text>
       </g>
 
       <g opacity=".36" stroke="#65707B" fill="none">
