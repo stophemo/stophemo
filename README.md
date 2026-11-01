@@ -1,8 +1,8 @@
 <a href="https://github.com/stophemo?tab=repositories">
   <picture>
-    <source media="(max-width: 767px)" srcset="https://cdn.jsdelivr.net/gh/stophemo/stophemo@b5956f9ae77123ebe7fae5170e4021129fc29c2c/assets/field-log-mobile.svg" />
-    <source media="(max-width: 1100px)" srcset="https://cdn.jsdelivr.net/gh/stophemo/stophemo@b5956f9ae77123ebe7fae5170e4021129fc29c2c/assets/field-log-compact.svg" />
-    <img src="https://cdn.jsdelivr.net/gh/stophemo/stophemo@b5956f9ae77123ebe7fae5170e4021129fc29c2c/assets/field-log.svg" width="100%" alt="Stophemo Field Log：探测器依次经过 Woo、woo-todo、digital-brain、T101 与 new-api，沿未完成的路线继续探索 AI。" />
+    <source media="(max-width: 767px)" srcset="https://cdn.jsdelivr.net/gh/stophemo/stophemo@fa85111ffa280bc67558ebf3ba3fdc1083190dec/assets/field-log-mobile.svg" />
+    <source media="(max-width: 1100px)" srcset="https://cdn.jsdelivr.net/gh/stophemo/stophemo@fa85111ffa280bc67558ebf3ba3fdc1083190dec/assets/field-log-compact.svg" />
+    <img src="https://cdn.jsdelivr.net/gh/stophemo/stophemo@fa85111ffa280bc67558ebf3ba3fdc1083190dec/assets/field-log.svg" width="100%" alt="Stophemo Field Log：探测器依次经过 Woo、woo-todo、digital-brain、T101 与 new-api，沿未完成的路线继续探索 AI。" />
   </picture>
 </a>
 
