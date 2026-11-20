@@ -7,7 +7,7 @@
      aria-labelledby="field-title field-desc"
      focusable="false">
   <title id="field-title">Stophemo Field Log</title>
-  <desc id="field-desc">An animated field map. A small probe visits Woo, Woo Todo, Digital Brain, T101 and New API before following an unfinished route toward AI.</desc>
+  <desc id="field-desc">An animated field map. A small probe visits Woo, Woo Todo, Digital Brain and Image Gen before following an unfinished route toward AI.</desc>
 
   <style>
     .mono {
@@ -25,8 +25,7 @@
     .node-woo { animation: node-woo 12s ease-out infinite; transform-box: fill-box; transform-origin: center; }
     .node-todo { animation: node-todo 12s ease-out infinite; transform-box: fill-box; transform-origin: center; }
     .node-brain { animation: node-brain 12s ease-out infinite; transform-box: fill-box; transform-origin: center; }
-    .node-t101 { animation: node-t101 12s ease-out infinite; transform-box: fill-box; transform-origin: center; }
-    .node-newapi { animation: node-newapi 12s ease-out infinite; transform-box: fill-box; transform-origin: center; }
+    .node-imagegen { animation: node-imagegen 12s ease-out infinite; transform-box: fill-box; transform-origin: center; }
     .node-ai { animation: node-ai 4s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
     .signal { animation: signal 2.4s steps(2, end) infinite; }
     .tick-a { animation: tick 3.6s ease-in-out infinite; }
@@ -58,13 +57,12 @@
     @keyframes probe-route {
       0%, 7% { transform: translate(42px, 216px); opacity: 0; }
       10% { opacity: 1; }
-      23% { transform: translate(161px, 190.7px); opacity: 1; }
-      40% { transform: translate(281.6px, 207.6px); }
-      58% { transform: translate(400.6px, 182.3px); }
-      68% { transform: translate(521.1px, 199.3px); }
-      79% { transform: translate(640.2px, 174px); }
-      90% { transform: translate(640.2px, 174px); opacity: 1; }
-      100% { transform: translate(640.2px, 174px); opacity: 0; }
+      17% { transform: translate(42px, 216px); opacity: 1; }
+      37% { transform: translate(188.6px, 184.8px); opacity: 1; }
+      57% { transform: translate(337.1px, 205.7px); opacity: 1; }
+      77% { transform: translate(483.7px, 174.5px); opacity: 1; }
+      90% { transform: translate(632.1px, 195.4px); opacity: 1; }
+      100% { transform: translate(632.1px, 195.4px); opacity: 0; }
     }
 
     @keyframes probe-core {
@@ -78,33 +76,27 @@
     }
 
     @keyframes node-woo {
-      0%, 17% { transform: scale(.65); opacity: .22; }
-      23% { transform: scale(1.35); opacity: 1; }
-      29%, 100% { transform: scale(1); opacity: .72; }
+      0%, 11% { transform: scale(.65); opacity: .22; }
+      17% { transform: scale(1.35); opacity: 1; }
+      23%, 100% { transform: scale(1); opacity: .72; }
     }
 
     @keyframes node-todo {
-      0%, 34% { transform: scale(.65); opacity: .22; }
-      40% { transform: scale(1.35); opacity: 1; }
-      46%, 100% { transform: scale(1); opacity: .72; }
+      0%, 31% { transform: scale(.65); opacity: .22; }
+      37% { transform: scale(1.35); opacity: 1; }
+      43%, 100% { transform: scale(1); opacity: .72; }
     }
 
     @keyframes node-brain {
-      0%, 52% { transform: scale(.65); opacity: .22; }
-      58% { transform: scale(1.35); opacity: 1; }
-      64%, 100% { transform: scale(1); opacity: .72; }
+      0%, 51% { transform: scale(.65); opacity: .22; }
+      57% { transform: scale(1.35); opacity: 1; }
+      63%, 100% { transform: scale(1); opacity: .72; }
     }
 
-    @keyframes node-t101 {
-      0%, 62% { transform: scale(.65); opacity: .22; }
-      68% { transform: scale(1.35); opacity: 1; }
-      74%, 100% { transform: scale(1); opacity: .72; }
-    }
-
-    @keyframes node-newapi {
-      0%, 73% { transform: scale(.65); opacity: .22; }
-      79% { transform: scale(1.35); opacity: 1; }
-      85%, 100% { transform: scale(1); opacity: .72; }
+    @keyframes node-imagegen {
+      0%, 71% { transform: scale(.65); opacity: .22; }
+      77% { transform: scale(1.35); opacity: 1; }
+      83%, 100% { transform: scale(1); opacity: .72; }
     }
 
     @keyframes node-ai {
@@ -133,8 +125,7 @@
       .node-woo,
       .node-todo,
       .node-brain,
-      .node-t101,
-      .node-newapi,
+      .node-imagegen,
       .node-ai,
       .signal,
       .tick-a,
@@ -145,12 +136,11 @@
       .probe-ring { display: none; }
 
       .route-live { stroke-dashoffset: .06; opacity: .9; }
-      .probe { transform: translate(640.2px, 174px); opacity: 1; }
+      .probe { transform: translate(632.1px, 195.4px); opacity: 1; }
       .node-woo,
       .node-todo,
       .node-brain,
-      .node-t101,
-      .node-newapi { opacity: .72; }
+      .node-imagegen { opacity: .72; }
       .node-ai { opacity: 1; }
     }
   </style>
@@ -183,7 +173,7 @@
     <text x="26" y="124" fill="#E7E9EC" font-size="26" font-weight="800">FOLLOW CURIOSITY.</text>
     <path d="M26 140H98" stroke="#65D6A6" stroke-width="4"/>
     <path d="M104 140H128" stroke="#E6B566" stroke-width="4"/>
-    <text x="452" y="96" fill="#8B949E" font-size="14" font-weight="700">REPOS <tspan data-stat="repos">06</tspan> · OPEN <tspan data-stat="open">01</tspan></text>
+    <text x="452" y="96" fill="#8B949E" font-size="14" font-weight="700">REPOS <tspan data-stat="repos">07</tspan> · OPEN <tspan data-stat="open">01</tspan></text>
 
     <g clip-path="url(#map-clip)">
       <rect x="26" y="148" width="668" height="108" fill="#0E1115"/>
@@ -192,16 +182,15 @@
       </g>
 
       <g opacity=".34" stroke="#65707B" fill="none">
-        <path d="M42 216L161 190.7L281.6 207.6L400.6 182.3L521.1 199.3L640.2 174L685.1 164.4" stroke-dasharray="3 9"/>
+        <path d="M42 216L188.6 184.8L337.1 205.7L483.7 174.5L632.1 195.4L677.7 201.8" stroke-dasharray="3 9"/>
         <circle cx="42" cy="216" r="15"/>
-        <circle cx="161" cy="190.7" r="20"/>
-        <circle cx="281.6" cy="207.6" r="20"/>
-        <circle cx="400.6" cy="182.3" r="20"/>
-        <circle cx="521.1" cy="199.3" r="20"/>
+        <circle cx="188.6" cy="184.8" r="20"/>
+        <circle cx="337.1" cy="205.7" r="20"/>
+        <circle cx="483.7" cy="174.5" r="20"/>
       </g>
 
       <path class="route-live"
-            d="M42 216L161 190.7L281.6 207.6L400.6 182.3L521.1 199.3L640.2 174"
+            d="M42 216L188.6 184.8L337.1 205.7L483.7 174.5L632.1 195.4"
             pathLength="1"
             fill="none"
             stroke="#65D6A6"
@@ -209,7 +198,7 @@
             stroke-dasharray="1"
             stroke-dashoffset="1"/>
       <path class="route-next"
-            d="M640.2 174L685.1 164.4"
+            d="M632.1 195.4L677.7 201.8"
             fill="none"
             stroke="#E6B566"
             stroke-width="1.5"
@@ -220,23 +209,19 @@
           <circle class="node-woo" r="8" fill="#0E1115" stroke="#65D6A6" stroke-width="2"/>
           <circle r="2.5" fill="#65D6A6"/>
         </g>
-        <g transform="translate(161 190.7)">
+        <g transform="translate(188.6 184.8)">
           <circle class="node-todo" r="8" fill="#0E1115" stroke="#65D6A6" stroke-width="2"/>
           <circle r="2.5" fill="#65D6A6"/>
         </g>
-        <g transform="translate(281.6 207.6)">
+        <g transform="translate(337.1 205.7)">
           <circle class="node-brain" r="8" fill="#0E1115" stroke="#65D6A6" stroke-width="2"/>
           <circle r="2.5" fill="#65D6A6"/>
         </g>
-        <g transform="translate(400.6 182.3)">
-          <circle class="node-t101" r="8" fill="#0E1115" stroke="#65D6A6" stroke-width="2"/>
+        <g transform="translate(483.7 174.5)">
+          <circle class="node-imagegen" r="8" fill="#0E1115" stroke="#65D6A6" stroke-width="2"/>
           <circle r="2.5" fill="#65D6A6"/>
         </g>
-        <g transform="translate(521.1 199.3)">
-          <circle class="node-newapi" r="8" fill="#0E1115" stroke="#65D6A6" stroke-width="2"/>
-          <circle r="2.5" fill="#65D6A6"/>
-        </g>
-        <g transform="translate(640.2 174)">
+        <g transform="translate(632.1 195.4)">
           <circle class="node-ai" r="16" fill="none" stroke="#E6B566"/>
           <circle r="5" fill="#E6B566"/>
           <path d="M-27 0H-20M20 0H27M0-27V-20M0 20V27" stroke="#E6B566"/>
@@ -265,11 +250,10 @@
 
     <g fill="#A7B0BA" font-size="16" font-weight="700">
         <text x="52" y="194" text-anchor="start">01 WOO</text>
-        <text x="161" y="168.7" text-anchor="middle">02 WOO-TODO</text>
-        <text x="281.6" y="185.6" text-anchor="middle" fill="#E6B566">03 BRAIN</text>
-        <text x="400.6" y="160.3" text-anchor="middle">04 T101</text>
-        <text x="521.1" y="177.3" text-anchor="middle">05 NEW-API</text>
-        <text x="640.2" y="134" text-anchor="middle" fill="#E6B566">AI / NEXT</text>
+        <text x="188.6" y="162.8" text-anchor="middle">02 WOO-TODO</text>
+        <text x="337.1" y="183.7" text-anchor="middle" fill="#E6B566">03 BRAIN</text>
+        <text x="483.7" y="152.5" text-anchor="middle">04 IMAGE-GEN</text>
+        <text x="632.1" y="155.4" text-anchor="middle" fill="#E6B566">AI / NEXT</text>
     </g>
 
     <path d="M26 268H694" stroke="#2A3038"/>

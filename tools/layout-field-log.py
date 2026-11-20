@@ -21,7 +21,7 @@
 ------------
 1. 用固定段长 L + 角度序列生成点位，相邻距离严格相等。
 2. 标签位置用回溯搜索求解，硬约束：
-     不压圆点、不压已放标签、不压角落文字、不超出裁切区。
+     不压圆点、不压已放标签、不压角落文字、不压路线、不超出裁切区。
    AI 节点外围有半径 27 的十字刻度，单独按 29 的半径避让，避免线条穿字。
 3. 回写：背景虚线路径 / 背景圆环 / route-live / route-next /
    节点组 transform / 标签 / 探针关键帧 / reduced-motion 终点。
@@ -59,6 +59,7 @@ DESCENT = 0.231    # 文字底部 = 基线 y + 0.231 × font-size
 TEXT_PAD = 2       # 标签之间最小间距
 EDGE_PAD = 4       # 距裁切边界留白
 STATIC_SLACK = 3   # 角落文字宽度预留字符数（数字将来变成 3 位也不会挤）
+ROUTE_PAD = 3      # 标签与路线的最小间距（线宽 2，再留 2px 视觉间隙）
 
 
 # ---------------------------------------------------------------- 几何
@@ -88,10 +89,34 @@ def overlaps(a, b, pad=TEXT_PAD):
     )
 
 
-def place_labels(points, names, font, clip, static_boxes, candidates, radii):
+def segment_hits_box(p, q, box):
+    """线段是否与矩形相交（Liang-Barsky）。"""
+    x0, y0, x1, y1 = box
+    dx, dy = q[0] - p[0], q[1] - p[1]
+    t0, t1 = 0.0, 1.0
+    for denom, dist in (
+        (-dx, p[0] - x0), (dx, x1 - p[0]),
+        (-dy, p[1] - y0), (dy, y1 - p[1]),
+    ):
+        if denom == 0:
+            if dist < 0:
+                return False
+        else:
+            t = dist / denom
+            if denom < 0:
+                t0 = max(t0, t)
+            else:
+                t1 = min(t1, t)
+            if t0 > t1:
+                return False
+    return True
+
+
+def place_labels(points, names, font, clip, static_boxes, candidates, radii, route):
     """回溯求解标签位置，返回 [(text, x, y, anchor), ...]。
 
     候选位置按优先级排列，DFS 取第一个可行解，因此越靠前的候选越容易被选中。
+    路线也作为障碍物：标签不能压在实线/虚线上。
     """
     dots = [(x - r, y - r, x + r, y + r) for (x, y), r in zip(points, radii)]
 
@@ -104,6 +129,13 @@ def place_labels(points, names, font, clip, static_boxes, candidates, radii):
             if box[0] < clip[0] + EDGE_PAD or box[2] > clip[0] + clip[2] - EDGE_PAD:
                 continue
             if box[1] < clip[1] + EDGE_PAD or box[3] > clip[1] + clip[3] - EDGE_PAD:
+                continue
+            padded = (box[0] - ROUTE_PAD, box[1] - ROUTE_PAD,
+                      box[2] + ROUTE_PAD, box[3] + ROUTE_PAD)
+            if any(
+                segment_hits_box(route[i], route[i + 1], padded)
+                for i in range(len(route) - 1)
+            ):
                 continue
             opts.append((x, y, anchor, box))
         options.append(opts)
@@ -159,7 +191,7 @@ def patch_svg(path: Path, cfg: dict, dry_run: bool) -> tuple[bool, list[float]]:
     ]
     labels = place_labels(
         nodes, cfg["names"], cfg["font"], label_clip, static_boxes,
-        cfg["candidates"], cfg["obstacle_radii"],
+        cfg["candidates"], cfg["obstacle_radii"], pts,
     )
 
     # 尾巴：沿最后一段方向再延伸一点，表示"路线还没画完"
@@ -208,7 +240,7 @@ def patch_svg(path: Path, cfg: dict, dry_run: bool) -> tuple[bool, list[float]]:
     )
 
     # 4) 节点组位置
-    for name, p in zip(["woo", "todo", "brain", "t101", "newapi", "ai"], nodes):
+    for name, p in zip(cfg["node_classes"], nodes):
         src = sub_once(
             r'(<g transform="translate\()([^)]*)(\)">\s*\n\s*<circle class="node-' + name + r'")',
             lambda m, p=p: m.group(1) + xy(p) + m.group(3),
@@ -228,19 +260,21 @@ def patch_svg(path: Path, cfg: dict, dry_run: bool) -> tuple[bool, list[float]]:
         lambda m: m.group(1) + block + "\n", src, "节点标签",
     )
 
-    # 6) 探针关键帧：按站点顺序推进，90% 时抵达终点再淡出
-    marks = [0.23, 0.40, 0.58, 0.68, 0.79, 0.90][: len(pts) - 1]
+    # 6) 探针关键帧：按 arrivals 依次抵达每个节点，90% 时停在终点再淡出
+    arrivals = cfg["arrivals"]
+    if len(arrivals) != len(nodes):
+        raise RuntimeError(
+            f"{path.name}: arrivals 有 {len(arrivals)} 个，节点有 {len(nodes)} 个。"
+        )
     frames = [
         f"      0%, 7% {{ transform: translate({fmt(pts[0][0])}px, {fmt(pts[0][1])}px);"
         " opacity: 0; }",
         "      10% { opacity: 1; }",
     ]
-    for i, mark in enumerate(marks):
-        p = pts[min(i + 1, len(pts) - 1)]
+    for mark, p in zip(arrivals, nodes):
         frames.append(
-            f"      {round(mark * 100)}% {{ transform: translate({fmt(p[0])}px, {fmt(p[1])}px);"
-            + (" opacity: 1;" if i == 0 else "")
-            + " }"
+            f"      {round(mark)}% {{ transform: translate({fmt(p[0])}px, {fmt(p[1])}px);"
+            " opacity: 1; }"
         )
     end = f"translate({fmt(pts[-1][0])}px, {fmt(pts[-1][1])}px)"
     frames.append(f"      90% {{ transform: {end}; opacity: 1; }}")
@@ -283,17 +317,29 @@ def verify(path: Path, cfg: dict) -> None:
         r'<g transform="translate\(([-\d.]+) ([-\d.]+)\)">\s*\n\s*<circle class="node-', src
     )
     pts = [(float(a), float(b)) for a, b in found]
-    if len(pts) != 6:
-        raise RuntimeError(f"{path.name}: 期望 6 个节点，实际解析到 {len(pts)} 个。")
+    expected = len(cfg["names"])
+    if len(pts) != expected:
+        raise RuntimeError(
+            f"{path.name}: 期望 {expected} 个节点，实际解析到 {len(pts)} 个。"
+        )
 
     segs = [math.dist(pts[i], pts[i + 1]) for i in range(len(pts) - 1)]
     ratio = max(segs) / min(segs)
     if ratio > 1.02:
         raise RuntimeError(f"{path.name}: 段长不均匀，最长/最短 = {ratio:.3f}x。")
 
-    # 标签是否压到圆点（用同一套估算度量自检一遍）
+    # 标签是否压到圆点或路线（用同一套估算度量自检一遍）
     radii = cfg["obstacle_radii"]
     dots = [(x - r, y - r, x + r, y + r) for (x, y), r in zip(pts, radii)]
+    route_d = re.search(
+        r'<path class="route-live"\s*\n\s*d="([^"]*)"', src
+    )
+    if not route_d:
+        raise RuntimeError(f"{path.name}: 找不到 route-live 路径。")
+    route = [
+        (float(a), float(b))
+        for a, b in re.findall(r"[ML]([-\d.]+) ([-\d.]+)", route_d.group(1))
+    ]
     labels = re.findall(
         r'<text x="([-\d.]+)" y="([-\d.]+)" text-anchor="(\w+)"[^>]*>([^<]+)</text>', src
     )
@@ -302,23 +348,32 @@ def verify(path: Path, cfg: dict) -> None:
         for dot in dots:
             if overlaps(box, dot, pad=0):
                 raise RuntimeError(f"{path.name}: 标签 {text!r} 压在圆点上。")
+        padded = (box[0] - ROUTE_PAD, box[1] - ROUTE_PAD,
+                  box[2] + ROUTE_PAD, box[3] + ROUTE_PAD)
+        if any(
+            segment_hits_box(route[i], route[i + 1], padded)
+            for i in range(len(route) - 1)
+        ):
+            raise RuntimeError(f"{path.name}: 标签 {text!r} 压在路线上。")
 
 
 # ---------------------------------------------------------------- 三套配置
 
 DESKTOP = {
     "start": (250, 340),
-    "angles": [-34, 16, -34, 16, -34, -34],
-    "length": 114.6,
+    "angles": [-34, 16, -34, 16, -34],
+    "length": 135.0,
     "font": 13,
     "clip": (218, 62, 714, 326),
     "ring_start": 15,
-    "ring_radii": [22, 22, 22, 22, 22],
+    "ring_radii": [22, 22, 22, 22],
     "tail": 88,
     # 圆点障碍半径：节点 8 + 描边 + 间隙 = 13；AI 有半径 27 的十字刻度 → 29
-    "obstacle_radii": [13, 13, 13, 13, 13, 29],
-    "names": ["01 / WOO", "02 / WOO-TODO", "03 / DIGITAL-BRAIN", "04 / T101",
-              "05 / NEW-API", "AI / NEXT"],
+    "obstacle_radii": [13, 13, 13, 13, 29],
+    "node_classes": ["woo", "todo", "brain", "imagegen", "ai"],
+    "arrivals": [23, 40, 58, 75, 90],
+    "names": ["01 / WOO", "02 / WOO-TODO", "03 / DIGITAL-BRAIN", "04 / IMAGE-GEN",
+              "AI / NEXT"],
     "static_labels": [
         (235, 83, "GRID / 07.24"), (820, 83, "SIGNAL / OPEN"),
         (235, 372, "ROUTE / ACTIVE"), (839, 372, "SCALE 1:07"),
@@ -336,17 +391,19 @@ DESKTOP = {
 
 MOBILE = {
     "start": (48, 500),
-    "angles": [-35, 12, -35, -35, -35, -35],
-    "length": 72.9,
+    "angles": [-45, 0, -45, 0, -45],
+    "length": 90.0,
     "font": 14,
     "clip": (18, 162, 444, 386),
     "ring_start": 14,
-    "ring_radii": [21, 21, 21, 21, 21],
+    "ring_radii": [21, 21, 21, 21],
     "tail": 38,
-    "obstacle_radii": [13, 13, 13, 13, 13, 29],
-    # 444px 宽塞不下 6 个长标签，所以这里用短名，并优先分列路线两侧
-    "names": ["01 WOO", "02 WOO-TODO", "03 BRAIN", "04 T101",
-              "05 NEW-API", "AI / NEXT"],
+    "obstacle_radii": [13, 13, 13, 13, 29],
+    "node_classes": ["woo", "todo", "brain", "imagegen", "ai"],
+    "arrivals": [23, 40, 58, 75, 90],
+    # 444px 宽塞不下长标签，所以这里用短名，并优先分列路线两侧
+    "names": ["01 WOO", "02 WOO-TODO", "03 BRAIN", "04 IMAGE-GEN",
+              "AI / NEXT"],
     "static_labels": [
         (31, 182, "ROUTE / ACTIVE"), (378, 182, "REPOS 06"),
         (31, 531, "OPEN ROUTES 01"),
@@ -362,18 +419,20 @@ MOBILE = {
 
 COMPACT = {
     "start": (42, 216),
-    "angles": [-12, 8, -12, 8, -12],
-    "length": 121.7,
+    "angles": [-12, 8, -12, 8],
+    "length": 149.9,
     "font": 16,
     "clip": (26, 148, 668, 108),
     # band 只有 108px 高，标签允许伸到画布空白区
     "label_clip": (12, 104, 696, 172),
     "trailhead": False,
-    "ring_radii": [15, 20, 20, 20, 20],
+    "ring_radii": [15, 20, 20, 20],
     "tail": 46,
-    "obstacle_radii": [13, 13, 13, 13, 13, 29],
-    "names": ["01 WOO", "02 WOO-TODO", "03 BRAIN", "04 T101",
-              "05 NEW-API", "AI / NEXT"],
+    "obstacle_radii": [13, 13, 13, 13, 29],
+    "node_classes": ["woo", "todo", "brain", "imagegen", "ai"],
+    "arrivals": [17, 37, 57, 77, 90],
+    "names": ["01 WOO", "02 WOO-TODO", "03 BRAIN", "04 IMAGE-GEN",
+              "AI / NEXT"],
     "static_labels": [(452, 96, "REPOS 06 · OPEN 01")],
     "candidates": [
         (0, -22, "middle"), (0, 26, "middle"),
